@@ -1,30 +1,10 @@
-#include "stepper_motors.h"
 
+#include "GPIO_binding.h"
 #include <stdint.h>
 #include "xc.h"
-typedef struct
-{
-    volatile uint16_t *Port;
-    volatile uint16_t *Tris;
-    volatile uint16_t *Ansel;
-    uint8_t FirstPin;
-} StepMotorCoil;
+#include "stepper_motors.h"
 
-typedef struct
-{
-    volatile uint16_t *Port;
-    volatile uint16_t *Tris;
-    volatile uint16_t *Ansel;
-    uint8_t LedPin;
-} StepMotorLed;
-
-typedef struct
-{
-    const StepMotorCoil* CoilA;
-    const StepMotorCoil* CoilB;
-    const StepMotorLed* Led;
-} StepMotor;
-
+// <editor-fold defaultstate="collapsed" desc="Coils and Leds Definitions">
 const StepMotorCoil CoilA_Motor1 = {STEP1_A_PORT, STEP1_A_DIR, STEP1_A_ANSEL, STEP1_A_BIT};
 const StepMotorCoil CoilB_Motor1 = {STEP1_B_PORT, STEP1_B_DIR, STEP1_B_ANSEL, STEP1_B_BIT};
 const StepMotorCoil CoilA_Motor2 = {STEP2_A_PORT, STEP2_A_DIR, STEP2_A_ANSEL, STEP2_A_BIT};
@@ -46,18 +26,9 @@ const StepMotorLed Led_Motor3 = {STEP3_LED_PORT, STEP3_LED_DIR, STEP3_LED_ANSEL,
 const StepMotorLed Led_Motor4 = {STEP4_LED_PORT, STEP4_LED_DIR, STEP4_LED_ANSEL, STEP4_LED_BIT};
 const StepMotorLed Led_Motor5 = {STEP5_LED_PORT, STEP5_LED_DIR, STEP5_LED_ANSEL, STEP5_LED_BIT};
 const StepMotorLed Led_Motor6 = {STEP6_LED_PORT, STEP6_LED_DIR, STEP6_LED_ANSEL, STEP6_LED_BIT};
-const StepMotorLed Led_Motor7 = {STEP7_LED_PORT, STEP7_LED_DIR, STEP7_LED_ANSEL, STEP7_LED_BIT};
+const StepMotorLed Led_Motor7 = {STEP7_LED_PORT, STEP7_LED_DIR, STEP7_LED_ANSEL, STEP7_LED_BIT}; // </editor-fold>
 
-
-#undef STEPPER_MOTOR
-#define STEPPER_MOTOR(_name_, _cA_, _cB_, _led_)   e##_name_,
-
-typedef enum
-{
-    #include "StepperMotor_list.h"
-    eStepperMotorNum
-} StepMotorIndex;
-
+// <editor-fold defaultstate="collapsed" desc="Motors array declaration">
 #undef STEPPER_MOTOR
 #define STEPPER_MOTOR(_name_, _cA_, _cB_, _led_)   \
     StepMotor _name_ =                  \
@@ -72,27 +43,51 @@ typedef enum
 #undef STEPPER_MOTOR
 #define STEPPER_MOTOR(_name_, _cA_, _cB_, _led_)   &_name_,
 
-StepMotor* StepperMotorList[] = 
-{
-    #include "StepperMotor_list.h"
-};
+StepMotor *StepperMotorList[] ={
+#include "StepperMotor_list.h"
+}; // </editor-fold>
 
-void InitMotors()
+void DoSteps(uint8_t motorNum, uint16_t stepsNum)
+{
+    StepperMotorList[motorNum]->LastState.RemainingSteps = stepsNum;
+}
+
+void DoStep(uint8_t motorNum)
+{
+    StepMotor *mot = (StepMotor*)(StepperMotorList[motorNum]);
+
+    if (mot->LastState.RemainingSteps != 0) 
+    {
+        StepMotorCoil *xcoil;
+        if (mot->LastState.ChangeDirection == 1) {
+            mot->LastState.LastCoil ^= 1;
+            mot->LastState.ChangeDirection = 0;
+        }
+
+        if (mot->LastState.LastCoil == 1) {
+            xcoil = (StepMotorCoil*) (mot->CoilA);
+        } else {
+            xcoil = (StepMotorCoil*) (mot->CoilB);
+        }
+        *(xcoil->Port) ^= (0b11 << xcoil->FirstPin);
+        mot->LastState.RemainingSteps--;
+    }
+}
+void InitMotorsAndLeds()
 {
     int i;
     for (i = 0; i < eStepperMotorNum; i++) 
     {
-        *(StepperMotorList[i]->CoilA->Port) |= (3 << StepperMotorList[i]->CoilA->FirstPin);
-        *(StepperMotorList[i]->CoilA->Tris) |= (3 << StepperMotorList[i]->CoilA->FirstPin);
-        *(StepperMotorList[i]->CoilA->Ansel) |= (3 << StepperMotorList[i]->CoilA->FirstPin);
+        StepMotorCoil *xcoil = (StepMotorCoil*)(StepperMotorList[i]->CoilA);
+        *(xcoil->Tris) &= ~(0b11 << xcoil->FirstPin);
+        *(xcoil->Ansel) &= ~(0b11 << xcoil->FirstPin);
         
-        *(StepperMotorList[i]->CoilB->Port) |= (3 << StepperMotorList[i]->CoilB->FirstPin);
-        *(StepperMotorList[i]->CoilB->Tris) |= (3 << StepperMotorList[i]->CoilB->FirstPin);
-        *(StepperMotorList[i]->CoilB->Ansel) |= (3 << StepperMotorList[i]->CoilB->FirstPin);
-
-        *(StepperMotorList[i]->Led->Port) |= (1 << StepperMotorList[i]->Led->LedPin);
-        *(StepperMotorList[i]->Led->Tris) |= (1 << StepperMotorList[i]->Led->LedPin);
-        *(StepperMotorList[i]->Led->Ansel) |= (1 << StepperMotorList[i]->Led->LedPin);
+        xcoil = (StepMotorCoil*)(StepperMotorList[i]->CoilB);
+        *(xcoil->Tris) &= ~(0b11 << xcoil->FirstPin);
+        *(xcoil->Ansel) &= ~(3 << xcoil->FirstPin);
+        
+        StepMotorLed *xled = (StepMotorLed*)(StepperMotorList[i]->Led);
+        *(xled->Tris) &= ~(1 << xled->LedPin);
+        *(xled->Ansel) &= ~(1 << xled->LedPin);   
     }
-
 }
