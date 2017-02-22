@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/dspic33ep256gp506/debug/fft_dsplib.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>28672</length>
+      <used>3672</used>
+      <free>25000</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>261888</length>
+      <used>3675</used>
+      <free>258213</free>
+    </memory>
+  </executable>
+</project>
