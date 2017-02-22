@@ -48,7 +48,7 @@ typedef enum
 
 void InitMotorsAndLeds();
 void DoStep(uint8_t motorNum);
-void DoSteps(uint8_t motorNum, uint16_t stepsNum)
+void DoSteps(uint8_t motorNum, uint16_t stepsNum);
 
 #endif	/* STEPPER_MOTORS_H */
 

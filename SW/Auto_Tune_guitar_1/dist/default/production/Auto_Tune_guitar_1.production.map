@@ -18,6 +18,8 @@ Command:
   build/default/production/main.o \
   build/default/production/stepper_motors.o \
   build/default/production/user.o \
+  build/default/production/stepper_motor_vars.o \
+  build/default/production/ADCf.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EP256MU806.gld.00 \
@@ -75,12 +77,12 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xe4           0x156  (342)
 .const                       0x2e4                0xa8            0xfc  (252)
-.text                        0x38c               0x14e           0x1f5  (501)
-.dinit                       0x4da                0x40            0x60  (96)
-.text                        0x51a                 0xe            0x15  (21)
-.shared.dinit                0x528                 0x2             0x3  (3)
+.text                        0x38c               0x178           0x234  (564)
+.dinit                       0x504                0x40            0x60  (96)
+.text                        0x544                0x48            0x6c  (108)
+.shared.dinit                0x58c                 0x2             0x3  (3)
 
-                 Total program memory used (bytes):          0x4bf  (1215) <1%
+                 Total program memory used (bytes):          0x555  (1365) <1%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -142,8 +144,8 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00022c                  __psv_init
-                  0x000238                  __data_init_extended
                   0x000238                  __data_init
+                  0x000238                  __data_init_extended
                   0x0002e0                  __DefaultInterrupt
                   0x0002e4                  _CoilA_Motor1
                   0x0002ec                  _CoilB_Motor1
@@ -166,10 +168,12 @@ External Symbols in Program Memory (by address):
                   0x000374                  _Led_Motor5
                   0x00037c                  _Led_Motor6
                   0x000384                  _Led_Motor7
-                  0x00038c                  _DoStep
-                  0x000400                  _InitMotorsAndLeds
-                  0x00051a                  _InitApp
-                  0x000522                  _main
+                  0x00038c                  _DoSteps
+                  0x0003a4                  _DoStep
+                  0x00042a                  _InitMotorsAndLeds
+                  0x000544                  _initADC
+                  0x00057e                  _InitApp
+                  0x000586                  _main
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
@@ -188,9 +192,10 @@ External Symbols in Program Memory (by name):
                   0x00032c                  _CoilB_Motor5
                   0x00033c                  _CoilB_Motor6
                   0x00034c                  _CoilB_Motor7
-                  0x00038c                  _DoStep
-                  0x00051a                  _InitApp
-                  0x000400                  _InitMotorsAndLeds
+                  0x0003a4                  _DoStep
+                  0x00038c                  _DoSteps
+                  0x00057e                  _InitApp
+                  0x00042a                  _InitMotorsAndLeds
                   0x000354                  _Led_Motor1
                   0x00035c                  _Led_Motor2
                   0x000364                  _Led_Motor3
@@ -204,7 +209,8 @@ External Symbols in Program Memory (by name):
                   0x000238                  __data_init_extended
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000522                  _main
+                  0x000544                  _initADC
+                  0x000586                  _main
 
 Memory Configuration
 
@@ -230,6 +236,8 @@ Linker script and memory map
 LOAD build/default/production/main.o
 LOAD build/default/production/stepper_motors.o
 LOAD build/default/production/user.o
+LOAD build/default/production/stepper_motor_vars.o
+LOAD build/default/production/ADCf.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EP256MU806
 LOAD c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libfx-elf.a
@@ -307,34 +315,43 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000        0xc0c
+.debug_info       0x000000       0x140e
  *(.debug_info)
- .debug_info      0x000000        0x112 build/default/production/main.o
- .debug_info      0x000112        0x9ea build/default/production/stepper_motors.o
- .debug_info      0x000afc        0x110 build/default/production/user.o
+ .debug_info      0x000000        0x12d build/default/production/main.o
+ .debug_info      0x00012d        0x480 build/default/production/stepper_motors.o
+ .debug_info      0x0005ad        0x12c build/default/production/user.o
+ .debug_info      0x0006d9        0x8f5 build/default/production/stepper_motor_vars.o
+ .debug_info      0x000fce        0x440 build/default/production/ADCf.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x1ac
+.debug_abbrev     0x000000        0x2f5
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x36 build/default/production/main.o
- .debug_abbrev    0x000036        0x144 build/default/production/stepper_motors.o
- .debug_abbrev    0x00017a         0x32 build/default/production/user.o
+ .debug_abbrev    0x000036        0x10b build/default/production/stepper_motors.o
+ .debug_abbrev    0x000141         0x34 build/default/production/user.o
+ .debug_abbrev    0x000175         0xdb build/default/production/stepper_motor_vars.o
+ .debug_abbrev    0x000250         0xa5 build/default/production/ADCf.o
 
-.debug_line       0x000000        0x1a6
+.debug_line       0x000000        0x2e2
  *(.debug_line)
  .debug_line      0x000000         0x33 build/default/production/main.o
- .debug_line      0x000033        0x140 build/default/production/stepper_motors.o
- .debug_line      0x000173         0x33 build/default/production/user.o
+ .debug_line      0x000033         0xcc build/default/production/stepper_motors.o
+ .debug_line      0x0000ff         0x33 build/default/production/user.o
+ .debug_line      0x000132        0x112 build/default/production/stepper_motor_vars.o
+ .debug_line      0x000244         0x9e build/default/production/ADCf.o
 
-.debug_frame      0x000000         0xac
+.debug_frame      0x000000         0xf8
  *(.debug_frame)
  .debug_frame     0x000000         0x30 build/default/production/main.o
- .debug_frame     0x000030         0x4c build/default/production/stepper_motors.o
- .debug_frame     0x00007c         0x30 build/default/production/user.o
+ .debug_frame     0x000030         0x68 build/default/production/stepper_motors.o
+ .debug_frame     0x000098         0x30 build/default/production/user.o
+ .debug_frame     0x0000c8         0x30 build/default/production/ADCf.o
 
-.debug_str        0x000000        0x114
+.debug_str        0x000000        0x135
  *(.debug_str)
- .debug_str       0x000000        0x114 build/default/production/stepper_motors.o
+ .debug_str       0x000000         0x1a build/default/production/stepper_motors.o
+ .debug_str       0x00001a        0x103 build/default/production/stepper_motor_vars.o
+ .debug_str       0x00011d         0x18 build/default/production/ADCf.o
 
 .debug_loc
  *(.debug_loc)
@@ -343,19 +360,23 @@ __FUID0
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x225
+                  0x000000        0x261
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x1b build/default/production/main.o
  .debug_pubnames
-                  0x00001b        0x1ec build/default/production/stepper_motors.o
+                  0x00001b         0x3f build/default/production/stepper_motors.o
  .debug_pubnames
-                  0x000207         0x1e build/default/production/user.o
+                  0x00005a         0x1e build/default/production/user.o
+ .debug_pubnames
+                  0x000078        0x1cb build/default/production/stepper_motor_vars.o
+ .debug_pubnames
+                  0x000243         0x1e build/default/production/ADCf.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x48
+.debug_aranges    0x000000         0x60
  *(.debug_aranges)
  .debug_aranges
                   0x000000         0x18 build/default/production/main.o
@@ -363,6 +384,8 @@ __FUID0
                   0x000018         0x18 build/default/production/stepper_motors.o
  .debug_aranges
                   0x000030         0x18 build/default/production/user.o
+ .debug_aranges
+                  0x000048         0x18 build/default/production/ADCf.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -2939,29 +2962,37 @@ LOAD data_init
 LOAD shared_data_init
 
 .debug_pubtypes
-                  0x000048         0x93
+                  0x000060        0x15a
  .debug_pubtypes
-                  0x000048         0x12 build/default/production/main.o
+                  0x000060         0x12 build/default/production/main.o
  .debug_pubtypes
-                  0x00005a         0x6f build/default/production/stepper_motors.o
+                  0x000072         0x6f build/default/production/stepper_motors.o
  .debug_pubtypes
-                  0x0000c9         0x12 build/default/production/user.o
+                  0x0000e1         0x12 build/default/production/user.o
+ .debug_pubtypes
+                  0x0000f3         0x6f build/default/production/stepper_motor_vars.o
+ .debug_pubtypes
+                  0x000162         0x58 build/default/production/ADCf.o
 
 __c30_signature
-                  0x0000db         0x1e
+                  0x0001ba         0x2a
  __c30_signature
-                  0x0000db          0x6 build/default/production/main.o
+                  0x0001ba          0x6 build/default/production/main.o
  __c30_signature
-                  0x0000e1          0x6 build/default/production/stepper_motors.o
+                  0x0001c0          0x6 build/default/production/stepper_motors.o
  __c30_signature
-                  0x0000e7          0x6 build/default/production/user.o
+                  0x0001c6          0x6 build/default/production/user.o
  __c30_signature
-                  0x0000ed          0x6 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0001cc          0x6 build/default/production/stepper_motor_vars.o
  __c30_signature
-                  0x0000f3          0x6 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extendedep.o)
+                  0x0001d2          0x6 build/default/production/ADCf.o
+ __c30_signature
+                  0x0001d8          0x6 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
+ __c30_signature
+                  0x0001de          0x6 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extendedep.o)
 
 .data               0x1000         0x54
- .data              0x1000         0x54 build/default/production/stepper_motors.o
+ .data              0x1000         0x54 build/default/production/stepper_motor_vars.o
                     0x1000                  _Motor1
                     0x100a                  _Motor2
                     0x1014                  _Motor3
@@ -2994,7 +3025,7 @@ __c30_signature
  .config_IESO     0xf80006          0x2 build/default/production/main.o
 
 .const              0x82e4         0xa8 load address 0x0002e4  
- .const             0x82e4         0xa8 build/default/production/stepper_motors.o
+ .const             0x82e4         0xa8 build/default/production/stepper_motor_vars.o
                     0x82e4                  _CoilA_Motor1
                     0x82ec                  _CoilB_Motor1
                     0x82f4                  _CoilA_Motor2
@@ -3017,19 +3048,22 @@ __c30_signature
                     0x837c                  _Led_Motor6
                     0x8384                  _Led_Motor7
 
-.text             0x00038c        0x14e
- .text            0x00038c        0x14e build/default/production/stepper_motors.o
-                  0x00038c                  _DoStep
-                  0x000400                  _InitMotorsAndLeds
+.text             0x00038c        0x178
+ .text            0x00038c        0x178 build/default/production/stepper_motors.o
+                  0x00038c                  _DoSteps
+                  0x0003a4                  _DoStep
+                  0x00042a                  _InitMotorsAndLeds
 
-.dinit            0x0004da         0x40
- .dinit           0x0004da         0x40 data_init
+.dinit            0x000504         0x40
+ .dinit           0x000504         0x40 data_init
 
-.text             0x00051a          0xe
- .text            0x00051a          0x8 build/default/production/user.o
-                  0x00051a                  _InitApp
- .text            0x000522          0x6 build/default/production/main.o
-                  0x000522                  _main
+.text             0x000544         0x48
+ .text            0x000544         0x3a build/default/production/ADCf.o
+                  0x000544                  _initADC
+ .text            0x00057e          0x8 build/default/production/user.o
+                  0x00057e                  _InitApp
+ .text            0x000586          0x6 build/default/production/main.o
+                  0x000586                  _main
 
-.shared.dinit     0x000528          0x2
- .shared.dinit    0x000528          0x2 shared_data_init
+.shared.dinit     0x00058c          0x2
+ .shared.dinit    0x00058c          0x2 shared_data_init

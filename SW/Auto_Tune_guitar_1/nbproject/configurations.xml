@@ -21,6 +21,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>stepper_motors.c</itemPath>
       <itemPath>user.c</itemPath>
+      <itemPath>stepper_motor_vars.c</itemPath>
+      <itemPath>ADCf.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
