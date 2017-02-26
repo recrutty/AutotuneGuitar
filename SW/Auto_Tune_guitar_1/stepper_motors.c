@@ -46,6 +46,6 @@ void InitMotorsAndLeds()
         
         StepMotorLed *xled = (StepMotorLed*)(StepperMotorList[i]->Led);
         *(xled->Tris) &= ~(1 << xled->LedPin);
-        *(xled->Ansel) &= ~(1 << xled->LedPin);   
+        *(xled->Ansel) &= ~(1 << xled->LedPin);
     }
 }

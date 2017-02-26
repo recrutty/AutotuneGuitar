@@ -98,14 +98,17 @@
 #define SW1_DIR (&TRISB)
 #define SW1_ANSEL (&ANSELB)
 #define SW1_PULLUP (&CNPUB)
+#define SW1_PORT (&PORTB)
 #define SW1_PIN 15
 #define SW2_DIR (&TRISD)
 #define SW2_ANSEL (&ANSELD)
 #define SW2_PULLUP (&CNPUD)
+#define SW2_PORT (&PORTD)
 #define SW2_PIN 5
 #define SW3_DIR (&TRISD)
 #define SW3_ANSEL (&ANSELD)
 #define SW3_PULLUP (&CNPUD)
+#define SW3_PORT (&PORTD)
 #define SW3_PIN 6
 
 #endif	/* GPIO_BINDING_H */
