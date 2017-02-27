@@ -31,7 +31,7 @@ void DoStep(uint8_t motorNum)
         mot->LastState.RemainingSteps--;
     }
 }
-void InitMotorsAndLeds()
+void InitMotors()
 {
     int i;
     for (i = 0; i < eStepperMotorNum; i++) 
