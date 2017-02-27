@@ -13,7 +13,7 @@ typedef struct
 } Led;
 
 #undef LED
-#define LED (_name_, _po_, _tr_, _an_, _pin_)   e##_name_,
+#define LED(_name_, _po_, _tr_, _an_, _pin_)   e##_name_,
 
 typedef enum
 {
