@@ -1,2 +1,3 @@
 Mereni napeti baterky
 vypinac baterky
+AVDD + VDD
