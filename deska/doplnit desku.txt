@@ -1,3 +1,4 @@
 Mereni napeti baterky
 vypinac baterky
 AVDD + VDD
+VDD na programovacim konektoru
