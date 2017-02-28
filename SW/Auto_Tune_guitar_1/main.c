@@ -4,100 +4,88 @@
 #include "xc.h"
 #include "stepper_motors.h"
 #include "user.h"
-extern StepMotor *StepperMotorList[];
+#include "Leds.h"
+#include "Buttons.h"
 
-    StepMotorLed *xled;
+extern StepMotor *StepperMotorList[];
+extern Led *LedList[];
+
     
 void myNewDelay()
 {   
     uint16_t k = 0;
-    while (k<65000)
+    while (k<2000)
     {
         k++;
     }
 }
 int main(void) 
 {
-    //InitApp();
+    InitApp();
     
-    int i;
-    for (i = 0; i < eStepperMotorNum; i++) 
-    {        
-        xled = (StepMotorLed*)(StepperMotorList[i]->Led);
-        *(xled->Tris) &= ~(1 << xled->LedPin);
-        *(xled->Ansel) &= ~(1 << xled->LedPin);
-        *(xled->Port) |= (1 << xled->LedPin);
-    }
-    
-    *(SW1_DIR) |= (1 << SW1_PIN);
-    *(SW1_PULLUP) |= (1 << SW1_PIN);
-    *(SW1_ANSEL) &= ~(1 << SW1_PIN);
-    
-    *(SW2_DIR) |= (1 << SW2_PIN);
-    *(SW2_PULLUP) |= (1 << SW2_PIN);
-    *(SW2_ANSEL) &= ~(1 << SW2_PIN);
-    
-    *(SW3_DIR) |= (1 << SW3_PIN);
-    *(SW3_PULLUP) |= (1 << SW3_PIN);
-    *(SW3_ANSEL) &= ~(1 << SW3_PIN);
-    
+    MotorsWake();
+    StepMotor *xmotor;
+    int iled = 0;
     while (1) 
     {
-        xled = (StepMotorLed*)(StepperMotorList[6]->Led);
-        if (((*(SW1_PORT))&(1 << SW1_PIN))==0) 
-        {
-            
-            *(xled->Port) |= (1 << xled->LedPin);
-        } 
-        else
-        {
-            
-            *(xled->Port) &= ~(1 << xled->LedPin);
-        }
-        
-        xled = (StepMotorLed*)(StepperMotorList[5]->Led);
-        if (((*(SW2_PORT))&(1 << SW2_PIN))==0) 
-        {
-            
-            *(xled->Port) |= (1 << xled->LedPin);
-        } 
-        else
-        {
-            
-            *(xled->Port) &= ~(1 << xled->LedPin);
-        }
-        
-        xled = (StepMotorLed*)(StepperMotorList[4]->Led);
-        if (((*(SW3_PORT))&(1 << SW3_PIN))==0) 
-        {
-            
-            *(xled->Port) |= (1 << xled->LedPin);
-        } 
-        else
-        {
-            
-            *(xled->Port) &= ~(1 << xled->LedPin);
-        }
         /*
-        xled = (StepMotorLed*)(StepperMotorList[0]->Led);
-        *(xled->Port) |= (1 << xled->LedPin);
-
-        xled = (StepMotorLed*)(StepperMotorList[6]->Led);
-        *(xled->Port) &= ~(1 << xled->LedPin);
-            myNewDelay();
-        int j;
-        for (j = 0; j < 7; j++) 
+        int i;
+        for (i = 0; i < eStepperMotorNum; i++) 
         {
-            xled = (StepMotorLed*)(StepperMotorList[j]->Led);
-            *(xled->Port) ^= (1 << xled->LedPin);
-            
-            xled = (StepMotorLed*)(StepperMotorList[j-1]->Led);
-            *(xled->Port) &= ~(1 << xled->LedPin);
-            myNewDelay();
-        }    */
-        
-        
-    }
 
+            xmotor = StepperMotorList[i];
+            *(xmotor->CoilA->Port) ^= (0b10 << (xmotor->CoilA->FirstPin)); 
+    
+        }
+        myNewDelay();
+        TurnLedOn(iled);
+        for (i = 0; i < eStepperMotorNum; i++) 
+        {
+            xmotor = StepperMotorList[i];
+            *(xmotor->CoilB->Port) ^= (0b10 << (xmotor->CoilB->FirstPin)); 
+        
+        }
+        myNewDelay();
+        TurnLedOff(iled);
+        iled++;
+        if (iled==eLedNum) 
+        {
+            iled=0;
+        }
+
+        PORTB = 0b0000000000001000;
+        myNewDelay();
+        PORTB = 0b0000000000001010;
+        myNewDelay();
+        PORTB = 0b0000000000000010;
+        myNewDelay();
+        PORTB = 0b0000000000011010; 
+        myNewDelay();       
+        PORTB = 0b0000000000011100;
+        myNewDelay();
+        PORTB = 0b0000000000011110;
+        myNewDelay();
+        PORTB = 0b0000000000000110;
+        myNewDelay();
+        PORTB = 0b0000000000001110;
+        myNewDelay();
+         */   
+        PORTB = 0b0001000000000100;
+        myNewDelay();
+        PORTB = 0b0001000000010100;
+        myNewDelay();
+        PORTB = 0b0001000000010000;
+        myNewDelay();
+        PORTB = 0b0001000000010010; 
+        myNewDelay();           
+        PORTB = 0b0001000000000010;
+        myNewDelay();
+        PORTB = 0b0001000000001010;
+        myNewDelay();
+        PORTB = 0b0001000000001000;
+        myNewDelay();
+        PORTB = 0b0001000000001100; 
+        myNewDelay();    
+    }
     return 0;
 }

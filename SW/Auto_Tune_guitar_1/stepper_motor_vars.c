@@ -26,7 +26,7 @@ const StepMotorCoil CoilB_Motor7 = {STEP7_B_PORT, STEP7_B_DIR, STEP7_B_ANSEL, ST
     StepMotor _name_ =                  \
     {                                   \
         .CoilA = &_cA_,                 \
-        .CoilB = &_cB_
+        .CoilB = &_cB_                  \
     };
 
 #include "StepperMotor_list.h"

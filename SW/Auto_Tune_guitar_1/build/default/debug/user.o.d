@@ -1,4 +1,4 @@
-build/default/production/user.o:  \
+build/default/debug/user.o:  \
 user.c  \
 stepper_motors.h  \
 GPIO_binding.h  \

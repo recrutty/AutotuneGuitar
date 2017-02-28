@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/Auto_Tune_guitar_1.production.elf">
+  <executable name="dist/default/debug/Auto_Tune_guitar_1.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>28672</length>
-      <used>176</used>
-      <free>28496</free>
+      <used>256</used>
+      <free>28416</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>261888</length>
-      <used>2469</used>
-      <free>259419</free>
+      <used>2322</used>
+      <free>259566</free>
     </memory>
   </executable>
 </project>

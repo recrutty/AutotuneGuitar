@@ -119,21 +119,21 @@ in this file you should find all pins binding.
 #define LED7_BIT 8
 
 //Buttons pins
-#define BTN1_DIR (&TRISB)
-#define BTN1_ANSEL (&ANSELB)
-#define BTN1_PULLUP (&CNPUB)
-#define BTN1_PORT (&PORTB)
-#define BTN1_PIN 15
+#define BTN1_DIR (&TRISD)
+#define BTN1_ANSEL (&ANSELD)
+#define BTN1_PULLUP (&CNPUD)
+#define BTN1_PORT (&PORTD)
+#define BTN1_PIN 6
 #define BTN2_DIR (&TRISD)
 #define BTN2_ANSEL (&ANSELD)
 #define BTN2_PULLUP (&CNPUD)
 #define BTN2_PORT (&PORTD)
 #define BTN2_PIN 5
-#define BTN3_DIR (&TRISD)
-#define BTN3_ANSEL (&ANSELD)
-#define BTN3_PULLUP (&CNPUD)
-#define BTN3_PORT (&PORTD)
-#define BTN3_PIN 6
+#define BTN3_DIR (&TRISB)
+#define BTN3_ANSEL (&ANSELB)
+#define BTN3_PULLUP (&CNPUB)
+#define BTN3_PORT (&PORTB)
+#define BTN3_PIN 15
 
 #endif	/* GPIO_BINDING_H */
 

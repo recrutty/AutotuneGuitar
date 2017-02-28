@@ -12,5 +12,15 @@ void InitLeds()
     {
         *((LedList[i])->Tris) &= ~(1 << ((LedList[i])->LedPin));
         *((LedList[i])->Ansel) &= ~(1 << ((LedList[i])->LedPin));
-    }
+    }    
+}
+
+void TurnLedOn(uint8_t ledNum)
+{
+    *(LedList[ledNum]->Port) |= (1 << LedList[ledNum]->LedPin);                
+}
+
+void TurnLedOff(uint8_t ledNum)
+{
+    *(LedList[ledNum]->Port) &= ~(1 << LedList[ledNum]->LedPin);                
 }

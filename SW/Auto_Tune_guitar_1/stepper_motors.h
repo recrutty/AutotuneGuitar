@@ -36,6 +36,8 @@ typedef enum
 } StepMotorIndex;
 
 void InitMotors();
+void MotorsSleep();
+void MotorsWake();
 void DoStep(uint8_t motorNum);
 void DoSteps(uint8_t motorNum, uint16_t stepsNum);
 

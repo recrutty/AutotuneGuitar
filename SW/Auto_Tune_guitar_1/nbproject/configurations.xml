@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="New Folder 1" projectFiles="true">
+      </logicalFolder>
       <itemPath>config_bits.h</itemPath>
       <itemPath>GPIO_binding.h</itemPath>
       <itemPath>StepperMotor_list.h</itemPath>
@@ -11,6 +13,10 @@
       <itemPath>stepper_motors.h</itemPath>
       <itemPath>user.h</itemPath>
       <itemPath>ADC.h</itemPath>
+      <itemPath>Leds.h</itemPath>
+      <itemPath>Led_list.h</itemPath>
+      <itemPath>Buttons.h</itemPath>
+      <itemPath>Button_list.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +30,10 @@
       <itemPath>user.c</itemPath>
       <itemPath>stepper_motor_vars.c</itemPath>
       <itemPath>ADC.c</itemPath>
+      <itemPath>Leds.c</itemPath>
+      <itemPath>Leds_vars.c</itemPath>
+      <itemPath>Buttons.c</itemPath>
+      <itemPath>Buttons_vars.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -31,6 +41,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

@@ -5,6 +5,15 @@
 
 extern StepMotor *StepperMotorList[];
 
+void MotorsSleep()
+{
+    *STEP_WK_PORT &= ~(1 << STEP_WK_BIT);
+}
+void MotorsWake()
+{    
+    *STEP_WK_PORT |= (1 << STEP_WK_BIT);
+}
+
 void DoSteps(uint8_t motorNum, uint16_t stepsNum)
 {
     StepperMotorList[motorNum]->LastState.RemainingSteps = stepsNum;
@@ -39,9 +48,14 @@ void InitMotors()
         StepMotorCoil *xcoil = (StepMotorCoil*)(StepperMotorList[i]->CoilA);
         *(xcoil->Tris) &= ~(0b11 << xcoil->FirstPin);
         *(xcoil->Ansel) &= ~(0b11 << xcoil->FirstPin);
+        *(xcoil->Port) ^= (1 << xcoil->FirstPin);
         
         xcoil = (StepMotorCoil*)(StepperMotorList[i]->CoilB);
         *(xcoil->Tris) &= ~(0b11 << xcoil->FirstPin);
-        *(xcoil->Ansel) &= ~(3 << xcoil->FirstPin);
+        *(xcoil->Ansel) &= ~(0b11 << xcoil->FirstPin);
+        *(xcoil->Port) ^= (1 << xcoil->FirstPin);
     }
+    
+    *STEP_WK_DIR &= ~(1 << STEP_WK_BIT);
+    *STEP_WK_ANSEL &= ~(1 << STEP_WK_BIT);
 }
