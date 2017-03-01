@@ -12,11 +12,16 @@ typedef struct
     volatile uint8_t FirstPin;
 } StepMotorCoil;
 
+typedef enum
+{
+    Forward = -1,
+    Back = 1
+} __attribute__((packed)) StepMotorDirection;
+
 typedef struct{
     uint16_t RemainingSteps;
-    uint8_t UpDown:1;
-    uint8_t LastCoil:1;
-    uint8_t ChangeDirection:1;    
+    int8_t RotationState;
+    StepMotorDirection Direction;
 } StepMotorState;
 
 typedef struct
@@ -29,6 +34,7 @@ typedef struct
 #undef STEPPER_MOTOR
 #define STEPPER_MOTOR(_name_, _cA_, _cB_)   e##_name_,
 
+
 typedef enum
 {
     #include "StepperMotor_list.h"
@@ -38,8 +44,8 @@ typedef enum
 void InitMotors();
 void MotorsSleep();
 void MotorsWake();
-void DoStep(uint8_t motorNum);
-void DoSteps(uint8_t motorNum, uint16_t stepsNum);
+void DoStep(StepMotorIndex motorNum, StepMotorDirection dir);
+void DoSteps(StepMotorIndex motorNum, StepMotorDirection dir, uint16_t stepsNum);
 
 #endif	/* STEPPER_MOTORS_H */
 
