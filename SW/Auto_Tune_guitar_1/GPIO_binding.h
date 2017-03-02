@@ -25,32 +25,33 @@ in this file you should find all pins binding.
 #define STEP_WK_BIT 12
 
 //stepper motor drivers 1-7 pins
-#define STEP1_A_DIR (&TRISF)
-#define STEP1_A_ANSEL (&ANSELF)
-#define STEP1_A_PORT (&PORTF)
-#define STEP1_A_BIT 4
-#define STEP1_B_DIR (&TRISB)
-#define STEP1_B_ANSEL (&ANSELB)
-#define STEP1_B_PORT (&PORTB)
-#define STEP1_B_BIT 13
 
-#define STEP2_A_DIR (&TRISB)
-#define STEP2_A_ANSEL (&ANSELB)
-#define STEP2_A_PORT (&PORTB)
-#define STEP2_A_BIT 8
-#define STEP2_B_DIR (&TRISB)
-#define STEP2_B_ANSEL (&ANSELB)
-#define STEP2_B_PORT (&PORTB)
-#define STEP2_B_BIT 10
+#define STEP1_A_DIR (&TRISD)
+#define STEP1_A_ANSEL (&ANSELD)
+#define STEP1_A_PORT (&PORTD)
+#define STEP1_A_BIT 1
+#define STEP1_B_DIR (&TRISD)
+#define STEP1_B_ANSEL (&ANSELD)
+#define STEP1_B_PORT (&PORTD)
+#define STEP1_B_BIT 3
 
-#define STEP3_A_DIR (&TRISB)
-#define STEP3_A_ANSEL (&ANSELB)
-#define STEP3_A_PORT (&PORTB)
-#define STEP3_A_BIT 3
-#define STEP3_B_DIR (&TRISB)
-#define STEP3_B_ANSEL (&ANSELB)
-#define STEP3_B_PORT (&PORTB)
-#define STEP3_B_BIT 1
+#define STEP2_A_DIR (&TRISF)
+#define STEP2_A_ANSEL (&ANSELF)
+#define STEP2_A_PORT (&PORTF)
+#define STEP2_A_BIT 0
+#define STEP2_B_DIR (&TRISE)
+#define STEP2_B_ANSEL (&ANSELE)
+#define STEP2_B_PORT (&PORTE)
+#define STEP2_B_BIT 0
+
+#define STEP3_A_DIR (&TRISE)
+#define STEP3_A_ANSEL (&ANSELE)
+#define STEP3_A_PORT (&PORTE)
+#define STEP3_A_BIT 2
+#define STEP3_B_DIR (&TRISE)
+#define STEP3_B_ANSEL (&ANSELE)
+#define STEP3_B_PORT (&PORTE)
+#define STEP3_B_BIT 4
 
 #define STEP4_A_DIR (&TRISE)
 #define STEP4_A_ANSEL (&ANSELE)
@@ -61,32 +62,32 @@ in this file you should find all pins binding.
 #define STEP4_B_PORT (&PORTG)
 #define STEP4_B_BIT 6
 
-#define STEP5_A_DIR (&TRISE)
-#define STEP5_A_ANSEL (&ANSELE)
-#define STEP5_A_PORT (&PORTE)
-#define STEP5_A_BIT 2
-#define STEP5_B_DIR (&TRISE)
-#define STEP5_B_ANSEL (&ANSELE)
-#define STEP5_B_PORT (&PORTE)
-#define STEP5_B_BIT 4
+#define STEP5_A_DIR (&TRISB)
+#define STEP5_A_ANSEL (&ANSELB)
+#define STEP5_A_PORT (&PORTB)
+#define STEP5_A_BIT 3
+#define STEP5_B_DIR (&TRISB)
+#define STEP5_B_ANSEL (&ANSELB)
+#define STEP5_B_PORT (&PORTB)
+#define STEP5_B_BIT 1
 
-#define STEP6_A_DIR (&TRISF)
-#define STEP6_A_ANSEL (&ANSELF)
-#define STEP6_A_PORT (&PORTF)
-#define STEP6_A_BIT 0
-#define STEP6_B_DIR (&TRISE)
-#define STEP6_B_ANSEL (&ANSELE)
-#define STEP6_B_PORT (&PORTE)
-#define STEP6_B_BIT 0
+#define STEP6_A_DIR (&TRISB)
+#define STEP6_A_ANSEL (&ANSELB)
+#define STEP6_A_PORT (&PORTB)
+#define STEP6_A_BIT 8
+#define STEP6_B_DIR (&TRISB)
+#define STEP6_B_ANSEL (&ANSELB)
+#define STEP6_B_PORT (&PORTB)
+#define STEP6_B_BIT 10
 
-#define STEP7_A_DIR (&TRISD)
-#define STEP7_A_ANSEL (&ANSELD)
-#define STEP7_A_PORT (&PORTD)
-#define STEP7_A_BIT 1
-#define STEP7_B_DIR (&TRISD)
-#define STEP7_B_ANSEL (&ANSELD)
-#define STEP7_B_PORT (&PORTD)
-#define STEP7_B_BIT 3
+#define STEP7_A_DIR (&TRISF)
+#define STEP7_A_ANSEL (&ANSELF)
+#define STEP7_A_PORT (&PORTF)
+#define STEP7_A_BIT 4
+#define STEP7_B_DIR (&TRISB)
+#define STEP7_B_ANSEL (&ANSELB)
+#define STEP7_B_PORT (&PORTB)
+#define STEP7_B_BIT 13
 
 //Led pins
 #define LED1_DIR (&TRISC)
@@ -134,6 +135,8 @@ in this file you should find all pins binding.
 #define BTN3_PULLUP (&CNPUB)
 #define BTN3_PORT (&PORTB)
 #define BTN3_PIN 15
+
+#define iDeb (1000)
 
 #endif	/* GPIO_BINDING_H */
 

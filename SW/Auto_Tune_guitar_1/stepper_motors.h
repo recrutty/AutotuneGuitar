@@ -46,7 +46,7 @@ typedef enum
 {
     #include "StepperMotor_list.h"
     eStepperMotorNum
-} StepMotorIndex;
+} __attribute__((packed)) StepMotorIndex;
 
 void InitMotors();
 void MotorsSleep();

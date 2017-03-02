@@ -130,7 +130,7 @@ void DoStep(StepMotorIndex motorNum, StepMotorDirection dir)
 }
 void InitMotors()
 {
-    int i;
+    StepMotorIndex i;
     for (i = 0; i < eStepperMotorNum; i++) 
     {
         StepMotorCoil *xcoil = (StepMotorCoil*)(StepperMotorList[i]->CoilA);

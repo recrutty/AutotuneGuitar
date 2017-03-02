@@ -19,7 +19,7 @@ typedef enum
 {
     #include "Led_list.h"
     eLedNum
-} LedIndex;
+} __attribute__((packed)) LedIndex;
 
 void InitLeds();
 void TurnLedOn(uint8_t ledNum);

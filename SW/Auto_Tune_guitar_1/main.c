@@ -9,6 +9,7 @@
 
 extern StepMotor *StepperMotorList[];
 extern Led *LedList[];
+uint8_t MotorSelect = 0;
     
 void myNewDelay()
 {   
@@ -23,12 +24,13 @@ int main(void)
     InitApp();    
     MotorsWake();
     
-    while (1) 
-    {
-        int i;
+    while (1)
+    {     
+        StepMotorIndex i;
         for (i = 0; i < eStepperMotorNum; i++)
         {
-            int j;
+            OneLedOn(i);
+            int16_t j;
             for (j = 0; j < 3000; j++) 
             {          
                 DoStep(i, Back);
@@ -41,7 +43,7 @@ int main(void)
                 myNewDelay();
             }
             MotorOff(i);
-        }        
+        }
     }
     return 0;
 }

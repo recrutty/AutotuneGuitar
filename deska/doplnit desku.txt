@@ -1,4 +1,6 @@
 Mereni napeti baterky
-vypinac baterky
 AVDD + VDD
 VDD na programovacim konektoru
+drivery layout
+drivery posunout
+drivery vetsi pady
