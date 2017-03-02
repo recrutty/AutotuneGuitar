@@ -32,7 +32,7 @@ in this file you should find all pins binding.
 #define STEP1_B_DIR (&TRISB)
 #define STEP1_B_ANSEL (&ANSELB)
 #define STEP1_B_PORT (&PORTB)
-#define STEP1_B_BIT 14
+#define STEP1_B_BIT 13
 
 #define STEP2_A_DIR (&TRISB)
 #define STEP2_A_ANSEL (&ANSELB)
@@ -77,7 +77,7 @@ in this file you should find all pins binding.
 #define STEP6_B_DIR (&TRISE)
 #define STEP6_B_ANSEL (&ANSELE)
 #define STEP6_B_PORT (&PORTE)
-#define STEP6_B_BIT 2
+#define STEP6_B_BIT 0
 
 #define STEP7_A_DIR (&TRISD)
 #define STEP7_A_ANSEL (&ANSELD)

@@ -14,7 +14,13 @@ typedef struct
 
 typedef enum
 {
-    Forward = -1,
+    No = 0,
+    Yes = 1
+} __attribute__((packed)) DifferentDirection;
+
+typedef enum
+{
+    Forward = 0,
     Back = 1
 } __attribute__((packed)) StepMotorDirection;
 
@@ -28,11 +34,12 @@ typedef struct
 {
     const StepMotorCoil *CoilA;
     const StepMotorCoil *CoilB;
-    volatile StepMotorState LastState;
+    volatile StepMotorState LastState;    
+    const DifferentDirection DifferentDirection;
 } StepMotor;
 
 #undef STEPPER_MOTOR
-#define STEPPER_MOTOR(_name_, _cA_, _cB_)   e##_name_,
+#define STEPPER_MOTOR(_name_, _cA_, _cB_, _dd_)   e##_name_,
 
 
 typedef enum
@@ -46,6 +53,6 @@ void MotorsSleep();
 void MotorsWake();
 void DoStep(StepMotorIndex motorNum, StepMotorDirection dir);
 void DoSteps(StepMotorIndex motorNum, StepMotorDirection dir, uint16_t stepsNum);
-
+void MotorOff(StepMotorIndex motorNum);
 #endif	/* STEPPER_MOTORS_H */
 

@@ -13,13 +13,13 @@ extern Led *LedList[];
 void myNewDelay()
 {   
     uint16_t k = 0;
-    while (k<1000)
+    while (k<220)
     {
         k++;
     }
 }
 int main(void) 
-{
+{ 
     InitApp();    
     MotorsWake();
     
@@ -28,10 +28,20 @@ int main(void)
         int i;
         for (i = 0; i < eStepperMotorNum; i++)
         {
-            DoStep(i, Back);
-            *(LedList[i]->Port) ^= (1<<(LedList[i]->LedPin));
-            myNewDelay();
-        }
+            int j;
+            for (j = 0; j < 3000; j++) 
+            {          
+                DoStep(i, Back);
+                myNewDelay();
+            }
+            
+            for (j = 0; j < 3000; j++) 
+            {          
+                DoStep(i, Forward);
+                myNewDelay();
+            }
+            MotorOff(i);
+        }        
     }
     return 0;
 }
