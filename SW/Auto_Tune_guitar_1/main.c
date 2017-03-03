@@ -9,29 +9,70 @@
 
 extern StepMotor *StepperMotorList[];
 extern Led *LedList[];
+extern Button *BtnList[];
+uint8_t MotorSelect = 0;
     
 void myNewDelay()
 {   
     uint16_t k = 0;
-    while (k<1000)
+    while (k<300)
     {
         k++;
     }
 }
 int main(void) 
-{
+{ 
     InitApp();    
     MotorsWake();
     
-    while (1) 
+    uint8_t MotorSelected = 0;
+    StepMotorIndex mot = 0;
+    LedIndex led = 0;
+    while (1)
     {
-        int i;
-        for (i = 0; i < eStepperMotorNum; i++)
+        if(MotorSelected)
         {
-            DoStep(i, Back);
-            *(LedList[i]->Port) ^= (1<<(LedList[i]->LedPin));
-            myNewDelay();
+            if(!BtnOpen(BtnList[eBtn1]))
+            {                
+                MotorsWake();
+                DoStep(mot, Back);        
+                myNewDelay();
+            }
+            else if(!BtnOpen(BtnList[eBtn3]))
+            {
+                MotorsWake();
+                DoStep(mot, Forward);        
+                myNewDelay();
+            }
+            else
+            {
+                MotorsSleep();
+            }
+                
+            if(BtnClick(eBtn2))
+            {
+                InverseLeds();
+                MotorSelected = 0;                
+            } 
         }
+        else
+        {
+            if (BtnClick(eBtn1) && (led > eLed1)) 
+            {
+                led--;
+            }    
+            if (BtnClick(eBtn3) && (led < eLed7)) 
+            {
+                led++;
+            }   
+            OneLedOn(led);
+            if(BtnClick(eBtn2))
+            {   
+                InverseLeds();
+                MotorSelected = 1;
+                mot = (StepMotorIndex)led;
+            } 
+        }        
     }
     return 0;
 }

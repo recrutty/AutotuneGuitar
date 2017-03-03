@@ -84,11 +84,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x100           0x180  (384)
 .const                       0x300                0x70            0xa8  (168)
-.text                        0x370               0x538           0x7d4  (2004)
-.dinit                       0x8a8                0x98            0xe4  (228)
-.text                        0x940                0x70            0xa8  (168)
+.text                        0x370               0x7de           0xbcd  (3021)
+.dinit                       0xb4e                0xb4           0x10e  (270)
+.text                        0xc02                0xbc           0x11a  (282)
 
-                 Total program memory used (bytes):          0xb88  (2952) 1%
+                 Total program memory used (bytes):         0x101d  (4125) 1%
 
 
 Auxflash Memory  [Origin = 0x7fc000, Length = 0x3ffa]
@@ -103,10 +103,11 @@ Data Memory  [Origin = 0x1000, Length = 0x7000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.ndata                      0x1000                   0            0x70  (112)
-.data                       0x1070                   0            0x40  (64)
+.ndata                      0x1000                   0            0x38  (56)
+.nbss                       0x1038                   0             0x2  (2)
+.data                       0x103a                   0            0xa4  (164)
 
-                 Total data memory used (bytes):           0xb0  (176) <1%
+                 Total data memory used (bytes):           0xde  (222) <1%
 
 
 Dynamic Memory Usage
@@ -114,56 +115,58 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x10b0                              0x6f50  (28496)
+stack                       0x10de                              0x6f22  (28450)
 
-                 Maximum dynamic memory (bytes):         0x6f50  (28496)
+                 Maximum dynamic memory (bytes):         0x6f22  (28450)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x1000                  _Motor1
-                    0x1008                  _Motor2
-                    0x1010                  _Motor3
-                    0x1018                  _Motor4
-                    0x1020                  _Motor5
-                    0x1028                  _Motor6
-                    0x1030                  _Motor7
-                    0x1038                  _Led1
-                    0x1040                  _Led2
-                    0x1048                  _Led3
-                    0x1050                  _Led4
-                    0x1058                  _Led5
-                    0x1060                  _Led6
-                    0x1068                  _Led7
-                    0x1070                  _Btn1
-                    0x107a                  _Btn2
-                    0x1084                  _Btn3
-                    0x108e                  _BtnList
-                    0x1094                  _StepperMotorList
-                    0x10a2                  _LedList
+                    0x1000                  _Led1
+                    0x1008                  _Led2
+                    0x1010                  _Led3
+                    0x1018                  _Led4
+                    0x1020                  _Led5
+                    0x1028                  _Led6
+                    0x1030                  _Led7
+                    0x1038                  _MotorSelect
+                    0x103a                  _Motor1
+                    0x1044                  _Motor2
+                    0x104e                  _Motor3
+                    0x1058                  _Motor4
+                    0x1062                  _Motor5
+                    0x106c                  _Motor6
+                    0x1076                  _Motor7
+                    0x1080                  _StepperMotorList
+                    0x108e                  _Btn1
+                    0x10a2                  _Btn2
+                    0x10b6                  _Btn3
+                    0x10ca                  _BtnList
+                    0x10d0                  _LedList
 
 External Symbols in Data Memory (by name):
 
-                    0x1070                  _Btn1
-                    0x107a                  _Btn2
-                    0x1084                  _Btn3
-                    0x108e                  _BtnList
-                    0x1038                  _Led1
-                    0x1040                  _Led2
-                    0x1048                  _Led3
-                    0x1050                  _Led4
-                    0x1058                  _Led5
-                    0x1060                  _Led6
-                    0x1068                  _Led7
-                    0x10a2                  _LedList
-                    0x1000                  _Motor1
-                    0x1008                  _Motor2
-                    0x1010                  _Motor3
-                    0x1018                  _Motor4
-                    0x1020                  _Motor5
-                    0x1028                  _Motor6
-                    0x1030                  _Motor7
-                    0x1094                  _StepperMotorList
+                    0x108e                  _Btn1
+                    0x10a2                  _Btn2
+                    0x10b6                  _Btn3
+                    0x10ca                  _BtnList
+                    0x1000                  _Led1
+                    0x1008                  _Led2
+                    0x1010                  _Led3
+                    0x1018                  _Led4
+                    0x1020                  _Led5
+                    0x1028                  _Led6
+                    0x1030                  _Led7
+                    0x10d0                  _LedList
+                    0x103a                  _Motor1
+                    0x1044                  _Motor2
+                    0x104e                  _Motor3
+                    0x1058                  _Motor4
+                    0x1062                  _Motor5
+                    0x106c                  _Motor6
+                    0x1076                  _Motor7
+                    0x1038                  _MotorSelect
+                    0x1080                  _StepperMotorList
 
 External Symbols in Program Memory (by address):
 
@@ -188,25 +191,37 @@ External Symbols in Program Memory (by address):
                   0x000368                  _CoilB_Motor7
                   0x000370                  _MotorsSleep
                   0x00037c                  _MotorsWake
-                  0x000388                  _DoSteps
-                  0x0003b0                  _DoStep
-                  0x000554                  _InitMotors
-                  0x000628                  _InitLeds
-                  0x0006a0                  _TurnLedOn
-                  0x0006d8                  _TurnLedOff
-                  0x000712                  _InitBtns
-                  0x0007b8                  _BtnOpen
-                  0x0007e2                  _initAdc
-                  0x0007ec                  _initAdcBattery
-                  0x000844                  _initAdcPiezo
-                  0x000940                  _myNewDelay
-                  0x000956                  _main
-                  0x0009a4                  _InitApp
+                  0x000388                  _MotorOff
+                  0x000400                  _DoSteps
+                  0x000428                  _DoStep
+                  0x00070c                  _InitMotors
+                  0x0007e4                  _InitLeds
+                  0x000838                  _TurnLedOn
+                  0x000870                  _TurnLedOff
+                  0x0008aa                  _OneLedOn
+                  0x0008b8                  _OneLedOff
+                  0x0008c6                  _InverseLeds
+                  0x0008fe                  _AllLedsOff
+                  0x000938                  _AllLedsOn
+                  0x000970                  _InitBtns
+                  0x0009da                  _DebPress
+                  0x0009f0                  _DebRelease
+                  0x000a06                  _BtnOpen
+                  0x000a20                  _BtnClick
+                  0x000a88                  _initAdc
+                  0x000a92                  _initAdcBattery
+                  0x000aea                  _initAdcPiezo
+                  0x000c02                  _myNewDelay
+                  0x000c18                  _main
+                  0x000cb2                  _InitApp
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x0007b8                  _BtnOpen
+                  0x0008fe                  _AllLedsOff
+                  0x000938                  _AllLedsOn
+                  0x000a20                  _BtnClick
+                  0x000a06                  _BtnOpen
                   0x000300                  _CoilA_Motor1
                   0x000310                  _CoilA_Motor2
                   0x000320                  _CoilA_Motor3
@@ -221,27 +236,33 @@ External Symbols in Program Memory (by name):
                   0x000348                  _CoilB_Motor5
                   0x000358                  _CoilB_Motor6
                   0x000368                  _CoilB_Motor7
-                  0x0003b0                  _DoStep
-                  0x000388                  _DoSteps
-                  0x0009a4                  _InitApp
-                  0x000712                  _InitBtns
-                  0x000628                  _InitLeds
-                  0x000554                  _InitMotors
+                  0x0009da                  _DebPress
+                  0x0009f0                  _DebRelease
+                  0x000428                  _DoStep
+                  0x000400                  _DoSteps
+                  0x000cb2                  _InitApp
+                  0x000970                  _InitBtns
+                  0x0007e4                  _InitLeds
+                  0x00070c                  _InitMotors
+                  0x0008c6                  _InverseLeds
+                  0x000388                  _MotorOff
                   0x000370                  _MotorsSleep
                   0x00037c                  _MotorsWake
-                  0x0006d8                  _TurnLedOff
-                  0x0006a0                  _TurnLedOn
+                  0x0008b8                  _OneLedOff
+                  0x0008aa                  _OneLedOn
+                  0x000870                  _TurnLedOff
+                  0x000838                  _TurnLedOn
                   0x0002fa                  __DefaultInterrupt
                   0xf80004                  __FGS.sec
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0007e2                  _initAdc
-                  0x0007ec                  _initAdcBattery
-                  0x000844                  _initAdcPiezo
-                  0x000956                  _main
-                  0x000940                  _myNewDelay
+                  0x000a88                  _initAdc
+                  0x000a92                  _initAdcBattery
+                  0x000aea                  _initAdcPiezo
+                  0x000c18                  _main
+                  0x000c02                  _myNewDelay
 
 Memory Configuration
 
@@ -354,57 +375,58 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x2e40
+.debug_info       0x000000       0x32b8
  *(.debug_info)
- .debug_info      0x000000        0x2a3 build/default/production/main.o
- .debug_info      0x0002a3        0x4f3 build/default/production/stepper_motors.o
- .debug_info      0x000796        0x12c build/default/production/user.o
- .debug_info      0x0008c2        0x76c build/default/production/stepper_motor_vars.o
- .debug_info      0x00102e       0x124e build/default/production/ADC.o
- .debug_info      0x00227c        0x29c build/default/production/Leds.o
- .debug_info      0x002518        0x378 build/default/production/Leds_vars.o
- .debug_info      0x002890        0x265 build/default/production/Buttons.o
- .debug_info      0x002af5        0x34b build/default/production/Buttons_vars.o
+ .debug_info      0x000000        0x3fc build/default/production/main.o
+ .debug_info      0x0003fc        0x541 build/default/production/stepper_motors.o
+ .debug_info      0x00093d        0x11d build/default/production/user.o
+ .debug_info      0x000a5a        0x78f build/default/production/stepper_motor_vars.o
+ .debug_info      0x0011e9       0x123f build/default/production/ADC.o
+ .debug_info      0x002428        0x3d0 build/default/production/Leds.o
+ .debug_info      0x0027f8        0x369 build/default/production/Leds_vars.o
+ .debug_info      0x002b61        0x39b build/default/production/Buttons.o
+ .debug_info      0x002efc        0x3bc build/default/production/Buttons_vars.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x69d
+.debug_abbrev     0x000000        0x704
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0xd3 build/default/production/main.o
- .debug_abbrev    0x0000d3        0x11a build/default/production/stepper_motors.o
- .debug_abbrev    0x0001ed         0x34 build/default/production/user.o
- .debug_abbrev    0x000221         0xdc build/default/production/stepper_motor_vars.o
- .debug_abbrev    0x0002fd         0xb6 build/default/production/ADC.o
- .debug_abbrev    0x0003b3         0xd7 build/default/production/Leds.o
- .debug_abbrev    0x00048a         0x9d build/default/production/Leds_vars.o
- .debug_abbrev    0x000527         0xd9 build/default/production/Buttons.o
- .debug_abbrev    0x000600         0x9d build/default/production/Buttons_vars.o
+ .debug_abbrev    0x000000         0xe2 build/default/production/main.o
+ .debug_abbrev    0x0000e2        0x136 build/default/production/stepper_motors.o
+ .debug_abbrev    0x000218         0x34 build/default/production/user.o
+ .debug_abbrev    0x00024c         0xf8 build/default/production/stepper_motor_vars.o
+ .debug_abbrev    0x000344         0xb6 build/default/production/ADC.o
+ .debug_abbrev    0x0003fa         0xe0 build/default/production/Leds.o
+ .debug_abbrev    0x0004da         0x9d build/default/production/Leds_vars.o
+ .debug_abbrev    0x000577         0xe9 build/default/production/Buttons.o
+ .debug_abbrev    0x000660         0xa4 build/default/production/Buttons_vars.o
 
-.debug_line       0x000000        0x752
+.debug_line       0x000000        0x7d4
  *(.debug_line)
- .debug_line      0x000000         0xb6 build/default/production/main.o
- .debug_line      0x0000b6        0x152 build/default/production/stepper_motors.o
- .debug_line      0x000208         0x35 build/default/production/user.o
- .debug_line      0x00023d        0x112 build/default/production/stepper_motor_vars.o
- .debug_line      0x00034f         0xc3 build/default/production/ADC.o
- .debug_line      0x000412         0xa4 build/default/production/Leds.o
- .debug_line      0x0004b6         0xf6 build/default/production/Leds_vars.o
- .debug_line      0x0005ac         0xa7 build/default/production/Buttons.o
- .debug_line      0x000653         0xff build/default/production/Buttons_vars.o
+ .debug_line      0x000000         0xe0 build/default/production/main.o
+ .debug_line      0x0000e0        0x17b build/default/production/stepper_motors.o
+ .debug_line      0x00025b         0x35 build/default/production/user.o
+ .debug_line      0x000290        0x112 build/default/production/stepper_motor_vars.o
+ .debug_line      0x0003a2         0xc3 build/default/production/ADC.o
+ .debug_line      0x000465         0xc0 build/default/production/Leds.o
+ .debug_line      0x000525         0xf6 build/default/production/Leds_vars.o
+ .debug_line      0x00061b         0xba build/default/production/Buttons.o
+ .debug_line      0x0006d5         0xff build/default/production/Buttons_vars.o
 
-.debug_frame      0x000000        0x238
+.debug_frame      0x000000        0x334
  *(.debug_frame)
  .debug_frame     0x000000         0x4c build/default/production/main.o
- .debug_frame     0x00004c         0xa0 build/default/production/stepper_motors.o
- .debug_frame     0x0000ec         0x30 build/default/production/user.o
- .debug_frame     0x00011c         0x68 build/default/production/ADC.o
- .debug_frame     0x000184         0x68 build/default/production/Leds.o
- .debug_frame     0x0001ec         0x4c build/default/production/Buttons.o
+ .debug_frame     0x00004c         0xbc build/default/production/stepper_motors.o
+ .debug_frame     0x000108         0x30 build/default/production/user.o
+ .debug_frame     0x000138         0x68 build/default/production/ADC.o
+ .debug_frame     0x0001a0         0xf4 build/default/production/Leds.o
+ .debug_frame     0x000294         0xa0 build/default/production/Buttons.o
 
-.debug_str        0x000000        0x153
+.debug_str        0x000000        0x180
  *(.debug_str)
- .debug_str       0x000000         0x1a build/default/production/stepper_motors.o
- .debug_str       0x00001a         0xb6 build/default/production/stepper_motor_vars.o
- .debug_str       0x0000d0         0x83 build/default/production/ADC.o
+ .debug_str       0x000000         0x2d build/default/production/stepper_motors.o
+ .debug_str       0x00002d         0xc9 build/default/production/stepper_motor_vars.o
+ .debug_str       0x0000f6         0x83 build/default/production/ADC.o
+ .debug_str       0x000179          0x7 build/default/production/Leds.o
 
 .debug_loc
  *(.debug_loc)
@@ -413,26 +435,26 @@ __FUID0
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x340
+                  0x000000        0x3ce
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x2a build/default/production/main.o
+                  0x000000         0x3a build/default/production/main.o
  .debug_pubnames
-                  0x00002a         0x57 build/default/production/stepper_motors.o
+                  0x00003a         0x64 build/default/production/stepper_motors.o
  .debug_pubnames
-                  0x000081         0x1e build/default/production/user.o
+                  0x00009e         0x1e build/default/production/user.o
  .debug_pubnames
-                  0x00009f        0x162 build/default/production/stepper_motor_vars.o
+                  0x0000bc        0x162 build/default/production/stepper_motor_vars.o
  .debug_pubnames
-                  0x000201         0x42 build/default/production/ADC.o
+                  0x00021e         0x42 build/default/production/ADC.o
  .debug_pubnames
-                  0x000243         0x3c build/default/production/Leds.o
+                  0x000260         0x84 build/default/production/Leds.o
  .debug_pubnames
-                  0x00027f         0x5d build/default/production/Leds_vars.o
+                  0x0002e4         0x5d build/default/production/Leds_vars.o
  .debug_pubnames
-                  0x0002dc         0x2b build/default/production/Buttons.o
+                  0x000341         0x54 build/default/production/Buttons.o
  .debug_pubnames
-                  0x000307         0x39 build/default/production/Buttons_vars.o
+                  0x000395         0x39 build/default/production/Buttons_vars.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -3037,79 +3059,82 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000090        0x3bb
+                  0x000090        0x426
  .debug_pubtypes
-                  0x000090         0x33 build/default/production/main.o
+                  0x000090         0x56 build/default/production/main.o
  .debug_pubtypes
-                  0x0000c3         0x93 build/default/production/stepper_motors.o
+                  0x0000e6         0xaa build/default/production/stepper_motors.o
  .debug_pubtypes
-                  0x000156         0x12 build/default/production/user.o
+                  0x000190         0x12 build/default/production/user.o
  .debug_pubtypes
-                  0x000168         0x80 build/default/production/stepper_motor_vars.o
+                  0x0001a2         0x97 build/default/production/stepper_motor_vars.o
  .debug_pubtypes
-                  0x0001e8        0x191 build/default/production/ADC.o
+                  0x000239        0x191 build/default/production/ADC.o
  .debug_pubtypes
-                  0x000379         0x33 build/default/production/Leds.o
+                  0x0003ca         0x40 build/default/production/Leds.o
  .debug_pubtypes
-                  0x0003ac         0x33 build/default/production/Leds_vars.o
+                  0x00040a         0x33 build/default/production/Leds_vars.o
  .debug_pubtypes
-                  0x0003df         0x36 build/default/production/Buttons.o
+                  0x00043d         0x43 build/default/production/Buttons.o
  .debug_pubtypes
-                  0x000415         0x36 build/default/production/Buttons_vars.o
+                  0x000480         0x36 build/default/production/Buttons_vars.o
 
 __c30_signature
-                  0x00044b         0x42
+                  0x0004b6         0x42
  __c30_signature
-                  0x00044b          0x6 build/default/production/main.o
+                  0x0004b6          0x6 build/default/production/main.o
  __c30_signature
-                  0x000451          0x6 build/default/production/stepper_motors.o
+                  0x0004bc          0x6 build/default/production/stepper_motors.o
  __c30_signature
-                  0x000457          0x6 build/default/production/user.o
+                  0x0004c2          0x6 build/default/production/user.o
  __c30_signature
-                  0x00045d          0x6 build/default/production/stepper_motor_vars.o
+                  0x0004c8          0x6 build/default/production/stepper_motor_vars.o
  __c30_signature
-                  0x000463          0x6 build/default/production/ADC.o
+                  0x0004ce          0x6 build/default/production/ADC.o
  __c30_signature
-                  0x000469          0x6 build/default/production/Leds.o
+                  0x0004d4          0x6 build/default/production/Leds.o
  __c30_signature
-                  0x00046f          0x6 build/default/production/Leds_vars.o
+                  0x0004da          0x6 build/default/production/Leds_vars.o
  __c30_signature
-                  0x000475          0x6 build/default/production/Buttons.o
+                  0x0004e0          0x6 build/default/production/Buttons.o
  __c30_signature
-                  0x00047b          0x6 build/default/production/Buttons_vars.o
+                  0x0004e6          0x6 build/default/production/Buttons_vars.o
  __c30_signature
-                  0x000481          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0004ec          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x000487          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
+                  0x0004f2          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
 
-.ndata              0x1000         0x70
- .ndata             0x1000         0x38 build/default/production/stepper_motor_vars.o
-                    0x1000                  _Motor1
-                    0x1008                  _Motor2
-                    0x1010                  _Motor3
-                    0x1018                  _Motor4
-                    0x1020                  _Motor5
-                    0x1028                  _Motor6
-                    0x1030                  _Motor7
- .ndata             0x1038         0x38 build/default/production/Leds_vars.o
-                    0x1038                  _Led1
-                    0x1040                  _Led2
-                    0x1048                  _Led3
-                    0x1050                  _Led4
-                    0x1058                  _Led5
-                    0x1060                  _Led6
-                    0x1068                  _Led7
+.ndata              0x1000         0x38
+ .ndata             0x1000         0x38 build/default/production/Leds_vars.o
+                    0x1000                  _Led1
+                    0x1008                  _Led2
+                    0x1010                  _Led3
+                    0x1018                  _Led4
+                    0x1020                  _Led5
+                    0x1028                  _Led6
+                    0x1030                  _Led7
 
-.data               0x1070         0x40
- .data              0x1070         0x24 build/default/production/Buttons_vars.o
-                    0x1070                  _Btn1
-                    0x107a                  _Btn2
-                    0x1084                  _Btn3
-                    0x108e                  _BtnList
- .data              0x1094          0xe build/default/production/stepper_motor_vars.o
-                    0x1094                  _StepperMotorList
- .data              0x10a2          0xe build/default/production/Leds_vars.o
-                    0x10a2                  _LedList
+.nbss               0x1038          0x2
+ .nbss              0x1038          0x2 build/default/production/main.o
+                    0x1038                  _MotorSelect
+
+.data               0x103a         0xa4
+ .data              0x103a         0x54 build/default/production/stepper_motor_vars.o
+                    0x103a                  _Motor1
+                    0x1044                  _Motor2
+                    0x104e                  _Motor3
+                    0x1058                  _Motor4
+                    0x1062                  _Motor5
+                    0x106c                  _Motor6
+                    0x1076                  _Motor7
+                    0x1080                  _StepperMotorList
+ .data              0x108e         0x42 build/default/production/Buttons_vars.o
+                    0x108e                  _Btn1
+                    0x10a2                  _Btn2
+                    0x10b6                  _Btn3
+                    0x10ca                  _BtnList
+ .data              0x10d0          0xe build/default/production/Leds_vars.o
+                    0x10d0                  _LedList
 
 .config_APLK      0xf80010          0x2
  .config_APLK     0xf80010          0x2 build/default/production/main.o
@@ -3150,31 +3175,40 @@ __c30_signature
                     0x8360                  _CoilA_Motor7
                     0x8368                  _CoilB_Motor7
 
-.text             0x000370        0x538
- .text            0x000370        0x2b8 build/default/production/stepper_motors.o
+.text             0x000370        0x7de
+ .text            0x000370        0x474 build/default/production/stepper_motors.o
                   0x000370                  _MotorsSleep
                   0x00037c                  _MotorsWake
-                  0x000388                  _DoSteps
-                  0x0003b0                  _DoStep
-                  0x000554                  _InitMotors
- .text            0x000628         0xea build/default/production/Leds.o
-                  0x000628                  _InitLeds
-                  0x0006a0                  _TurnLedOn
-                  0x0006d8                  _TurnLedOff
- .text            0x000712         0xd0 build/default/production/Buttons.o
-                  0x000712                  _InitBtns
-                  0x0007b8                  _BtnOpen
- .text            0x0007e2         0xc6 build/default/production/ADC.o
-                  0x0007e2                  _initAdc
-                  0x0007ec                  _initAdcBattery
-                  0x000844                  _initAdcPiezo
+                  0x000388                  _MotorOff
+                  0x000400                  _DoSteps
+                  0x000428                  _DoStep
+                  0x00070c                  _InitMotors
+ .text            0x0007e4        0x18c build/default/production/Leds.o
+                  0x0007e4                  _InitLeds
+                  0x000838                  _TurnLedOn
+                  0x000870                  _TurnLedOff
+                  0x0008aa                  _OneLedOn
+                  0x0008b8                  _OneLedOff
+                  0x0008c6                  _InverseLeds
+                  0x0008fe                  _AllLedsOff
+                  0x000938                  _AllLedsOn
+ .text            0x000970        0x118 build/default/production/Buttons.o
+                  0x000970                  _InitBtns
+                  0x0009da                  _DebPress
+                  0x0009f0                  _DebRelease
+                  0x000a06                  _BtnOpen
+                  0x000a20                  _BtnClick
+ .text            0x000a88         0xc6 build/default/production/ADC.o
+                  0x000a88                  _initAdc
+                  0x000a92                  _initAdcBattery
+                  0x000aea                  _initAdcPiezo
 
-.dinit            0x0008a8         0x98
- .dinit           0x0008a8         0x98 data_init
+.dinit            0x000b4e         0xb4
+ .dinit           0x000b4e         0xb4 data_init
 
-.text             0x000940         0x70
- .text            0x000940         0x64 build/default/production/main.o
-                  0x000940                  _myNewDelay
-                  0x000956                  _main
- .text            0x0009a4          0xc build/default/production/user.o
-                  0x0009a4                  _InitApp
+.text             0x000c02         0xbc
+ .text            0x000c02         0xb0 build/default/production/main.o
+                  0x000c02                  _myNewDelay
+                  0x000c18                  _main
+ .text            0x000cb2          0xc build/default/production/user.o
+                  0x000cb2                  _InitApp
