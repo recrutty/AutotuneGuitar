@@ -19,12 +19,14 @@ typedef enum
 {
     #include "Led_list.h"
     eLedNum
-} LedIndex;
+} __attribute__((packed)) LedIndex;
 
 void InitLeds();
-void TurnLedOn(uint8_t ledNum);
-void TurnLedOff(uint8_t ledNum);
-void OneLedOn(uint8_t ledNum);
+void TurnLedOn(LedIndex ledNum);
+void TurnLedOff(LedIndex ledNum);
+void OneLedOn(LedIndex ledNum);
+void OneLedOff(LedIndex ledNum);
+void InverseLeds();
+void AllLedsOn();
 void AllLedsOff();
-
 #endif	/* LEDS_H */
