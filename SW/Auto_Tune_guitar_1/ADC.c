@@ -1,7 +1,7 @@
 #include "xc.h"
 #include "ADC.h"
 
-void initAdc()
+void InitAdc()
 {
     initAdcPiezo();
     initAdcBattery();
@@ -37,6 +37,7 @@ void initAdcBattery()
 void initAdcPiezo()
 {
     ANSELBbits.ANSB0 = 1;
+    TRISBbits.TRISB0 = 1;
     
     AD1CON1bits.ADON = 1;
     AD1CON1bits.ADSIDL = 0;
@@ -65,9 +66,11 @@ void initAdcPiezo()
     
     AD1CSSH = 0;
     AD1CSSL = 0;
+    
+    IEC0bits.AD1IE=1;
 }
-/*
- void __attribute__ ((interrupt, auto_psv)) _ADC1Interrupt(void)
+
+ void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
  {   
-     IFS0bits.AD1IF = 0;        //Clear the interrupt flag
- }*/
+    IFS0bits.AD1IF = 0;        //Clear the interrupt flag
+ }
