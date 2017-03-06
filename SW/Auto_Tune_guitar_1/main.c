@@ -15,19 +15,20 @@ uint8_t MotorSelect = 0;
 void myNewDelay()
 {   
     uint16_t k = 0;
-    while (k<300)
+    while (k<1000)
     {
         k++;
     }
 }
 int main(void) 
-{ 
+{     
     InitApp();    
     MotorsWake();
     
     uint8_t MotorSelected = 0;
     StepMotorIndex mot = 0;
-    LedIndex led = 0;
+    LedIndex led = 0;       
+    
     while (1)
     {
         if(MotorSelected)

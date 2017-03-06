@@ -146,4 +146,8 @@ void InitMotors()
     
     *STEP_WK_DIR &= ~(1 << STEP_WK_BIT);
     *STEP_WK_ANSEL &= ~(1 << STEP_WK_BIT);
+    
+    *STEP_POW_DIR &= ~(1 << STEP_POW_BIT);
+    *STEP_POW_ANSEL &= ~(1 << STEP_POW_BIT);
+    
 }

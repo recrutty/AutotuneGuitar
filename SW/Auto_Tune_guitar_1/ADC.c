@@ -1,5 +1,12 @@
+#include <stdint.h>
+
 #include "xc.h"
 #include "ADC.h"
+#include "Leds.h"
+
+#define FIELD_SIZE 1000
+uint16_t A[FIELD_SIZE];
+int ADCdebugDataCounter = 0;
 
 void InitAdc()
 {
@@ -54,8 +61,8 @@ void initAdcPiezo()
     AD1CON2bits.ALTS = 0;
     
     AD1CON3bits.ADRC = 0;
-    AD1CON3bits.SAMC = 3;
-    AD1CON3bits.ADCS = 200;
+    AD1CON3bits.SAMC = 0;
+    AD1CON3bits.ADCS = 10;
     
     AD1CON4bits.ADDMAEN = 0;
     
@@ -69,8 +76,55 @@ void initAdcPiezo()
     
     IEC0bits.AD1IE=1;
 }
-
- void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
- {   
+#define COMP_HIGH_LIMIT 2050
+#define COMP_LOW_LIMIT 2035
+uint8_t compMem=0;
+uint16_t AdcSamplesCounter = 0;
+void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
+{   
+    *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
+    
+    
+    AdcSamplesCounter++;
+    switch(compMem) 
+    {
+    case 0 :        
+        if(ADC1BUF0 > COMP_HIGH_LIMIT)
+        {
+            compMem = 1;
+            A[ADCdebugDataCounter] = AdcSamplesCounter;
+            ADCdebugDataCounter++;
+            AdcSamplesCounter = 0;
+        }
+        break;
+        
+    case 1 :        
+        if(ADC1BUF0 < COMP_LOW_LIMIT)
+        {
+            compMem = 0;
+        }            
+        break;
+    default:        
+        compMem = 0;
+        break;
+    }
+    switch(ADCdebugDataCounter) 
+    {
+    case FIELD_SIZE :
+        ADCdebugDataCounter=0;
+        break;
+    }
+         
+    /*     
+    A[ADCdebugDataCounter] = ADC1BUF0;
+    ADCdebugDataCounter++;
+    if (ADCdebugDataCounter == FIELD_SIZE)
+    {
+        ADCdebugDataCounter = 0;
+    }
+    */
+    
+    
     IFS0bits.AD1IF = 0;        //Clear the interrupt flag
- }
+    *(STEP_POW_PORT) &= ~(1 << STEP_POW_BIT);
+}

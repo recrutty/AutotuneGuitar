@@ -136,6 +136,6 @@ in this file you should find all pins binding.
 #define BTN3_PORT (&PORTB)
 #define BTN3_PIN 15
 
-#define iDeb (20)
+#define iDeb (100)
 
 #endif	/* GPIO_BINDING_H */
