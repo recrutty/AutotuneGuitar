@@ -1,6 +1,7 @@
 build/default/production/ADC.o:  \
 ADC.c  \
+Strings_freq.h  \
 ADC.h  \
 Leds.h  \
-GPIO_binding.h  \
- Led_list.h 
+ GPIO_binding.h  \
+Led_list.h 

@@ -4,5 +4,6 @@
     void initAdcPiezo();
     void initAdcBattery();
     void _AD1Interrupt();
+    void countFrequencyTable(uint16_t ConcertPitchA);
 #endif	/* ADC_H */
 

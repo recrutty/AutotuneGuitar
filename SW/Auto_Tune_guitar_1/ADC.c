@@ -1,6 +1,7 @@
 #include <stdint.h>
 
 #include "xc.h"
+#include "Strings_freq.h"
 #include "ADC.h"
 #include "Leds.h"
 
@@ -8,10 +9,22 @@
 uint16_t A[FIELD_SIZE];
 int ADCdebugDataCounter = 0;
 
+
+#define COMP_HIGH_LIMIT (2050)
+#define COMP_LOW_LIMIT (2035)
+#define MOV_AVR_BR_DIV (2)
+#define MOVING_AVERAGE_FIELD_SIZE (1<<(MOV_AVR_BR_DIV))
+uint16_t MovingAverage[MOVING_AVERAGE_FIELD_SIZE] = {0};
+uint64_t MovingAverageSummary = 0;
+uint8_t MovingAverageCounter = 0;
+uint8_t compMem=0;
+uint16_t AdcSamplesCounter = 0;
+
 void InitAdc()
 {
     initAdcPiezo();
     initAdcBattery();
+    countFrequencyTable(440);
 }
 void initAdcBattery()
 {
@@ -76,14 +89,22 @@ void initAdcPiezo()
     
     IEC0bits.AD1IE=1;
 }
-#define COMP_HIGH_LIMIT 2050
-#define COMP_LOW_LIMIT 2035
-uint8_t compMem=0;
-uint16_t AdcSamplesCounter = 0;
+uint32_t TonesAdcPeriods[7];
+void countFrequencyTable(uint16_t ConcertPitchA)
+{    
+    long double A1_ADC_Per = (double)((ADC_SAMPLE_RATE * MOVING_AVERAGE_FIELD_SIZE)/((double)(ConcertPitchA)));
+    TonesAdcPeriods[6] = (int)(A1_ADC_Per * SEMITONE_3_MULTIPLIER + 0.5);
+    TonesAdcPeriods[5] = (int)(A1_ADC_Per * SEMITONE_8_MULTIPLIER + 0.5);
+    TonesAdcPeriods[4] = (int)(A1_ADC_Per * SEMITONE_2_MULTIPLIER * 2 + 0.5);
+    TonesAdcPeriods[3] = (int)(A1_ADC_Per * SEMITONE_7_MULTIPLIER * 2 + 0.5);
+    TonesAdcPeriods[2] = (int)(A1_ADC_Per * 4 + 0.5);
+    TonesAdcPeriods[1] = (int)(A1_ADC_Per * SEMITONE_5_MULTIPLIER * 4 + 0.5);
+    TonesAdcPeriods[0] = (int)(A1_ADC_Per * SEMITONE_10_MULTIPLIER * 4 + 0.5);
+}
+
 void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
 {   
-    *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
-    
+    *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;    
     
     AdcSamplesCounter++;
     switch(compMem) 
@@ -91,10 +112,17 @@ void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
     case 0 :        
         if(ADC1BUF0 > COMP_HIGH_LIMIT)
         {
-            compMem = 1;
+            compMem = 1;            
+            
+            MovingAverageSummary += AdcSamplesCounter;
+            MovingAverageSummary -= MovingAverage[MovingAverageCounter];            
+            
             A[ADCdebugDataCounter] = AdcSamplesCounter;
             ADCdebugDataCounter++;
             AdcSamplesCounter = 0;
+            
+            MovingAverageCounter++;
+            MovingAverageCounter &= ~(1 << MOV_AVR_BR_DIV); //reset to 0 if in max value
         }
         break;
         

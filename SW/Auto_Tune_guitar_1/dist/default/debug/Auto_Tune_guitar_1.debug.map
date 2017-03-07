@@ -24,19 +24,12 @@ Command:
   build/default/debug/Leds_vars.o \
   build/default/debug/Buttons.o \
   build/default/debug/Buttons_vars.o \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.00 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.01 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.02 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.03 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.04 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.05 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00001f40.06 \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
   --defsym=__DEBUG=1 \
-  --defsym=__MPLAB_DEBUGGER_REAL_ICE=1 \
-  -Tp33EP256MU806.gld.07 \
+  --defsym=__MPLAB_DEBUGGER_SIMULATOR=1 \
+  -Tp33EP256MU806.gld.00 \
   --stack=16 \
   --check-sections \
   --data-init \
@@ -68,6 +61,36 @@ c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.
                               c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o) (__data_init_extended)
 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
                               (__crt_start_mode_normal)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(adddf3.epeo)
+                              build/default/debug/ADC.o (___adddf3)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
+                              build/default/debug/ADC.o (___divsf3)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dpack.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(adddf3.epeo) (__dpack)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack2.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(adddf3.epeo) (__dunpack2)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(extendsfdf.epeo)
+                              build/default/debug/ADC.o (___extendsfdf2)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixdfsi.epeo)
+                              build/default/debug/ADC.o (_(float, int, long long, double, float, short, int))
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
+                              build/default/debug/ADC.o (___floatunsisf)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo) (__fpack)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(extendsfdf.epeo) (__funpack)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo) (__funpack2)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo) (__fPropagateNaN)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(muldf3.epeo)
+                              build/default/debug/ADC.o (___muldf3)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dpropagateNaN.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack2.epeo) (__dPropagateNaN)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack2.epeo) (__dunpack)
+c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
+                              c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo) (___floatundisf)
 
 
 Selected CodeGuard Options:
@@ -92,13 +115,13 @@ Program Memory  [Origin = 0x200, Length = 0x2aa00]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x100           0x180  (384)
-.const                       0x300                0x70            0xa8  (168)
-.text                        0x370               0x870           0xca8  (3240)
-.dinit                       0xbe0                0xc0           0x120  (288)
-.text                        0xca0               0x114           0x19e  (414)
+.text                        0x200               0x5fa           0x8f7  (2295)
+.const                       0x7fa                0x70            0xa8  (168)
+.text                        0x86a               0x9ba           0xe97  (3735)
+.dinit                      0x1224                0xc0           0x120  (288)
+.text                       0x12e4               0x114           0x19e  (414)
 
-                 Total program memory used (bytes):         0x118e  (4494) 1%
+                 Total program memory used (bytes):         0x1af4  (6900) 2%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -120,19 +143,12 @@ Data Memory  [Origin = 0x1000, Length = 0x7000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-reserve_data_0x1000         0x1000                0x1c            0x1c  (28)
-reserve_data_0x101c         0x101c                 0x2             0x2  (2)
-reserve_data_0x101e         0x101e                 0x2             0x2  (2)
-reserve_data_0x1020         0x1020                 0x2             0x2  (2)
-reserve_data_0x1022         0x1022                 0x2             0x2  (2)
-reserve_data_0x1024         0x1024                 0x4             0x4  (4)
-reserve_data_0x1028         0x1028                0x28            0x28  (40)
-.ndata                      0x1050                   0            0x38  (56)
-.nbss                       0x1088                   0             0x8  (8)
-.bss                        0x1090                   0           0x7d0  (2000)
-.data                       0x1860                   0            0xa4  (164)
+.ndata                      0x1000                   0            0x38  (56)
+.nbss                       0x1038                   0            0x14  (20)
+.bss                        0x104c                   0           0x7ec  (2028)
+.data                       0x1838                   0            0xa4  (164)
 
-                 Total data memory used (bytes):          0x904  (2308) 8%
+                 Total data memory used (bytes):          0x8dc  (2268) 7%
 
 
 Dynamic Memory Usage
@@ -140,166 +156,214 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1904                              0x66fc  (26364)
+stack                       0x18dc                              0x6724  (26404)
 
-                 Maximum dynamic memory (bytes):         0x66fc  (26364)
+                 Maximum dynamic memory (bytes):         0x6724  (26404)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x1050                  _Led1
-                    0x1058                  _Led2
-                    0x1060                  _Led3
-                    0x1068                  _Led4
-                    0x1070                  _Led5
-                    0x1078                  _Led6
-                    0x1080                  _Led7
-                    0x1088                  _ADCdebugDataCounter
-                    0x108a                  _compMem
-                    0x108c                  _AdcSamplesCounter
-                    0x108e                  _MotorSelect
-                    0x1090                  _A
-                    0x1860                  _Motor1
-                    0x186a                  _Motor2
-                    0x1874                  _Motor3
-                    0x187e                  _Motor4
-                    0x1888                  _Motor5
-                    0x1892                  _Motor6
-                    0x189c                  _Motor7
-                    0x18a6                  _StepperMotorList
-                    0x18b4                  _Btn1
-                    0x18c8                  _Btn2
-                    0x18dc                  _Btn3
-                    0x18f0                  _BtnList
-                    0x18f6                  _LedList
+                    0x1000                  _Led1
+                    0x1008                  _Led2
+                    0x1010                  _Led3
+                    0x1018                  _Led4
+                    0x1020                  _Led5
+                    0x1028                  _Led6
+                    0x1030                  _Led7
+                    0x1038                  _ADCdebugDataCounter
+                    0x103a                  _MovingAverage
+                    0x1042                  _MovingAverageSummary
+                    0x1046                  _MovingAverageCounter
+                    0x1047                  _compMem
+                    0x1048                  _AdcSamplesCounter
+                    0x104a                  _MotorSelect
+                    0x104c                  _A
+                    0x181c                  _TonesAdcPeriods
+                    0x1838                  _Motor1
+                    0x1842                  _Motor2
+                    0x184c                  _Motor3
+                    0x1856                  _Motor4
+                    0x1860                  _Motor5
+                    0x186a                  _Motor6
+                    0x1874                  _Motor7
+                    0x187e                  _StepperMotorList
+                    0x188c                  _Btn1
+                    0x18a0                  _Btn2
+                    0x18b4                  _Btn3
+                    0x18c8                  _BtnList
+                    0x18ce                  _LedList
 
 External Symbols in Data Memory (by name):
 
-                    0x1090                  _A
-                    0x1088                  _ADCdebugDataCounter
-                    0x108c                  _AdcSamplesCounter
-                    0x18b4                  _Btn1
-                    0x18c8                  _Btn2
-                    0x18dc                  _Btn3
-                    0x18f0                  _BtnList
-                    0x1050                  _Led1
-                    0x1058                  _Led2
-                    0x1060                  _Led3
-                    0x1068                  _Led4
-                    0x1070                  _Led5
-                    0x1078                  _Led6
-                    0x1080                  _Led7
-                    0x18f6                  _LedList
-                    0x1860                  _Motor1
-                    0x186a                  _Motor2
-                    0x1874                  _Motor3
-                    0x187e                  _Motor4
-                    0x1888                  _Motor5
-                    0x1892                  _Motor6
-                    0x189c                  _Motor7
-                    0x108e                  _MotorSelect
-                    0x18a6                  _StepperMotorList
-                    0x108a                  _compMem
+                    0x104c                  _A
+                    0x1038                  _ADCdebugDataCounter
+                    0x1048                  _AdcSamplesCounter
+                    0x188c                  _Btn1
+                    0x18a0                  _Btn2
+                    0x18b4                  _Btn3
+                    0x18c8                  _BtnList
+                    0x1000                  _Led1
+                    0x1008                  _Led2
+                    0x1010                  _Led3
+                    0x1018                  _Led4
+                    0x1020                  _Led5
+                    0x1028                  _Led6
+                    0x1030                  _Led7
+                    0x18ce                  _LedList
+                    0x1838                  _Motor1
+                    0x1842                  _Motor2
+                    0x184c                  _Motor3
+                    0x1856                  _Motor4
+                    0x1860                  _Motor5
+                    0x186a                  _Motor6
+                    0x1874                  _Motor7
+                    0x104a                  _MotorSelect
+                    0x103a                  _MovingAverage
+                    0x1046                  _MovingAverageCounter
+                    0x1042                  _MovingAverageSummary
+                    0x187e                  _StepperMotorList
+                    0x181c                  _TonesAdcPeriods
+                    0x1047                  _compMem
 
 External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000248                  __data_init
                   0x000248                  __data_init_extended
+                  0x000248                  __data_init
                   0x0002fa                  __DefaultInterrupt
-                  0x000300                  _CoilA_Motor1
-                  0x000308                  _CoilB_Motor1
-                  0x000310                  _CoilA_Motor2
-                  0x000318                  _CoilB_Motor2
-                  0x000320                  _CoilA_Motor3
-                  0x000328                  _CoilB_Motor3
-                  0x000330                  _CoilA_Motor4
-                  0x000338                  _CoilB_Motor4
-                  0x000340                  _CoilA_Motor5
-                  0x000348                  _CoilB_Motor5
-                  0x000350                  _CoilA_Motor6
-                  0x000358                  _CoilB_Motor6
-                  0x000360                  _CoilA_Motor7
-                  0x000368                  _CoilB_Motor7
-                  0x000370                  _MotorsSleep
-                  0x00037c                  _MotorsWake
-                  0x000388                  _MotorOff
-                  0x000400                  _DoSteps
-                  0x000428                  _DoStep
-                  0x00070c                  _InitMotors
-                  0x0007f0                  _InitLeds
-                  0x000844                  _TurnLedOn
-                  0x00087c                  _TurnLedOff
-                  0x0008b6                  _OneLedOn
-                  0x0008c4                  _OneLedOff
-                  0x0008d2                  _InverseLeds
-                  0x00090a                  _AllLedsOff
-                  0x000944                  _AllLedsOn
-                  0x00097c                  _InitAdc
-                  0x000986                  _initAdcBattery
-                  0x0009de                  _initAdcPiezo
-                  0x000a42                  __AD1Interrupt
-                  0x000ac8                  _InitBtns
-                  0x000b32                  _DebPress
-                  0x000b48                  _DebRelease
-                  0x000b5e                  _BtnOpen
-                  0x000b78                  _BtnClick
-                  0x000ca0                  _myNewDelay
-                  0x000cb6                  _main
-                  0x000d50                  _InitApp
-                  0x000d60                  _InitPllOsc
+                  0x000300                  ___adddf3
+                  0x0003fa                  ___divsf3
+                  0x00047e                  __dpack
+                  0x0004d6                  __dunpack2
+                  0x0004f8                  __dreturnNaN
+                  0x0004fe                  __dunpack2exit
+                  0x000508                  ___extendsfdf2
+                  0x000546                  ___fixdfsi
+                  0x00059e                  ___floatunsisf
+                  0x0005a2                  __fpack
+                  0x0005ee                  __funpack
+                  0x000618                  __funpack2
+                  0x000628                  __fPropagateNaN
+                  0x00063a                  __fbopExit
+                  0x000642                  __fbopReturnNaN
+                  0x000648                  ___muldf3
+                  0x000732                  __dPropagateNaN
+                  0x00074e                  __dunpack
+                  0x00079c                  ___floatundisf
+                  0x0007fa                  _CoilA_Motor1
+                  0x000802                  _CoilB_Motor1
+                  0x00080a                  _CoilA_Motor2
+                  0x000812                  _CoilB_Motor2
+                  0x00081a                  _CoilA_Motor3
+                  0x000822                  _CoilB_Motor3
+                  0x00082a                  _CoilA_Motor4
+                  0x000832                  _CoilB_Motor4
+                  0x00083a                  _CoilA_Motor5
+                  0x000842                  _CoilB_Motor5
+                  0x00084a                  _CoilA_Motor6
+                  0x000852                  _CoilB_Motor6
+                  0x00085a                  _CoilA_Motor7
+                  0x000862                  _CoilB_Motor7
+                  0x00086a                  _MotorsSleep
+                  0x000876                  _MotorsWake
+                  0x000882                  _MotorOff
+                  0x0008fa                  _DoSteps
+                  0x000922                  _DoStep
+                  0x000c06                  _InitMotors
+                  0x000cea                  _InitAdc
+                  0x000cf8                  _initAdcBattery
+                  0x000d50                  _initAdcPiezo
+                  0x000db4                  _countFrequencyTable
+                  0x000ec4                  __AD1Interrupt
+                  0x000f80                  _InitLeds
+                  0x000fd4                  _TurnLedOn
+                  0x00100c                  _TurnLedOff
+                  0x001046                  _OneLedOn
+                  0x001054                  _OneLedOff
+                  0x001062                  _InverseLeds
+                  0x00109a                  _AllLedsOff
+                  0x0010d4                  _AllLedsOn
+                  0x00110c                  _InitBtns
+                  0x001176                  _DebPress
+                  0x00118c                  _DebRelease
+                  0x0011a2                  _BtnOpen
+                  0x0011bc                  _BtnClick
+                  0x0012e4                  _myNewDelay
+                  0x0012fa                  _main
+                  0x001394                  _InitApp
+                  0x0013a4                  _InitPllOsc
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x00090a                  _AllLedsOff
-                  0x000944                  _AllLedsOn
-                  0x000b78                  _BtnClick
-                  0x000b5e                  _BtnOpen
-                  0x000300                  _CoilA_Motor1
-                  0x000310                  _CoilA_Motor2
-                  0x000320                  _CoilA_Motor3
-                  0x000330                  _CoilA_Motor4
-                  0x000340                  _CoilA_Motor5
-                  0x000350                  _CoilA_Motor6
-                  0x000360                  _CoilA_Motor7
-                  0x000308                  _CoilB_Motor1
-                  0x000318                  _CoilB_Motor2
-                  0x000328                  _CoilB_Motor3
-                  0x000338                  _CoilB_Motor4
-                  0x000348                  _CoilB_Motor5
-                  0x000358                  _CoilB_Motor6
-                  0x000368                  _CoilB_Motor7
-                  0x000b32                  _DebPress
-                  0x000b48                  _DebRelease
-                  0x000428                  _DoStep
-                  0x000400                  _DoSteps
-                  0x00097c                  _InitAdc
-                  0x000d50                  _InitApp
-                  0x000ac8                  _InitBtns
-                  0x0007f0                  _InitLeds
-                  0x00070c                  _InitMotors
-                  0x000d60                  _InitPllOsc
-                  0x0008d2                  _InverseLeds
-                  0x000388                  _MotorOff
-                  0x000370                  _MotorsSleep
-                  0x00037c                  _MotorsWake
-                  0x0008c4                  _OneLedOff
-                  0x0008b6                  _OneLedOn
-                  0x00087c                  _TurnLedOff
-                  0x000844                  _TurnLedOn
-                  0x000a42                  __AD1Interrupt
+                  0x00109a                  _AllLedsOff
+                  0x0010d4                  _AllLedsOn
+                  0x0011bc                  _BtnClick
+                  0x0011a2                  _BtnOpen
+                  0x0007fa                  _CoilA_Motor1
+                  0x00080a                  _CoilA_Motor2
+                  0x00081a                  _CoilA_Motor3
+                  0x00082a                  _CoilA_Motor4
+                  0x00083a                  _CoilA_Motor5
+                  0x00084a                  _CoilA_Motor6
+                  0x00085a                  _CoilA_Motor7
+                  0x000802                  _CoilB_Motor1
+                  0x000812                  _CoilB_Motor2
+                  0x000822                  _CoilB_Motor3
+                  0x000832                  _CoilB_Motor4
+                  0x000842                  _CoilB_Motor5
+                  0x000852                  _CoilB_Motor6
+                  0x000862                  _CoilB_Motor7
+                  0x001176                  _DebPress
+                  0x00118c                  _DebRelease
+                  0x000922                  _DoStep
+                  0x0008fa                  _DoSteps
+                  0x000cea                  _InitAdc
+                  0x001394                  _InitApp
+                  0x00110c                  _InitBtns
+                  0x000f80                  _InitLeds
+                  0x000c06                  _InitMotors
+                  0x0013a4                  _InitPllOsc
+                  0x001062                  _InverseLeds
+                  0x000882                  _MotorOff
+                  0x00086a                  _MotorsSleep
+                  0x000876                  _MotorsWake
+                  0x001054                  _OneLedOff
+                  0x001046                  _OneLedOn
+                  0x00100c                  _TurnLedOff
+                  0x000fd4                  _TurnLedOn
+                  0x000ec4                  __AD1Interrupt
                   0x0002fa                  __DefaultInterrupt
                   0xf80004                  __FGS.sec
+                  0x000300                  ___adddf3
+                  0x0003fa                  ___divsf3
+                  0x000508                  ___extendsfdf2
+                  0x000546                  ___fixdfsi
+                  0x00079c                  ___floatundisf
+                  0x00059e                  ___floatunsisf
+                  0x000648                  ___muldf3
+                  0x000732                  __dPropagateNaN
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
+                  0x00047e                  __dpack
+                  0x0004f8                  __dreturnNaN
+                  0x00074e                  __dunpack
+                  0x0004d6                  __dunpack2
+                  0x0004fe                  __dunpack2exit
+                  0x000628                  __fPropagateNaN
+                  0x00063a                  __fbopExit
+                  0x000642                  __fbopReturnNaN
+                  0x0005a2                  __fpack
+                  0x0005ee                  __funpack
+                  0x000618                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000986                  _initAdcBattery
-                  0x0009de                  _initAdcPiezo
-                  0x000cb6                  _main
-                  0x000ca0                  _myNewDelay
+                  0x000db4                  _countFrequencyTable
+                  0x000cf8                  _initAdcBattery
+                  0x000d50                  _initAdcPiezo
+                  0x0012fa                  _main
+                  0x0012e4                  _myNewDelay
 
 Memory Configuration
 
@@ -331,45 +395,10 @@ LOAD build/default/debug/Leds.o
 LOAD build/default/debug/Leds_vars.o
 LOAD build/default/debug/Buttons.o
 LOAD build/default/debug/Buttons_vars.o
-
-reserve_data_0x1000
-                    0x1000         0x1c
-                    0x101c                  . = 0x1c
- *fill*             0x1000         0x1c00
-
-reserve_data_0x101c
-                    0x101c          0x2
-                    0x101e                  . = 0x2
- *fill*             0x101c          0x200
-
-reserve_data_0x101e
-                    0x101e          0x2
-                    0x1020                  . = 0x2
- *fill*             0x101e          0x200
-
-reserve_data_0x1020
-                    0x1020          0x2
-                    0x1022                  . = 0x2
- *fill*             0x1020          0x200
-
-reserve_data_0x1022
-                    0x1022          0x2
-                    0x1024                  . = 0x2
- *fill*             0x1022          0x200
-
-reserve_data_0x1024
-                    0x1024          0x4
-                    0x1028                  . = 0x4
- *fill*             0x1024          0x400
-
-reserve_data_0x1028
-                    0x1028         0x28
-                    0x1050                  . = 0x28
- *fill*             0x1028         0x2800
                     0x0001                  __MPLAB_BUILD = 0x1
                     0x0001                  __MPLAB_DEBUG = 0x1
                     0x0001                  __DEBUG = 0x1
-                    0x0001                  __MPLAB_DEBUGGER_REAL_ICE = 0x1
+                    0x0001                  __MPLAB_DEBUGGER_SIMULATOR = 0x1
 LOAD p33EP256MU806
 LOAD c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libfx-elf.a
                     0xf80004                  __FGS = 0xf80004
@@ -395,7 +424,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x100
+.text             0x000200        0x5fa
  *(.init)
  .init            0x000200         0x48 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __resetPRI
@@ -417,6 +446,51 @@ LOAD c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libfx-elf.a
                   0x0002fe          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
                   0x0002fe                  __crt_start_mode
                   0x0002fe                  __crt_start_mode_normal
+ .libm.adddf3     0x000300         0xfa c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(adddf3.epeo)
+                  0x000300                  ___adddf3
+ .libm.divfs3     0x0003fa         0x84 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
+                  0x0003fa                  ___divsf3
+ .libm.dpack      0x00047e         0x58 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dpack.epeo)
+                  0x00047e                  __dpack
+ .libm.dunpack2
+                  0x0004d6         0x32 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack2.epeo)
+                  0x0004d6                  __dunpack2
+                  0x0004f8                  __dreturnNaN
+                  0x0004fe                  __dunpack2exit
+ .libm.extendsfdf2
+                  0x000508         0x3e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(extendsfdf.epeo)
+                  0x000508                  ___extendsfdf2
+ .libm.fixdfsi    0x000546         0x58 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixdfsi.epeo)
+                  0x000546                  _(float, int, long long, double, float, short, int)
+ .libm.floatunsisf
+                  0x00059e          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
+                  0x00059e                  ___floatunsisf
+ .libm.fpack      0x0005a2         0x4c c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
+                  0x0005a2                  __fpack
+ .libm.funpack    0x0005ee         0x2a c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
+                  0x0005ee                  __funpack
+ .libm.funpack2
+                  0x000618         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
+                  0x000618                  __funpack2
+ .libm.fPropagateNaN
+                  0x000628         0x12 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x000628                  __fPropagateNaN
+ .libm.fbobExit
+                  0x00063a          0x8 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x00063a                  __fbopExit
+ .libm.fbopReturnNaN
+                  0x000642          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x000642                  __fbopReturnNaN
+ .libm.muldf3     0x000648         0xea c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(muldf3.epeo)
+                  0x000648                  ___muldf3
+ .libm.dPropagateNaN
+                  0x000732         0x1c c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dpropagateNaN.epeo)
+                  0x000732                  __dPropagateNaN
+ .libm.dunpack    0x00074e         0x4e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack.epeo)
+                  0x00074e                  __dunpack
+ .libm.floatundisf
+                  0x00079c         0x5e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
+                  0x00079c                  ___floatundisf
 
 usercode
  *(usercode)
@@ -450,59 +524,59 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x3dba
+.debug_info       0x000000       0x3f90
  *(.debug_info)
- .debug_info      0x000000        0x40b build/default/debug/main.o
- .debug_info      0x00040b        0x592 build/default/debug/stepper_motors.o
- .debug_info      0x00099d        0x52f build/default/debug/user.o
- .debug_info      0x000ecc        0x79e build/default/debug/stepper_motor_vars.o
- .debug_info      0x00166a       0x1884 build/default/debug/ADC.o
- .debug_info      0x002eee        0x3df build/default/debug/Leds.o
- .debug_info      0x0032cd        0x378 build/default/debug/Leds_vars.o
- .debug_info      0x003645        0x3aa build/default/debug/Buttons.o
- .debug_info      0x0039ef        0x3cb build/default/debug/Buttons_vars.o
+ .debug_info      0x000000        0x421 build/default/debug/main.o
+ .debug_info      0x000421        0x5a8 build/default/debug/stepper_motors.o
+ .debug_info      0x0009c9        0x545 build/default/debug/user.o
+ .debug_info      0x000f0e        0x7b4 build/default/debug/stepper_motor_vars.o
+ .debug_info      0x0016c2       0x19aa build/default/debug/ADC.o
+ .debug_info      0x00306c        0x3f5 build/default/debug/Leds.o
+ .debug_info      0x003461        0x38e build/default/debug/Leds_vars.o
+ .debug_info      0x0037ef        0x3c0 build/default/debug/Buttons.o
+ .debug_info      0x003baf        0x3e1 build/default/debug/Buttons_vars.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x7fe
+.debug_abbrev     0x000000        0x83c
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xe2 build/default/debug/main.o
  .debug_abbrev    0x0000e2        0x136 build/default/debug/stepper_motors.o
  .debug_abbrev    0x000218         0xb6 build/default/debug/user.o
  .debug_abbrev    0x0002ce         0xf8 build/default/debug/stepper_motor_vars.o
- .debug_abbrev    0x0003c6        0x12e build/default/debug/ADC.o
- .debug_abbrev    0x0004f4         0xe0 build/default/debug/Leds.o
- .debug_abbrev    0x0005d4         0x9d build/default/debug/Leds_vars.o
- .debug_abbrev    0x000671         0xe9 build/default/debug/Buttons.o
- .debug_abbrev    0x00075a         0xa4 build/default/debug/Buttons_vars.o
+ .debug_abbrev    0x0003c6        0x16c build/default/debug/ADC.o
+ .debug_abbrev    0x000532         0xe0 build/default/debug/Leds.o
+ .debug_abbrev    0x000612         0x9d build/default/debug/Leds_vars.o
+ .debug_abbrev    0x0006af         0xe9 build/default/debug/Buttons.o
+ .debug_abbrev    0x000798         0xa4 build/default/debug/Buttons_vars.o
 
-.debug_line       0x000000        0x8b7
+.debug_line       0x000000        0x8d3
  *(.debug_line)
  .debug_line      0x000000         0xe0 build/default/debug/main.o
  .debug_line      0x0000e0        0x17d build/default/debug/stepper_motors.o
  .debug_line      0x00025d         0xa1 build/default/debug/user.o
  .debug_line      0x0002fe        0x112 build/default/debug/stepper_motor_vars.o
- .debug_line      0x000410        0x138 build/default/debug/ADC.o
- .debug_line      0x000548         0xc0 build/default/debug/Leds.o
- .debug_line      0x000608         0xf6 build/default/debug/Leds_vars.o
- .debug_line      0x0006fe         0xba build/default/debug/Buttons.o
- .debug_line      0x0007b8         0xff build/default/debug/Buttons_vars.o
+ .debug_line      0x000410        0x154 build/default/debug/ADC.o
+ .debug_line      0x000564         0xc0 build/default/debug/Leds.o
+ .debug_line      0x000624         0xf6 build/default/debug/Leds_vars.o
+ .debug_line      0x00071a         0xba build/default/debug/Buttons.o
+ .debug_line      0x0007d4         0xff build/default/debug/Buttons_vars.o
 
-.debug_frame      0x000000        0x382
+.debug_frame      0x000000        0x39e
  *(.debug_frame)
  .debug_frame     0x000000         0x4c build/default/debug/main.o
  .debug_frame     0x00004c         0xbc build/default/debug/stepper_motors.o
  .debug_frame     0x000108         0x4c build/default/debug/user.o
- .debug_frame     0x000154         0x9a build/default/debug/ADC.o
- .debug_frame     0x0001ee         0xf4 build/default/debug/Leds.o
- .debug_frame     0x0002e2         0xa0 build/default/debug/Buttons.o
+ .debug_frame     0x000154         0xb6 build/default/debug/ADC.o
+ .debug_frame     0x00020a         0xf4 build/default/debug/Leds.o
+ .debug_frame     0x0002fe         0xa0 build/default/debug/Buttons.o
 
-.debug_str        0x000000        0x1e1
+.debug_str        0x000000        0x229
  *(.debug_str)
  .debug_str       0x000000         0x2d build/default/debug/stepper_motors.o
  .debug_str       0x00002d         0x16 build/default/debug/user.o
  .debug_str       0x000043         0xc9 build/default/debug/stepper_motor_vars.o
- .debug_str       0x00010c         0xce build/default/debug/ADC.o
- .debug_str       0x0001da          0x7 build/default/debug/Leds.o
+ .debug_str       0x00010c        0x116 build/default/debug/ADC.o
+ .debug_str       0x000222          0x7 build/default/debug/Leds.o
 
 .debug_loc
  *(.debug_loc)
@@ -511,7 +585,7 @@ __FUID0
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x42f
+                  0x000000        0x49f
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x3a build/default/debug/main.o
@@ -522,15 +596,15 @@ __FUID0
  .debug_pubnames
                   0x0000cb        0x162 build/default/debug/stepper_motor_vars.o
  .debug_pubnames
-                  0x00022d         0x94 build/default/debug/ADC.o
+                  0x00022d        0x104 build/default/debug/ADC.o
  .debug_pubnames
-                  0x0002c1         0x84 build/default/debug/Leds.o
+                  0x000331         0x84 build/default/debug/Leds.o
  .debug_pubnames
-                  0x000345         0x5d build/default/debug/Leds_vars.o
+                  0x0003b5         0x5d build/default/debug/Leds_vars.o
  .debug_pubnames
-                  0x0003a2         0x54 build/default/debug/Buttons.o
+                  0x000412         0x54 build/default/debug/Buttons.o
  .debug_pubnames
-                  0x0003f6         0x39 build/default/debug/Buttons_vars.o
+                  0x000466         0x39 build/default/debug/Buttons_vars.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -3135,7 +3209,7 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000090        0x4da
+                  0x000090        0x4e7
  .debug_pubtypes
                   0x000090         0x56 build/default/debug/main.o
  .debug_pubtypes
@@ -3145,80 +3219,114 @@ LOAD data_init
  .debug_pubtypes
                   0x0001e4         0x97 build/default/debug/stepper_motor_vars.o
  .debug_pubtypes
-                  0x00027b        0x203 build/default/debug/ADC.o
+                  0x00027b        0x210 build/default/debug/ADC.o
  .debug_pubtypes
-                  0x00047e         0x40 build/default/debug/Leds.o
+                  0x00048b         0x40 build/default/debug/Leds.o
  .debug_pubtypes
-                  0x0004be         0x33 build/default/debug/Leds_vars.o
+                  0x0004cb         0x33 build/default/debug/Leds_vars.o
  .debug_pubtypes
-                  0x0004f1         0x43 build/default/debug/Buttons.o
+                  0x0004fe         0x43 build/default/debug/Buttons.o
  .debug_pubtypes
-                  0x000534         0x36 build/default/debug/Buttons_vars.o
+                  0x000541         0x36 build/default/debug/Buttons_vars.o
 
 __c30_signature
-                  0x00056a         0x42
+                  0x000577         0x9c
  __c30_signature
-                  0x00056a          0x6 build/default/debug/main.o
+                  0x000577          0x6 build/default/debug/main.o
  __c30_signature
-                  0x000570          0x6 build/default/debug/stepper_motors.o
+                  0x00057d          0x6 build/default/debug/stepper_motors.o
  __c30_signature
-                  0x000576          0x6 build/default/debug/user.o
+                  0x000583          0x6 build/default/debug/user.o
  __c30_signature
-                  0x00057c          0x6 build/default/debug/stepper_motor_vars.o
+                  0x000589          0x6 build/default/debug/stepper_motor_vars.o
  __c30_signature
-                  0x000582          0x6 build/default/debug/ADC.o
+                  0x00058f          0x6 build/default/debug/ADC.o
  __c30_signature
-                  0x000588          0x6 build/default/debug/Leds.o
+                  0x000595          0x6 build/default/debug/Leds.o
  __c30_signature
-                  0x00058e          0x6 build/default/debug/Leds_vars.o
+                  0x00059b          0x6 build/default/debug/Leds_vars.o
  __c30_signature
-                  0x000594          0x6 build/default/debug/Buttons.o
+                  0x0005a1          0x6 build/default/debug/Buttons.o
  __c30_signature
-                  0x00059a          0x6 build/default/debug/Buttons_vars.o
+                  0x0005a7          0x6 build/default/debug/Buttons_vars.o
  __c30_signature
-                  0x0005a0          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0005ad          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x0005a6          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
+                  0x0005b3          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
+ __c30_signature
+                  0x0005b9          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(adddf3.epeo)
+ __c30_signature
+                  0x0005bf          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
+ __c30_signature
+                  0x0005c5          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dpack.epeo)
+ __c30_signature
+                  0x0005cb          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack2.epeo)
+ __c30_signature
+                  0x0005d1          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(extendsfdf.epeo)
+ __c30_signature
+                  0x0005d7          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixdfsi.epeo)
+ __c30_signature
+                  0x0005dd          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
+ __c30_signature
+                  0x0005e3          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
+ __c30_signature
+                  0x0005e9          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
+ __c30_signature
+                  0x0005ef          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
+ __c30_signature
+                  0x0005f5          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+ __c30_signature
+                  0x0005fb          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(muldf3.epeo)
+ __c30_signature
+                  0x000601          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dpropagateNaN.epeo)
+ __c30_signature
+                  0x000607          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(dunpack.epeo)
+ __c30_signature
+                  0x00060d          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
 
-.ndata              0x1050         0x38
- .ndata             0x1050         0x38 build/default/debug/Leds_vars.o
-                    0x1050                  _Led1
-                    0x1058                  _Led2
-                    0x1060                  _Led3
-                    0x1068                  _Led4
-                    0x1070                  _Led5
-                    0x1078                  _Led6
-                    0x1080                  _Led7
+.ndata              0x1000         0x38
+ .ndata             0x1000         0x38 build/default/debug/Leds_vars.o
+                    0x1000                  _Led1
+                    0x1008                  _Led2
+                    0x1010                  _Led3
+                    0x1018                  _Led4
+                    0x1020                  _Led5
+                    0x1028                  _Led6
+                    0x1030                  _Led7
 
-.nbss               0x1088          0x8
- .nbss              0x1088          0x6 build/default/debug/ADC.o
-                    0x1088                  _ADCdebugDataCounter
-                    0x108a                  _compMem
-                    0x108c                  _AdcSamplesCounter
- .nbss              0x108e          0x2 build/default/debug/main.o
-                    0x108e                  _MotorSelect
+.nbss               0x1038         0x14
+ .nbss              0x1038         0x12 build/default/debug/ADC.o
+                    0x1038                  _ADCdebugDataCounter
+                    0x103a                  _MovingAverage
+                    0x1042                  _MovingAverageSummary
+                    0x1046                  _MovingAverageCounter
+                    0x1047                  _compMem
+                    0x1048                  _AdcSamplesCounter
+ .nbss              0x104a          0x2 build/default/debug/main.o
+                    0x104a                  _MotorSelect
 
-.bss                0x1090        0x7d0
- .bss               0x1090        0x7d0 build/default/debug/ADC.o
-                    0x1090                  _A
+.bss                0x104c        0x7ec
+ .bss               0x104c        0x7ec build/default/debug/ADC.o
+                    0x104c                  _A
+                    0x181c                  _TonesAdcPeriods
 
-.data               0x1860         0xa4
- .data              0x1860         0x54 build/default/debug/stepper_motor_vars.o
-                    0x1860                  _Motor1
-                    0x186a                  _Motor2
-                    0x1874                  _Motor3
-                    0x187e                  _Motor4
-                    0x1888                  _Motor5
-                    0x1892                  _Motor6
-                    0x189c                  _Motor7
-                    0x18a6                  _StepperMotorList
- .data              0x18b4         0x42 build/default/debug/Buttons_vars.o
-                    0x18b4                  _Btn1
-                    0x18c8                  _Btn2
-                    0x18dc                  _Btn3
-                    0x18f0                  _BtnList
- .data              0x18f6          0xe build/default/debug/Leds_vars.o
-                    0x18f6                  _LedList
+.data               0x1838         0xa4
+ .data              0x1838         0x54 build/default/debug/stepper_motor_vars.o
+                    0x1838                  _Motor1
+                    0x1842                  _Motor2
+                    0x184c                  _Motor3
+                    0x1856                  _Motor4
+                    0x1860                  _Motor5
+                    0x186a                  _Motor6
+                    0x1874                  _Motor7
+                    0x187e                  _StepperMotorList
+ .data              0x188c         0x42 build/default/debug/Buttons_vars.o
+                    0x188c                  _Btn1
+                    0x18a0                  _Btn2
+                    0x18b4                  _Btn3
+                    0x18c8                  _BtnList
+ .data              0x18ce          0xe build/default/debug/Leds_vars.o
+                    0x18ce                  _LedList
 
 .config_APLK      0xf80010          0x2
  .config_APLK     0xf80010          0x2 build/default/debug/main.o
@@ -3247,59 +3355,60 @@ __c30_signature
  .ivt._AD1Interrupt
                   0x00002e          0x2 build/default/debug/ADC.o
 
-.const              0x8300         0x70 load address 0x000300  
- .const             0x8300         0x70 build/default/debug/stepper_motor_vars.o
-                    0x8300                  _CoilA_Motor1
-                    0x8308                  _CoilB_Motor1
-                    0x8310                  _CoilA_Motor2
-                    0x8318                  _CoilB_Motor2
-                    0x8320                  _CoilA_Motor3
-                    0x8328                  _CoilB_Motor3
-                    0x8330                  _CoilA_Motor4
-                    0x8338                  _CoilB_Motor4
-                    0x8340                  _CoilA_Motor5
-                    0x8348                  _CoilB_Motor5
-                    0x8350                  _CoilA_Motor6
-                    0x8358                  _CoilB_Motor6
-                    0x8360                  _CoilA_Motor7
-                    0x8368                  _CoilB_Motor7
+.const              0x87fa         0x70 load address 0x0007fa  
+ .const             0x87fa         0x70 build/default/debug/stepper_motor_vars.o
+                    0x87fa                  _CoilA_Motor1
+                    0x8802                  _CoilB_Motor1
+                    0x880a                  _CoilA_Motor2
+                    0x8812                  _CoilB_Motor2
+                    0x881a                  _CoilA_Motor3
+                    0x8822                  _CoilB_Motor3
+                    0x882a                  _CoilA_Motor4
+                    0x8832                  _CoilB_Motor4
+                    0x883a                  _CoilA_Motor5
+                    0x8842                  _CoilB_Motor5
+                    0x884a                  _CoilA_Motor6
+                    0x8852                  _CoilB_Motor6
+                    0x885a                  _CoilA_Motor7
+                    0x8862                  _CoilB_Motor7
 
-.text             0x000370        0x870
- .text            0x000370        0x480 build/default/debug/stepper_motors.o
-                  0x000370                  _MotorsSleep
-                  0x00037c                  _MotorsWake
-                  0x000388                  _MotorOff
-                  0x000400                  _DoSteps
-                  0x000428                  _DoStep
-                  0x00070c                  _InitMotors
- .text            0x0007f0        0x18c build/default/debug/Leds.o
-                  0x0007f0                  _InitLeds
-                  0x000844                  _TurnLedOn
-                  0x00087c                  _TurnLedOff
-                  0x0008b6                  _OneLedOn
-                  0x0008c4                  _OneLedOff
-                  0x0008d2                  _InverseLeds
-                  0x00090a                  _AllLedsOff
-                  0x000944                  _AllLedsOn
- .text            0x00097c        0x14c build/default/debug/ADC.o
-                  0x00097c                  _InitAdc
-                  0x000986                  _initAdcBattery
-                  0x0009de                  _initAdcPiezo
-                  0x000a42                  __AD1Interrupt
- .text            0x000ac8        0x118 build/default/debug/Buttons.o
-                  0x000ac8                  _InitBtns
-                  0x000b32                  _DebPress
-                  0x000b48                  _DebRelease
-                  0x000b5e                  _BtnOpen
-                  0x000b78                  _BtnClick
+.text             0x00086a        0x9ba
+ .text            0x00086a        0x480 build/default/debug/stepper_motors.o
+                  0x00086a                  _MotorsSleep
+                  0x000876                  _MotorsWake
+                  0x000882                  _MotorOff
+                  0x0008fa                  _DoSteps
+                  0x000922                  _DoStep
+                  0x000c06                  _InitMotors
+ .text            0x000cea        0x296 build/default/debug/ADC.o
+                  0x000cea                  _InitAdc
+                  0x000cf8                  _initAdcBattery
+                  0x000d50                  _initAdcPiezo
+                  0x000db4                  _countFrequencyTable
+                  0x000ec4                  __AD1Interrupt
+ .text            0x000f80        0x18c build/default/debug/Leds.o
+                  0x000f80                  _InitLeds
+                  0x000fd4                  _TurnLedOn
+                  0x00100c                  _TurnLedOff
+                  0x001046                  _OneLedOn
+                  0x001054                  _OneLedOff
+                  0x001062                  _InverseLeds
+                  0x00109a                  _AllLedsOff
+                  0x0010d4                  _AllLedsOn
+ .text            0x00110c        0x118 build/default/debug/Buttons.o
+                  0x00110c                  _InitBtns
+                  0x001176                  _DebPress
+                  0x00118c                  _DebRelease
+                  0x0011a2                  _BtnOpen
+                  0x0011bc                  _BtnClick
 
-.dinit            0x000be0         0xc0
- .dinit           0x000be0         0xc0 data_init
+.dinit            0x001224         0xc0
+ .dinit           0x001224         0xc0 data_init
 
-.text             0x000ca0        0x114
- .text            0x000ca0         0xb0 build/default/debug/main.o
-                  0x000ca0                  _myNewDelay
-                  0x000cb6                  _main
- .text            0x000d50         0x64 build/default/debug/user.o
-                  0x000d50                  _InitApp
-                  0x000d60                  _InitPllOsc
+.text             0x0012e4        0x114
+ .text            0x0012e4         0xb0 build/default/debug/main.o
+                  0x0012e4                  _myNewDelay
+                  0x0012fa                  _main
+ .text            0x001394         0x64 build/default/debug/user.o
+                  0x001394                  _InitApp
+                  0x0013a4                  _InitPllOsc
