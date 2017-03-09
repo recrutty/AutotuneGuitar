@@ -51,7 +51,7 @@
         <targetDevice>dsPIC33EP256MU806</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>RealICEPlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.31</languageToolchainVersion>
         <platform>3</platform>
@@ -259,7 +259,6 @@
         <property key="UART 4" value="true"/>
         <property key="USB" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="hwtoolclock.instructionspeed" value="4"/>
         <property key="hwtoolclock.units" value="mips"/>
@@ -290,18 +289,13 @@
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="tracecontrol.collectioninterval" value="1"/>
-        <property key="tracecontrol.collectionunits" value="1"/>
-        <property key="tracecontrol.disablemacros" value="false"/>
         <property key="tracecontrol.include.timestamp" value="summarydataenabled"/>
-        <property key="tracecontrol.medium" value="0"/>
         <property key="tracecontrol.select" value="0"/>
         <property key="tracecontrol.stallontracebufferfull" value="false"/>
-        <property key="tracecontrol.timerpriority" value="3"/>
-        <property key="tracecontrol.timerselect" value="0"/>
+        <property key="tracecontrol.timestamp" value="0"/>
         <property key="tracecontrol.tracebufmax" value="546000"/>
         <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
-        <property key="tracecontrol.tracefilemax" value="10000000"/>
+        <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="voltagevalue" value="3.25"/>
       </RealICEPlatformTool>
       <Simulator>

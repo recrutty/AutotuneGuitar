@@ -6,16 +6,24 @@
 #include "user.h"
 #include "Leds.h"
 #include "Buttons.h"
+#include "ADC.h"
 
 extern StepMotor *StepperMotorList[];
 extern Led *LedList[];
 extern Button *BtnList[];
-uint8_t MotorSelect = 0;
+extern uint32_t Result; 
+extern uint8_t ResultFlag;
+extern uint16_t TonesAdcPeriods[];
+extern uint8_t MeasureDemand;
+    
+    uint8_t MotorSelected = 0;
+    StepMotorIndex mot = 0;
+    LedIndex led = 0;   
     
 void myNewDelay()
 {   
     uint16_t k = 0;
-    while (k<1000)
+    while (k<5000)
     {
         k++;
     }
@@ -25,35 +33,68 @@ int main(void)
     InitApp();    
     MotorsWake();
     
-    uint8_t MotorSelected = 0;
-    StepMotorIndex mot = 0;
-    LedIndex led = 0;       
     
+    //ResultFlag =0;
     while (1)
     {
         if(MotorSelected)
         {
-            if(!BtnOpen(BtnList[eBtn1]))
-            {                
-                MotorsWake();
-                DoStep(mot, Back);        
-                myNewDelay();
-            }
-            else if(!BtnOpen(BtnList[eBtn3]))
+            if (ResultFlag) 
             {
-                MotorsWake();
-                DoStep(mot, Forward);        
-                myNewDelay();
+                int32_t diffA = Result-TonesAdcPeriods[mot];
+                if (diffA<0)
+                {
+                    diffA = TonesAdcPeriods[mot]-Result;
+                }
+
+                int32_t diffB = (Result*2)-TonesAdcPeriods[mot];
+                if (diffB<0)
+                {
+                    diffB = TonesAdcPeriods[mot]-(Result*2);
+                }
+                if (diffA>diffB)
+                {                
+                    Result*=2;
+                }
+
+                if(Result==(TonesAdcPeriods[mot])) 
+                {                    
+                    ResultFlag=0;
+                    MeasureDemand = 0;
+                    InverseLeds();
+                    MotorSelected = 0;   
+                }
+                else if(Result<TonesAdcPeriods[mot])
+                {                
+                    MotorsWake();
+                    int i;
+                    for (i = 0; i < 100; i++) 
+                    {
+                        DoStep(mot, Back);        
+                        myNewDelay();
+                    }
+                    MotorsSleep();
+                    ResultFlag=0;
+                }
+                else if(Result>TonesAdcPeriods[mot])
+                {                            
+                    MotorsWake();
+                    int i;
+                    for (i = 0; i < 100; i++) 
+                    {
+                        DoStep(mot, Forward);        
+                        myNewDelay();
+                    }
+                    MotorsSleep();
+                    ResultFlag=0;
+                }
             }
-            else
-            {
-                MotorsSleep();
-            }
-                
-            if(BtnClick(eBtn2))
+            else if(BtnClick(eBtn2))
             {
                 InverseLeds();
-                MotorSelected = 0;                
+                MotorSelected = 0;    
+                MeasureDemand = 0;                         
+                ResultFlag=0;
             } 
         }
         else
@@ -72,6 +113,8 @@ int main(void)
                 InverseLeds();
                 MotorSelected = 1;
                 mot = (StepMotorIndex)led;
+                MeasureDemand = 1;
+                ResultFlag = 0;
             } 
         }        
     }

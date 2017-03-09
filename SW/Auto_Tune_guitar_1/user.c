@@ -7,10 +7,11 @@
 void InitApp()
 {
     InitPllOsc();
+    InitAdc();
     InitMotors();
     InitBtns();
     InitLeds();
-    InitAdc();
+    
 }
 void InitPllOsc() 
 {
