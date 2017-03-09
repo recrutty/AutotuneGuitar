@@ -13,7 +13,7 @@ int ADCdebugDataCounter = 0;
 
 #define COMP_HIGH_LIMIT (2050)
 #define COMP_LOW_LIMIT (2035)
-#define MOV_AVR_BR_DIV (2)
+#define MOV_AVR_BR_DIV (4)
 #define SUC_MES_BR_DIV (4)
 #define MOVING_AVERAGE_FIELD_SIZE (1<<(MOV_AVR_BR_DIV))
 #define SUCCESFULL_MEASUREMENT_FIELD_SIZE (1<<(SUC_MES_BR_DIV))
