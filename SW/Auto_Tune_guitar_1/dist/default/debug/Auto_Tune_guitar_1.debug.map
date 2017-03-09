@@ -24,13 +24,13 @@ Command:
   build/default/debug/Leds_vars.o \
   build/default/debug/Buttons.o \
   build/default/debug/Buttons_vars.o \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.00 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.01 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.02 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.03 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.04 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.05 \
-  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp00003358.06 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.00 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.01 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.02 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.03 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.04 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.05 \
+  -TC:\\Users\\recru\\AppData\\Local\\Temp\\tmp000029a4.06 \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
@@ -158,11 +158,11 @@ reserve_data_0x1022         0x1022                 0x2             0x2  (2)
 reserve_data_0x1024         0x1024                 0x4             0x4  (4)
 reserve_data_0x1028         0x1028                0x28            0x28  (40)
 .ndata                      0x1050                   0            0x38  (56)
-.nbss                       0x1088                   0            0x16  (22)
-.bss                        0x109e                   0           0x83e  (2110)
-.data                       0x18dc                   0            0xc4  (196)
+.nbss                       0x1088                   0            0x1e  (30)
+.bss                        0x10a6                   0           0xfee  (4078)
+.data                       0x2094                   0            0xc4  (196)
 
-                 Total data memory used (bytes):          0x9a0  (2464) 8%
+                 Total data memory used (bytes):         0x1158  (4440) 15%
 
 
 Dynamic Memory Usage
@@ -170,9 +170,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x19a0                              0x6660  (26208)
+stack                       0x2158                              0x5ea8  (24232)
 
-                 Maximum dynamic memory (bytes):         0x6660  (26208)
+                 Maximum dynamic memory (bytes):         0x5ea8  (24232)
 
 
 External Symbols in Data Memory (by address):
@@ -185,46 +185,46 @@ External Symbols in Data Memory (by address):
                     0x1078                  _Led6
                     0x1080                  _Led7
                     0x1088                  _ADCdebugDataCounter
-                    0x108a                  _MovingAverageSummary
-                    0x108e                  _SucMesCounter
-                    0x108f                  _MovingAverageCounter
-                    0x1090                  _compMem
-                    0x1092                  _AdcSamplesCounter
-                    0x1094                  _Result
-                    0x1098                  _ResultFlag
-                    0x1099                  _MeasureDemand
-                    0x109a                  _MotorSelected
-                    0x109b                  _mot
-                    0x109c                  _led
-                    0x109e                  _A
-                    0x186e                  _MovingAverage
-                    0x188e                  _SuccesfullMeasurement
-                    0x18ce                  _TonesAdcPeriods
-                    0x18dc                  _Motor1
-                    0x18e6                  _Motor2
-                    0x18f0                  _Motor3
-                    0x18fa                  _Motor4
-                    0x1904                  _Motor5
-                    0x190e                  _Motor6
-                    0x1918                  _Motor7
-                    0x1922                  _StepperMotorList
-                    0x1930                  _Btn1
-                    0x1944                  _Btn2
-                    0x1958                  _Btn3
-                    0x196c                  _BtnList
-                    0x1972                  _ADC_buffer
-                    0x1992                  _LedList
+                    0x108a                  _MovingAverage
+                    0x1092                  _MovingAverageSummary
+                    0x1096                  _SucMesCounter
+                    0x1097                  _MovingAverageCounter
+                    0x1098                  _compMem
+                    0x109a                  _AdcSamplesCounter
+                    0x109c                  _Result
+                    0x10a0                  _ResultFlag
+                    0x10a1                  _MeasureDemand
+                    0x10a2                  _MotorSelected
+                    0x10a3                  _mot
+                    0x10a4                  _led
+                    0x10a6                  _A
+                    0x2046                  _SuccesfullMeasurement
+                    0x2086                  _TonesAdcPeriods
+                    0x2094                  _Motor1
+                    0x209e                  _Motor2
+                    0x20a8                  _Motor3
+                    0x20b2                  _Motor4
+                    0x20bc                  _Motor5
+                    0x20c6                  _Motor6
+                    0x20d0                  _Motor7
+                    0x20da                  _StepperMotorList
+                    0x20e8                  _Btn1
+                    0x20fc                  _Btn2
+                    0x2110                  _Btn3
+                    0x2124                  _BtnList
+                    0x212a                  _ADC_buffer
+                    0x214a                  _LedList
 
 External Symbols in Data Memory (by name):
 
-                    0x109e                  _A
-                    0x1972                  _ADC_buffer
+                    0x10a6                  _A
+                    0x212a                  _ADC_buffer
                     0x1088                  _ADCdebugDataCounter
-                    0x1092                  _AdcSamplesCounter
-                    0x1930                  _Btn1
-                    0x1944                  _Btn2
-                    0x1958                  _Btn3
-                    0x196c                  _BtnList
+                    0x109a                  _AdcSamplesCounter
+                    0x20e8                  _Btn1
+                    0x20fc                  _Btn2
+                    0x2110                  _Btn3
+                    0x2124                  _BtnList
                     0x1050                  _Led1
                     0x1058                  _Led2
                     0x1060                  _Led3
@@ -232,28 +232,28 @@ External Symbols in Data Memory (by name):
                     0x1070                  _Led5
                     0x1078                  _Led6
                     0x1080                  _Led7
-                    0x1992                  _LedList
-                    0x1099                  _MeasureDemand
-                    0x18dc                  _Motor1
-                    0x18e6                  _Motor2
-                    0x18f0                  _Motor3
-                    0x18fa                  _Motor4
-                    0x1904                  _Motor5
-                    0x190e                  _Motor6
-                    0x1918                  _Motor7
-                    0x109a                  _MotorSelected
-                    0x186e                  _MovingAverage
-                    0x108f                  _MovingAverageCounter
-                    0x108a                  _MovingAverageSummary
-                    0x1094                  _Result
-                    0x1098                  _ResultFlag
-                    0x1922                  _StepperMotorList
-                    0x108e                  _SucMesCounter
-                    0x188e                  _SuccesfullMeasurement
-                    0x18ce                  _TonesAdcPeriods
-                    0x1090                  _compMem
-                    0x109c                  _led
-                    0x109b                  _mot
+                    0x214a                  _LedList
+                    0x10a1                  _MeasureDemand
+                    0x2094                  _Motor1
+                    0x209e                  _Motor2
+                    0x20a8                  _Motor3
+                    0x20b2                  _Motor4
+                    0x20bc                  _Motor5
+                    0x20c6                  _Motor6
+                    0x20d0                  _Motor7
+                    0x10a2                  _MotorSelected
+                    0x108a                  _MovingAverage
+                    0x1097                  _MovingAverageCounter
+                    0x1092                  _MovingAverageSummary
+                    0x109c                  _Result
+                    0x10a0                  _ResultFlag
+                    0x20da                  _StepperMotorList
+                    0x1096                  _SucMesCounter
+                    0x2046                  _SuccesfullMeasurement
+                    0x2086                  _TonesAdcPeriods
+                    0x1098                  _compMem
+                    0x10a4                  _led
+                    0x10a3                  _mot
 
 External Symbols in Program Memory (by address):
 
@@ -3361,48 +3361,48 @@ __c30_signature
                     0x1078                  _Led6
                     0x1080                  _Led7
 
-.nbss               0x1088         0x16
- .nbss              0x1088         0x12 build/default/debug/ADC.o
+.nbss               0x1088         0x1e
+ .nbss              0x1088         0x1a build/default/debug/ADC.o
                     0x1088                  _ADCdebugDataCounter
-                    0x108a                  _MovingAverageSummary
-                    0x108e                  _SucMesCounter
-                    0x108f                  _MovingAverageCounter
-                    0x1090                  _compMem
-                    0x1092                  _AdcSamplesCounter
-                    0x1094                  _Result
-                    0x1098                  _ResultFlag
-                    0x1099                  _MeasureDemand
- .nbss              0x109a          0x4 build/default/debug/main.o
-                    0x109a                  _MotorSelected
-                    0x109b                  _mot
-                    0x109c                  _led
+                    0x108a                  _MovingAverage
+                    0x1092                  _MovingAverageSummary
+                    0x1096                  _SucMesCounter
+                    0x1097                  _MovingAverageCounter
+                    0x1098                  _compMem
+                    0x109a                  _AdcSamplesCounter
+                    0x109c                  _Result
+                    0x10a0                  _ResultFlag
+                    0x10a1                  _MeasureDemand
+ .nbss              0x10a2          0x4 build/default/debug/main.o
+                    0x10a2                  _MotorSelected
+                    0x10a3                  _mot
+                    0x10a4                  _led
 
-.bss                0x109e        0x83e
- .bss               0x109e        0x83e build/default/debug/ADC.o
-                    0x109e                  _A
-                    0x186e                  _MovingAverage
-                    0x188e                  _SuccesfullMeasurement
-                    0x18ce                  _TonesAdcPeriods
+.bss                0x10a6        0xfee
+ .bss               0x10a6        0xfee build/default/debug/ADC.o
+                    0x10a6                  _A
+                    0x2046                  _SuccesfullMeasurement
+                    0x2086                  _TonesAdcPeriods
 
-.data               0x18dc         0xc4
- .data              0x18dc         0x54 build/default/debug/stepper_motor_vars.o
-                    0x18dc                  _Motor1
-                    0x18e6                  _Motor2
-                    0x18f0                  _Motor3
-                    0x18fa                  _Motor4
-                    0x1904                  _Motor5
-                    0x190e                  _Motor6
-                    0x1918                  _Motor7
-                    0x1922                  _StepperMotorList
- .data              0x1930         0x42 build/default/debug/Buttons_vars.o
-                    0x1930                  _Btn1
-                    0x1944                  _Btn2
-                    0x1958                  _Btn3
-                    0x196c                  _BtnList
- .data              0x1972         0x20 build/default/debug/ADC.o
-                    0x1972                  _ADC_buffer
- .data              0x1992          0xe build/default/debug/Leds_vars.o
-                    0x1992                  _LedList
+.data               0x2094         0xc4
+ .data              0x2094         0x54 build/default/debug/stepper_motor_vars.o
+                    0x2094                  _Motor1
+                    0x209e                  _Motor2
+                    0x20a8                  _Motor3
+                    0x20b2                  _Motor4
+                    0x20bc                  _Motor5
+                    0x20c6                  _Motor6
+                    0x20d0                  _Motor7
+                    0x20da                  _StepperMotorList
+ .data              0x20e8         0x42 build/default/debug/Buttons_vars.o
+                    0x20e8                  _Btn1
+                    0x20fc                  _Btn2
+                    0x2110                  _Btn3
+                    0x2124                  _BtnList
+ .data              0x212a         0x20 build/default/debug/ADC.o
+                    0x212a                  _ADC_buffer
+ .data              0x214a          0xe build/default/debug/Leds_vars.o
+                    0x214a                  _LedList
 
 .config_APLK      0xf80010          0x2
  .config_APLK     0xf80010          0x2 build/default/debug/main.o

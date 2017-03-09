@@ -6,14 +6,14 @@
 #include "Leds.h"
 
 
-#define FIELD_SIZE 500
+#define FIELD_SIZE 1000
 uint32_t A[FIELD_SIZE];
 int ADCdebugDataCounter = 0;
 
 
 #define COMP_HIGH_LIMIT (2050)
 #define COMP_LOW_LIMIT (2035)
-#define MOV_AVR_BR_DIV (4)
+#define MOV_AVR_BR_DIV (2)
 #define SUC_MES_BR_DIV (4)
 #define MOVING_AVERAGE_FIELD_SIZE (1<<(MOV_AVR_BR_DIV))
 #define SUCCESFULL_MEASUREMENT_FIELD_SIZE (1<<(SUC_MES_BR_DIV))
@@ -151,7 +151,7 @@ void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
                     MovingAverageSummary += AdcSamplesCounter;
                     MovingAverageSummary -= MovingAverage[MovingAverageCounter];
 
-                    A[ADCdebugDataCounter] = (MovingAverageSummary);
+                    A[ADCdebugDataCounter] = (AdcSamplesCounter);
                     ADCdebugDataCounter++;
 
                     MovingAverage[MovingAverageCounter] = AdcSamplesCounter;
