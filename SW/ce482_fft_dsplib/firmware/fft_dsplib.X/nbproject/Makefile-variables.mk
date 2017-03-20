@@ -1,0 +1,34 @@
+#
+# Generated - do not edit!
+#
+# NOCDDL
+#
+CND_BASEDIR=`pwd`
+# dspic33ep512gm710 configuration
+CND_ARTIFACT_DIR_dspic33ep512gm710=dist/dspic33ep512gm710/production
+CND_ARTIFACT_NAME_dspic33ep512gm710=fft_dsplib.X.production.hex
+CND_ARTIFACT_PATH_dspic33ep512gm710=dist/dspic33ep512gm710/production/fft_dsplib.X.production.hex
+CND_PACKAGE_DIR_dspic33ep512gm710=${CND_DISTDIR}/dspic33ep512gm710/package
+CND_PACKAGE_NAME_dspic33ep512gm710=fftdsplib.x.tar
+CND_PACKAGE_PATH_dspic33ep512gm710=${CND_DISTDIR}/dspic33ep512gm710/package/fftdsplib.x.tar
+# dspic33ep512mu810 configuration
+CND_ARTIFACT_DIR_dspic33ep512mu810=dist/dspic33ep512mu810/production
+CND_ARTIFACT_NAME_dspic33ep512mu810=fft_dsplib.X.production.hex
+CND_ARTIFACT_PATH_dspic33ep512mu810=dist/dspic33ep512mu810/production/fft_dsplib.X.production.hex
+CND_PACKAGE_DIR_dspic33ep512mu810=${CND_DISTDIR}/dspic33ep512mu810/package
+CND_PACKAGE_NAME_dspic33ep512mu810=fftdsplib.x.tar
+CND_PACKAGE_PATH_dspic33ep512mu810=${CND_DISTDIR}/dspic33ep512mu810/package/fftdsplib.x.tar
+# dspic33ep256gp506 configuration
+CND_ARTIFACT_DIR_dspic33ep256gp506=dist/dspic33ep256gp506/production
+CND_ARTIFACT_NAME_dspic33ep256gp506=fft_dsplib.X.production.hex
+CND_ARTIFACT_PATH_dspic33ep256gp506=dist/dspic33ep256gp506/production/fft_dsplib.X.production.hex
+CND_PACKAGE_DIR_dspic33ep256gp506=${CND_DISTDIR}/dspic33ep256gp506/package
+CND_PACKAGE_NAME_dspic33ep256gp506=fftdsplib.x.tar
+CND_PACKAGE_PATH_dspic33ep256gp506=${CND_DISTDIR}/dspic33ep256gp506/package/fftdsplib.x.tar
+# dspic33ep256mu806 configuration
+CND_ARTIFACT_DIR_dspic33ep256mu806=dist/dspic33ep256mu806/production
+CND_ARTIFACT_NAME_dspic33ep256mu806=fft_dsplib.X.production.hex
+CND_ARTIFACT_PATH_dspic33ep256mu806=dist/dspic33ep256mu806/production/fft_dsplib.X.production.hex
+CND_PACKAGE_DIR_dspic33ep256mu806=${CND_DISTDIR}/dspic33ep256mu806/package
+CND_PACKAGE_NAME_dspic33ep256mu806=fftdsplib.x.tar
+CND_PACKAGE_PATH_dspic33ep256mu806=${CND_DISTDIR}/dspic33ep256mu806/package/fftdsplib.x.tar

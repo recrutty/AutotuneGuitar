@@ -3,15 +3,16 @@
 #include "Buttons.h"
 #include "user.h"
 #include "ADC.h"
+#include "fft.h"
 
 void InitApp()
 {
-    InitPllOsc();
+    //InitPllOsc();
     InitAdc();
     InitMotors();
     InitBtns();
-    InitLeds();
-    
+    InitLeds();    
+    InitFFT();
 }
 void InitPllOsc() 
 {

@@ -4,10 +4,11 @@
 #include "Strings_freq.h"
 #include "ADC.h"
 #include "Leds.h"
+#include "fft.h"
 
 
 #define FIELD_SIZE 1000
-uint32_t A[FIELD_SIZE];
+//uint32_t A[FIELD_SIZE];
 int ADCdebugDataCounter = 0;
 
 
@@ -19,6 +20,9 @@ int ADCdebugDataCounter = 0;
 #define SUCCESFULL_MEASUREMENT_FIELD_SIZE (1<<(SUC_MES_BR_DIV))
 #define SAMPLES_TO_INTERRUPT (16)
 
+int DataForFFT[FFT_BLOCK_LENGTH] = {0};
+int DataForFftCounter = 0;
+
 uint16_t MovingAverage[MOVING_AVERAGE_FIELD_SIZE] = {0};
 uint32_t SuccesfullMeasurement[SUCCESFULL_MEASUREMENT_FIELD_SIZE];// = {2047};
 uint32_t MovingAverageSummary = 0;
@@ -29,6 +33,7 @@ uint16_t AdcSamplesCounter = 0;
 uint32_t Result = 0;
 uint8_t ResultFlag = 0;
 uint8_t MeasureDemand = 0;
+uint8_t MeasurementStart = 0;
 
 void InitAdc()
 {
@@ -85,7 +90,7 @@ void initAdcPiezo()
     
     AD1CON3bits.ADRC = 0;
     AD1CON3bits.SAMC = 0;
-    AD1CON3bits.ADCS = 10;
+    AD1CON3bits.ADCS = 39;
     
     AD1CON4bits.ADDMAEN = 0;
     
@@ -132,98 +137,20 @@ volatile const uint16_t *ADC_buffer[] = {
 };
 
 void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
-{   
-    //*(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
-    if (MeasureDemand)
+{       
+    *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
+    if (MeasurementStart == 1)
     {
-        *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
         int i;
         for (i = 0; i < SAMPLES_TO_INTERRUPT; i++)
         {
-            AdcSamplesCounter++;
-            switch(compMem) 
+            DataForFFT[DataForFftCounter] = (*(ADC_buffer[i]));
+            DataForFftCounter++;
+            if (DataForFftCounter == FFT_BLOCK_LENGTH)
             {
-            case 0 :        
-                if(*(ADC_buffer[i]) > COMP_HIGH_LIMIT)
-                {   
-                    compMem = 1;            
-
-                    MovingAverageSummary += AdcSamplesCounter;
-                    MovingAverageSummary -= MovingAverage[MovingAverageCounter];
-
-                    A[ADCdebugDataCounter] = (AdcSamplesCounter);
-                    ADCdebugDataCounter++;
-
-                    MovingAverage[MovingAverageCounter] = AdcSamplesCounter;
-                    MovingAverageCounter++;
-                    MovingAverageCounter &= ~(1 << MOV_AVR_BR_DIV); //reset to 0 if in max value
-                    AdcSamplesCounter = 0;
-
-                    SuccesfullMeasurement[SucMesCounter] = MovingAverageSummary;
-                    SucMesCounter++;            
-                    SucMesCounter &= ~(1 << SUC_MES_BR_DIV); //reset to 0 if in max value
-                    if (ResultFlag ==0)
-                    {
-                        uint32_t min=0xffff;
-                        uint32_t max=0;
-                        int j;
-                        for (j = 0; j < SUCCESFULL_MEASUREMENT_FIELD_SIZE; j++) 
-                        {
-                            if(SuccesfullMeasurement[j]>max)
-                            {
-                                max=SuccesfullMeasurement[j];
-                            }
-                            if(SuccesfullMeasurement[j]<min)
-                            {
-                                min=SuccesfullMeasurement[j];
-                            }
-                        }
-                        if ((max-min)<30) 
-                        {
-                            int k;
-                            Result=0;
-                            for (k = 0; k < SUCCESFULL_MEASUREMENT_FIELD_SIZE; k++) 
-                            {
-                                Result += SuccesfullMeasurement[k];
-                            }
-                            
-                            Result >>= SUC_MES_BR_DIV;
-
-                            A[ADCdebugDataCounter-1]=0;
-                            ResultFlag = 1;
-                        }
-                    }
-                }
-                break;
-
-            case 1 :        
-                if(*(ADC_buffer[i]) < COMP_LOW_LIMIT)
-                {
-                    compMem = 0;
-                }            
-                break;
-            default:        
-                compMem = 0;
-                break;
+                DataForFftCounter = 0;
+                MeasurementStart = 2;
             }
-            
-            switch(ADCdebugDataCounter) 
-            {
-            case FIELD_SIZE :
-                ADCdebugDataCounter=0;
-                break;
-            }
-
-                /*
-            A[ADCdebugDataCounter] = (*(ADC_buffer[i]));
-            ADCdebugDataCounter++;
-            if (ADCdebugDataCounter == FIELD_SIZE)
-            {
-                ADCdebugDataCounter = 0;
-            }
-             */
-
-
         }
     }
     IFS0bits.AD1IF = 0;        //Clear the interrupt flag

@@ -1,5 +1,6 @@
 #include "config_bits.h"
 #include <p33EP256MU806.h>
+#include "dsp.h"
 #include <stdint.h>
 #include "xc.h"
 #include "stepper_motors.h"
@@ -7,6 +8,7 @@
 #include "Leds.h"
 #include "Buttons.h"
 #include "ADC.h"
+#include "fft.h"
 
 extern StepMotor *StepperMotorList[];
 extern Led *LedList[];
@@ -15,7 +17,9 @@ extern uint32_t Result;
 extern uint8_t ResultFlag;
 extern uint16_t TonesAdcPeriods[];
 extern uint8_t MeasureDemand;
-    
+extern uint8_t MeasurementStart;
+extern int DataForFFT[FFT_BLOCK_LENGTH];
+fractional OutputValues[FFT_BLOCK_LENGTH/2] = {0};
     uint8_t MotorSelected = 0;
     StepMotorIndex mot = 0;
     LedIndex led = 0;   
@@ -34,89 +38,20 @@ int main(void)
     MotorsWake();
     
     
+            MeasurementStart = 0;
     //ResultFlag =0;
     while (1)
     {
-        if(MotorSelected)
+        if (MeasurementStart == 2)
         {
-            if (ResultFlag) 
-            {
-                int32_t diffA = Result-TonesAdcPeriods[mot];
-                if (diffA<0)
-                {
-                    diffA = TonesAdcPeriods[mot]-Result;
-                }
-
-                int32_t diffB = (Result*2)-TonesAdcPeriods[mot];
-                if (diffB<0)
-                {
-                    diffB = TonesAdcPeriods[mot]-(Result*2);
-                }
-                if (diffA>diffB)
-                {                
-                    Result*=2;
-                }
-
-                if(Result==(TonesAdcPeriods[mot])) 
-                {                    
-                    ResultFlag=0;
-                    MeasureDemand = 0;
-                    InverseLeds();
-                    MotorSelected = 0;   
-                }
-                else if(Result<TonesAdcPeriods[mot])
-                {                
-                    MotorsWake();
-                    int i;
-                    for (i = 0; i < 100; i++) 
-                    {
-                        DoStep(mot, Back);        
-                        myNewDelay();
-                    }
-                    MotorsSleep();
-                    ResultFlag=0;
-                }
-                else if(Result>TonesAdcPeriods[mot])
-                {                            
-                    MotorsWake();
-                    int i;
-                    for (i = 0; i < 100; i++) 
-                    {
-                        DoStep(mot, Forward);        
-                        myNewDelay();
-                    }
-                    MotorsSleep();
-                    ResultFlag=0;
-                }
-            }
-            else if(BtnClick(eBtn2))
-            {
-                InverseLeds();
-                MotorSelected = 0;    
-                MeasureDemand = 0;                         
-                ResultFlag=0;
-            } 
+            CalculateFFT(DataForFFT, OutputValues);
+            MeasurementStart = 0;
         }
-        else
+        if (BtnClick(eBtn1))
         {
-            if (BtnClick(eBtn1) && (led > eLed1)) 
-            {
-                led--;
-            }    
-            if (BtnClick(eBtn3) && (led < eLed7)) 
-            {
-                led++;
-            }   
-            OneLedOn(led);
-            if(BtnClick(eBtn2))
-            {   
-                InverseLeds();
-                MotorSelected = 1;
-                mot = (StepMotorIndex)led;
-                MeasureDemand = 1;
-                ResultFlag = 0;
-            } 
-        }        
+           MeasurementStart = 1;
+        }    
+               
     }
     return 0;
 }
