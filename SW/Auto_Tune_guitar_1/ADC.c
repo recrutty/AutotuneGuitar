@@ -1,5 +1,6 @@
 #include <stdint.h>
 
+#include <p33EP256MU806.h>
 #include "xc.h"
 #include "Strings_freq.h"
 #include "ADC.h"
@@ -90,7 +91,8 @@ void initAdcPiezo()
     
     AD1CON3bits.ADRC = 0;
     AD1CON3bits.SAMC = 0;
-    AD1CON3bits.ADCS = 39;
+   // AD1CON3bits.ADCS = 39;
+    AD1CON3bits.ADCS = 250;
     
     AD1CON4bits.ADDMAEN = 0;
     

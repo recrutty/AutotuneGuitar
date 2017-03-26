@@ -20,9 +20,9 @@ extern uint8_t MeasureDemand;
 extern uint8_t MeasurementStart;
 extern int DataForFFT[FFT_BLOCK_LENGTH];
 fractional OutputValues[FFT_BLOCK_LENGTH/2] = {0};
-    uint8_t MotorSelected = 0;
-    StepMotorIndex mot = 0;
-    LedIndex led = 0;   
+uint8_t MotorSelected = 0;
+StepMotorIndex mot = 0;
+LedIndex led = 0;   
     
 void myNewDelay()
 {   
@@ -38,8 +38,8 @@ int main(void)
     MotorsWake();
     
     
-            MeasurementStart = 0;
-    //ResultFlag =0;
+    MeasurementStart = 0;
+    
     while (1)
     {
         if (MeasurementStart == 2)

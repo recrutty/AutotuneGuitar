@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/dspic33ep256mu806/production/fft_dsplib.X.production.elf">
+  <executable name="dist/dspic33ep256mu806/debug/fft_dsplib.X.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>28672</length>
-      <used>3592</used>
-      <free>25080</free>
+      <used>4618</used>
+      <free>24054</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>261888</length>
-      <used>3714</used>
-      <free>258174</free>
+      <used>5415</used>
+      <free>256473</free>
     </memory>
   </executable>
 </project>
