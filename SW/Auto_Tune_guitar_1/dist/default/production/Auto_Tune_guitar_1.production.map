@@ -192,14 +192,13 @@ section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .ndata                      0x1000                   0            0x38  (56)
 .nbss                       0x1038                   0            0x24  (36)
-.data                       0x105c                   0            0xc6  (198)
-.xbss                       0x1800                   0           0x800  (2048)
-.bss                        0x2000                   0           0x84e  (2126)
-_04E05BA058d7b6aa           0x6000                   0          0x1000  (4096)
-.bss                        0x7000                   0           0xc00  (3072)
-.bss                        0x7c00                   0           0x400  (1024)
+.bss                        0x105c                   0           0x800  (2048)
+.data                       0x185c                   0            0xc6  (198)
+.xbss                       0x2000                   0          0x1000  (4096)
+.bss                        0x3000                   0          0x284e  (10318)
+_04DC5BA058da6de4           0x6000                   0          0x2000  (8192)
 
-                 Total data memory used (bytes):         0x3170  (12656) 44%
+                 Total data memory used (bytes):         0x6170  (24944) 86%
 
 
 Dynamic Memory Usage
@@ -207,9 +206,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x284e                              0x37b2  (14258)
+stack                       0x584e                               0x7b2  (1970)
 
-                 Maximum dynamic memory (bytes):         0x37b2  (14258)
+                 Maximum dynamic memory (bytes):          0x7b2  (1970)
 
 
 External Symbols in Data Memory (by address):
@@ -236,40 +235,40 @@ External Symbols in Data Memory (by address):
                     0x1056                  _MotorSelected
                     0x1057                  _mot
                     0x1058                  _led
-                    0x105c                  _Motor1
-                    0x1066                  _Motor2
-                    0x1070                  _Motor3
-                    0x107a                  _Motor4
-                    0x1084                  _Motor5
-                    0x108e                  _Motor6
-                    0x1098                  _Motor7
-                    0x10a2                  _StepperMotorList
-                    0x10b0                  _Btn1
-                    0x10c4                  _Btn2
-                    0x10d8                  _Btn3
-                    0x10ec                  _BtnList
-                    0x10f2                  _ADC_buffer
-                    0x1112                  _LedList
-                    0x1120                  _STACK_GUARD
-                    0x1800                  _twiddleFactors
-                    0x2000                  _DataForFFT
-                    0x2800                  _SuccesfullMeasurement
-                    0x2840                  _TonesAdcPeriods
+                    0x105c                  _OutputValues
+                    0x185c                  _Motor1
+                    0x1866                  _Motor2
+                    0x1870                  _Motor3
+                    0x187a                  _Motor4
+                    0x1884                  _Motor5
+                    0x188e                  _Motor6
+                    0x1898                  _Motor7
+                    0x18a2                  _StepperMotorList
+                    0x18b0                  _Btn1
+                    0x18c4                  _Btn2
+                    0x18d8                  _Btn3
+                    0x18ec                  _BtnList
+                    0x18f2                  _ADC_buffer
+                    0x1912                  _LedList
+                    0x1920                  _STACK_GUARD
+                    0x2000                  _twiddleFactors
+                    0x3000                  _input
+                    0x4000                  _output
+                    0x4800                  _DataForFFT
+                    0x5800                  _SuccesfullMeasurement
+                    0x5840                  _TonesAdcPeriods
                     0x6000                  _sigCmpx
-                    0x7000                  _input
-                    0x7800                  _output
-                    0x7c00                  _OutputValues
 
 External Symbols in Data Memory (by name):
 
-                    0x10f2                  _ADC_buffer
+                    0x18f2                  _ADC_buffer
                     0x1038                  _ADCdebugDataCounter
                     0x104c                  _AdcSamplesCounter
-                    0x10b0                  _Btn1
-                    0x10c4                  _Btn2
-                    0x10d8                  _Btn3
-                    0x10ec                  _BtnList
-                    0x2000                  _DataForFFT
+                    0x18b0                  _Btn1
+                    0x18c4                  _Btn2
+                    0x18d8                  _Btn3
+                    0x18ec                  _BtnList
+                    0x4800                  _DataForFFT
                     0x103a                  _DataForFftCounter
                     0x1000                  _Led1
                     0x1008                  _Led2
@@ -278,35 +277,35 @@ External Symbols in Data Memory (by name):
                     0x1020                  _Led5
                     0x1028                  _Led6
                     0x1030                  _Led7
-                    0x1112                  _LedList
+                    0x1912                  _LedList
                     0x1053                  _MeasureDemand
                     0x1054                  _MeasurementStart
-                    0x105c                  _Motor1
-                    0x1066                  _Motor2
-                    0x1070                  _Motor3
-                    0x107a                  _Motor4
-                    0x1084                  _Motor5
-                    0x108e                  _Motor6
-                    0x1098                  _Motor7
+                    0x185c                  _Motor1
+                    0x1866                  _Motor2
+                    0x1870                  _Motor3
+                    0x187a                  _Motor4
+                    0x1884                  _Motor5
+                    0x188e                  _Motor6
+                    0x1898                  _Motor7
                     0x1056                  _MotorSelected
                     0x103c                  _MovingAverage
                     0x1049                  _MovingAverageCounter
                     0x1044                  _MovingAverageSummary
-                    0x7c00                  _OutputValues
+                    0x105c                  _OutputValues
                     0x104e                  _Result
                     0x1052                  _ResultFlag
-                    0x1120                  _STACK_GUARD
-                    0x10a2                  _StepperMotorList
+                    0x1920                  _STACK_GUARD
+                    0x18a2                  _StepperMotorList
                     0x1048                  _SucMesCounter
-                    0x2800                  _SuccesfullMeasurement
-                    0x2840                  _TonesAdcPeriods
+                    0x5800                  _SuccesfullMeasurement
+                    0x5840                  _TonesAdcPeriods
                     0x104a                  _compMem
-                    0x7000                  _input
+                    0x3000                  _input
                     0x1058                  _led
                     0x1057                  _mot
-                    0x7800                  _output
+                    0x4000                  _output
                     0x6000                  _sigCmpx
-                    0x1800                  _twiddleFactors
+                    0x2000                  _twiddleFactors
 
 External Symbols in Program Memory (by address):
 
@@ -3589,52 +3588,50 @@ __c30_signature
  .nbss              0x105a          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(errno.epeo)
                     0x105a                  _errno
 
-.xbss               0x1800        0x800
- .xbss              0x1800        0x800 build/default/production/fft.o
-                    0x1800                  _twiddleFactors
+.xbss               0x2000       0x1000
+ .xbss              0x2000       0x1000 build/default/production/fft.o
+                    0x2000                  _twiddleFactors
 
-_04E05BA058d7b6aa
-                    0x6000       0x1000
- _04E05BA058d7b6aa
-                    0x6000       0x1000 build/default/production/fft.o
+_04DC5BA058da6de4
+                    0x6000       0x2000
+ _04DC5BA058da6de4
+                    0x6000       0x2000 build/default/production/fft.o
                     0x6000                  _sigCmpx
 
-.bss                0x7000        0xc00
- .bss               0x7000        0xc00 build/default/production/fft.o
-                    0x7000                  _input
-                    0x7800                  _output
+.bss                0x3000       0x284e
+ .bss               0x3000       0x1800 build/default/production/fft.o
+                    0x3000                  _input
+                    0x4000                  _output
+ .bss               0x4800       0x104e build/default/production/ADC.o
+                    0x4800                  _DataForFFT
+                    0x5800                  _SuccesfullMeasurement
+                    0x5840                  _TonesAdcPeriods
 
-.bss                0x2000        0x84e
- .bss               0x2000        0x84e build/default/production/ADC.o
-                    0x2000                  _DataForFFT
-                    0x2800                  _SuccesfullMeasurement
-                    0x2840                  _TonesAdcPeriods
+.bss                0x105c        0x800
+ .bss               0x105c        0x800 build/default/production/main.o
+                    0x105c                  _OutputValues
 
-.bss                0x7c00        0x400
- .bss               0x7c00        0x400 build/default/production/main.o
-                    0x7c00                  _OutputValues
-
-.data               0x105c         0xc6
- .data              0x105c         0x54 build/default/production/stepper_motor_vars.o
-                    0x105c                  _Motor1
-                    0x1066                  _Motor2
-                    0x1070                  _Motor3
-                    0x107a                  _Motor4
-                    0x1084                  _Motor5
-                    0x108e                  _Motor6
-                    0x1098                  _Motor7
-                    0x10a2                  _StepperMotorList
- .data              0x10b0         0x42 build/default/production/Buttons_vars.o
-                    0x10b0                  _Btn1
-                    0x10c4                  _Btn2
-                    0x10d8                  _Btn3
-                    0x10ec                  _BtnList
- .data              0x10f2         0x20 build/default/production/ADC.o
-                    0x10f2                  _ADC_buffer
- .data              0x1112          0xe build/default/production/Leds_vars.o
-                    0x1112                  _LedList
- .data              0x1120          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
-                    0x1120                  _STACK_GUARD
+.data               0x185c         0xc6
+ .data              0x185c         0x54 build/default/production/stepper_motor_vars.o
+                    0x185c                  _Motor1
+                    0x1866                  _Motor2
+                    0x1870                  _Motor3
+                    0x187a                  _Motor4
+                    0x1884                  _Motor5
+                    0x188e                  _Motor6
+                    0x1898                  _Motor7
+                    0x18a2                  _StepperMotorList
+ .data              0x18b0         0x42 build/default/production/Buttons_vars.o
+                    0x18b0                  _Btn1
+                    0x18c4                  _Btn2
+                    0x18d8                  _Btn3
+                    0x18ec                  _BtnList
+ .data              0x18f2         0x20 build/default/production/ADC.o
+                    0x18f2                  _ADC_buffer
+ .data              0x1912          0xe build/default/production/Leds_vars.o
+                    0x1912                  _LedList
+ .data              0x1920          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
+                    0x1920                  _STACK_GUARD
 
 .config_APLK      0xf80010          0x2
  .config_APLK     0xf80010          0x2 build/default/production/main.o
