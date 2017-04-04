@@ -35,10 +35,15 @@ void myNewDelay()
 int main(void) 
 {     
     InitApp();    
-    MotorsWake();
-    
-    
+    MotorsWake();    
+    /*
+    fractional kuk = 50;
+    fractional bum = 5;
+    fractional kar = 0;
+    int karel = __builtin_divmodsd(kuk, bum, &kar);*/
     MeasurementStart = 0;
+    
+    
     
     while (1)
     {

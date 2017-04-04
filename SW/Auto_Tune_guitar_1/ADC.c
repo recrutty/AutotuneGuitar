@@ -35,6 +35,7 @@ uint32_t Result = 0;
 uint8_t ResultFlag = 0;
 uint8_t MeasureDemand = 0;
 uint8_t MeasurementStart = 0;
+extern fractcomplex sigCmpx[FFT_BLOCK_LENGTH];
 
 void InitAdc()
 {
@@ -146,7 +147,8 @@ void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
         int i;
         for (i = 0; i < SAMPLES_TO_INTERRUPT; i++)
         {
-            DataForFFT[DataForFftCounter] = (*(ADC_buffer[i]));
+            sigCmpx[DataForFftCounter].real = (*(ADC_buffer[i])) - ADC_MIDDLE;
+            //DataForFFT[DataForFftCounter] = (*(ADC_buffer[i]));
             DataForFftCounter++;
             if (DataForFftCounter == FFT_BLOCK_LENGTH)
             {
