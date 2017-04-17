@@ -1,3 +1,4 @@
 build/default/debug/fft.o:  \
 fft.c  \
-fft.h 
+fft.h  \
+Strings_freq.h 

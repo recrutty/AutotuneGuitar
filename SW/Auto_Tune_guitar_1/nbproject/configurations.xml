@@ -19,6 +19,8 @@
       <itemPath>dspcommon.inc</itemPath>
       <itemPath>fft.h</itemPath>
       <itemPath>C:/Program Files (x86)/Microchip/xc16/v1.31/support/generic/h/dsp.h</itemPath>
+      <itemPath>stringInfo.h</itemPath>
+      <itemPath>string_list.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

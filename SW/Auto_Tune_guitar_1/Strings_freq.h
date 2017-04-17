@@ -1,7 +1,7 @@
 #ifndef STRINGS_FREQ_H
 #define	STRINGS_FREQ_H
 
-#define ADC_SAMPLE_RATE (400000)
+
 #define FREQ_a1 (440)
 #define SEMITONE_1_MULTIPLIER ((double)(1.059463094359))
 #define SEMITONE_2_MULTIPLIER ((double)(1.122462048309))

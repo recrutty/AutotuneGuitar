@@ -6,7 +6,7 @@
 #include "fft.h"
 
 void InitApp()
- {
+{
     //InitPllOsc();
     InitAdc();
     InitMotors();

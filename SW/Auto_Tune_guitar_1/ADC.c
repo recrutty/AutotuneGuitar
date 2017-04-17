@@ -23,6 +23,8 @@ int ADCdebugDataCounter = 0;
 
 int DataForFFT[FFT_BLOCK_LENGTH] = {0};
 int DataForFftCounter = 0;
+uint8_t DesiredSampleRate = 125;
+extern GuitarString strings[7];
 
 uint16_t MovingAverage[MOVING_AVERAGE_FIELD_SIZE] = {0};
 uint32_t SuccesfullMeasurement[SUCCESFULL_MEASUREMENT_FIELD_SIZE];// = {2047};
@@ -41,7 +43,7 @@ void InitAdc()
 {
     initAdcPiezo();
     initAdcBattery();
-    countFrequencyTable(440);
+    //countFrequencyTable(440);
 }
 void initAdcBattery()
 {
@@ -92,8 +94,8 @@ void initAdcPiezo()
     
     AD1CON3bits.ADRC = 0;
     AD1CON3bits.SAMC = 0;
-   // AD1CON3bits.ADCS = 39;
-    AD1CON3bits.ADCS = 250;
+    //AD1CON3bits.ADCS = 250;
+    AD1CON3bits.ADCS = 125;
     
     AD1CON4bits.ADDMAEN = 0;
     
@@ -106,11 +108,11 @@ void initAdcPiezo()
     AD1CSSL = 0;
     
     IEC0bits.AD1IE=1;
-}
+}/*
 uint16_t TonesAdcPeriods[7];
 void countFrequencyTable(uint16_t ConcertPitchA)
 {    
-    long double A1_ADC_Per = (double)((ADC_SAMPLE_RATE * MOVING_AVERAGE_FIELD_SIZE)/((double)(ConcertPitchA)));
+    long double A1_ADC_Per = (double)((ADC_SampleRate * MOVING_AVERAGE_FIELD_SIZE)/((double)(ConcertPitchA)));
     TonesAdcPeriods[6] = (uint16_t)(A1_ADC_Per * SEMITONE_5_MULTIPLIER + 0.5);
     TonesAdcPeriods[5] = (uint16_t)(A1_ADC_Per * SEMITONE_10_MULTIPLIER + 0.5);
     TonesAdcPeriods[4] = (uint16_t)(A1_ADC_Per * SEMITONE_2_MULTIPLIER * 2 + 0.5);
@@ -118,7 +120,7 @@ void countFrequencyTable(uint16_t ConcertPitchA)
     TonesAdcPeriods[2] = (uint16_t)(A1_ADC_Per * 4 + 0.5);
     TonesAdcPeriods[1] = (uint16_t)(A1_ADC_Per * SEMITONE_5_MULTIPLIER * 4 + 0.5);
     TonesAdcPeriods[0] = (uint16_t)(A1_ADC_Per * SEMITONE_10_MULTIPLIER * 4 + 0.5);
-}
+}*/
 #define BUF0 ((ADC1BUF0))
 volatile const uint16_t *ADC_buffer[] = {
 &ADC1BUF0,
@@ -144,16 +146,23 @@ void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
     *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
     if (MeasurementStart == 1)
     {
-        int i;
-        for (i = 0; i < SAMPLES_TO_INTERRUPT; i++)
-        {
-            sigCmpx[DataForFftCounter].real = (*(ADC_buffer[i])) - ADC_MIDDLE;
-            //DataForFFT[DataForFftCounter] = (*(ADC_buffer[i]));
-            DataForFftCounter++;
-            if (DataForFftCounter == FFT_BLOCK_LENGTH)
+        if (AD1CON3bits.ADCS != DesiredSampleRate)
+        {            
+            AD1CON3bits.ADCS = DesiredSampleRate;
+        }
+        else
+        {            
+            int i;
+            for (i = 0; i < SAMPLES_TO_INTERRUPT; i++)
             {
-                DataForFftCounter = 0;
-                MeasurementStart = 2;
+                sigCmpx[DataForFftCounter].real = (*(ADC_buffer[i])) - ADC_MIDDLE;
+                //DataForFFT[DataForFftCounter] = (*(ADC_buffer[i]));
+                DataForFftCounter++;
+                if (DataForFftCounter == FFT_BLOCK_LENGTH)
+                {
+                    DataForFftCounter = 0;
+                    MeasurementStart = 2;
+                }
             }
         }
     }
