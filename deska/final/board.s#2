@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4573,19 +4573,19 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="C1" library="eagle-ltspice" deviceset="C" device="C0603" value="100n"/>
 <part name="GND21" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R7" library="eagle-ltspice" deviceset="R" device="R0603" value="330"/>
-<part name="C5" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C5" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND22" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$23" library="supply2" deviceset="+3.15" device=""/>
 <part name="U$25" library="supply2" deviceset="+3.15" device=""/>
 <part name="Q1" library="crystal" deviceset="CRYSTAL" device="CTS406"/>
-<part name="C6" library="eagle-ltspice" deviceset="C" device=""/>
-<part name="C7" library="eagle-ltspice" deviceset="C" device=""/>
+<part name="C6" library="eagle-ltspice" deviceset="C" device="" value="10p"/>
+<part name="C7" library="eagle-ltspice" deviceset="C" device="" value="10p"/>
 <part name="GND23" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND24" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND25" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND26" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C8" library="eagle-ltspice" deviceset="C" device="C1206"/>
-<part name="C10" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C8" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
+<part name="C10" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="U$26" library="supply1" deviceset="VBAT" device=""/>
 <part name="U$31" library="supply1" deviceset="VBAT" device=""/>
 <part name="GND27" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4603,7 +4603,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="C14" library="eagle-ltspice" deviceset="C" device="C1206" value="10u"/>
 <part name="GND34" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$33" library="supply1" deviceset="VBAT" device=""/>
-<part name="R10" library="eagle-ltspice" deviceset="R" device=""/>
+<part name="R10" library="eagle-ltspice" deviceset="R" device="" value="3k"/>
 <part name="GND35" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C15" library="eagle-ltspice" deviceset="C" device="" value="220p"/>
 <part name="R11" library="eagle-ltspice" deviceset="R" device="" value="10k"/>
@@ -4622,7 +4622,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="U$37" library="supply2" deviceset="+3.15" device=""/>
 <part name="GND39" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C20" library="eagle-ltspice" deviceset="C" device="" value="33n"/>
-<part name="C4" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C4" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND47" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$38" library="supply2" deviceset="+10" device=""/>
 <part name="U$15" library="supply2" deviceset="+10" device=""/>
@@ -4704,14 +4704,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="SW1" library="buttons" deviceset="KSS-2EG4430" device=""/>
 <part name="SW2" library="buttons" deviceset="KSS-2EG4430" device=""/>
 <part name="SW3" library="buttons" deviceset="KSS-2EG4430" device=""/>
-<part name="C21" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C21" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND80" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C22" library="eagle-ltspice" deviceset="C" device="C1206"/>
-<part name="C23" library="eagle-ltspice" deviceset="C" device="C1206"/>
-<part name="C24" library="eagle-ltspice" deviceset="C" device="C1206"/>
-<part name="C25" library="eagle-ltspice" deviceset="C" device="C1206"/>
-<part name="C26" library="eagle-ltspice" deviceset="C" device="C1206"/>
-<part name="C27" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C22" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
+<part name="C23" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
+<part name="C24" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
+<part name="C25" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
+<part name="C26" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
+<part name="C27" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND81" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND82" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND83" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4729,13 +4729,13 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="GND87" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$46" library="supply1" deviceset="VBAT" device=""/>
 <part name="GND88" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C28" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C28" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND89" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$35" library="supply2" deviceset="+3.15" device=""/>
-<part name="C29" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C29" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND90" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$47" library="supply2" deviceset="+3.15" device=""/>
-<part name="C30" library="eagle-ltspice" deviceset="C" device="C1206"/>
+<part name="C30" library="eagle-ltspice" deviceset="C" device="C1206" value="100n"/>
 <part name="GND91" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="U$48" library="supply2" deviceset="+3.15" device=""/>
 <part name="C31" library="eagle-ltspice" deviceset="C" device="C1206" value="10u"/>
@@ -4796,7 +4796,10 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="-22.86" y="38.1" size="1.778" layer="96"/>
 </instance>
 <instance part="R7" gate="G$1" x="-12.7" y="55.88"/>
-<instance part="C5" gate="G$1" x="55.88" y="111.76"/>
+<instance part="C5" gate="G$1" x="55.88" y="111.76" smashed="yes">
+<attribute name="NAME" x="57.404" y="112.141" size="1.778" layer="95"/>
+<attribute name="VALUE" x="57.404" y="114.681" size="1.778" layer="96"/>
+</instance>
 <instance part="GND22" gate="1" x="55.88" y="119.38" smashed="yes" rot="R180">
 <attribute name="VALUE" x="53.34" y="119.38" size="1.778" layer="96"/>
 </instance>
@@ -4807,11 +4810,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="120.65" y="36.83" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="Q1" gate="G$1" x="127" y="1.27" smashed="yes" rot="MR0">
-<attribute name="NAME" x="129.54" y="4.826" size="1.778" layer="95" rot="MR0"/>
+<attribute name="NAME" x="121.92" y="2.286" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="124.46" y="-1.27" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="C6" gate="G$1" x="132.08" y="-3.81"/>
-<instance part="C7" gate="G$1" x="121.92" y="-3.81"/>
+<instance part="C7" gate="G$1" x="121.92" y="-3.81" smashed="yes">
+<attribute name="NAME" x="118.364" y="-3.429" size="1.778" layer="95"/>
+<attribute name="VALUE" x="115.824" y="-8.509" size="1.778" layer="96"/>
+</instance>
 <instance part="GND23" gate="1" x="121.92" y="-11.43" smashed="yes">
 <attribute name="VALUE" x="124.46" y="-11.43" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -5077,11 +5083,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U$22" gate="G$1" pin="+3.15V"/>
 <wire x1="-20.32" y1="71.12" x2="-20.32" y2="68.58" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="U$24" gate="G$1" pin="+3.15V"/>
-<pinref part="U$28" gate="G$1" pin="2"/>
-<wire x1="-25.4" y1="58.42" x2="-25.4" y2="60.96" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="N$4" class="0">
 <segment>
@@ -5116,38 +5117,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="IC1" gate="A" pin="VCAP"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="55.88" y1="99.06" x2="55.88" y2="106.68" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="DIFF_N" class="0">
-<segment>
-<pinref part="IC1" gate="A" pin="OSC1/RP60/RC12"/>
-<wire x1="106.68" y1="45.72" x2="114.3" y2="45.72" width="0.1524" layer="91"/>
-<label x="109.22" y="45.72" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="-1.27" x2="121.92" y2="1.27" width="0.1524" layer="91"/>
-<label x="124.46" y="8.89" size="1.778" layer="95" rot="R180"/>
-<pinref part="Q1" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="1.27" x2="121.92" y2="6.35" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="1.27" x2="121.92" y2="1.27" width="0.1524" layer="91"/>
-<junction x="121.92" y="1.27"/>
-</segment>
-</net>
-<net name="DIFF_P" class="0">
-<segment>
-<pinref part="IC1" gate="A" pin="OSC2/CLKO/RC15"/>
-<wire x1="106.68" y1="48.26" x2="114.3" y2="48.26" width="0.1524" layer="91"/>
-<label x="109.22" y="48.26" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="-1.27" x2="132.08" y2="1.27" width="0.1524" layer="91"/>
-<label x="134.62" y="8.89" size="1.778" layer="95" rot="R180"/>
-<pinref part="Q1" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="1.27" x2="132.08" y2="6.35" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="1.27" x2="132.08" y2="1.27" width="0.1524" layer="91"/>
-<junction x="132.08" y="1.27"/>
 </segment>
 </net>
 <net name="10EN" class="0">
@@ -5245,6 +5214,11 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="45.72" y1="7.62" x2="45.72" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="7.62" x2="45.72" y2="7.62" width="0.1524" layer="91"/>
 <junction x="45.72" y="7.62"/>
+</segment>
+<segment>
+<pinref part="U$24" gate="G$1" pin="+3.15V"/>
+<pinref part="U$28" gate="G$1" pin="2"/>
+<wire x1="-25.4" y1="58.42" x2="-25.4" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$62" class="0">
@@ -5566,6 +5540,38 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="IC1" gate="A" pin="C2IND/SDO2/PMA3/RP120/RG8"/>
 <wire x1="-5.08" y1="58.42" x2="-12.7" y2="58.42" width="0.1524" layer="91"/>
 <label x="-12.7" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="OSC1" class="0">
+<segment>
+<pinref part="IC1" gate="A" pin="OSC2/CLKO/RC15"/>
+<wire x1="106.68" y1="48.26" x2="114.3" y2="48.26" width="0.1524" layer="91"/>
+<label x="109.22" y="48.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="-1.27" x2="132.08" y2="1.27" width="0.1524" layer="91"/>
+<label x="134.62" y="8.89" size="1.778" layer="95" rot="R180"/>
+<pinref part="Q1" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="1.27" x2="132.08" y2="6.35" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="1.27" x2="132.08" y2="1.27" width="0.1524" layer="91"/>
+<junction x="132.08" y="1.27"/>
+</segment>
+</net>
+<net name="OSC2" class="0">
+<segment>
+<pinref part="C7" gate="G$1" pin="1"/>
+<wire x1="121.92" y1="-1.27" x2="121.92" y2="1.27" width="0.1524" layer="91"/>
+<label x="124.46" y="8.89" size="1.778" layer="95" rot="R180"/>
+<pinref part="Q1" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="1.27" x2="121.92" y2="6.35" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="1.27" x2="121.92" y2="1.27" width="0.1524" layer="91"/>
+<junction x="121.92" y="1.27"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="A" pin="OSC1/RP60/RC12"/>
+<wire x1="106.68" y1="45.72" x2="114.3" y2="45.72" width="0.1524" layer="91"/>
+<label x="109.22" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

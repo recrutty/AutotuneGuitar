@@ -4726,6 +4726,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND28" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND29" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="GND30" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6217,6 +6218,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </sheet>
 <sheet>
 <plain>
+<text x="-2.54" y="96.52" size="1.778" layer="91">LP3982</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="87.63" y="59.69" rot="MR90"/>
@@ -6368,6 +6370,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="-17.78" y="68.58" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="U$46" gate="G$1" x="-35.56" y="83.82"/>
+<instance part="GND30" gate="1" x="-40.64" y="58.42" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -6518,6 +6521,11 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
 <pinref part="GND87" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="G$1" pin="TEMP"/>
+<pinref part="GND30" gate="1" pin="GND"/>
+<wire x1="-35.56" y1="58.42" x2="-38.1" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">

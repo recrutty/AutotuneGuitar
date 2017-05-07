@@ -6517,10 +6517,10 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="C8" gate="G$1" x="-39.37" y="97.79"/>
 <instance part="C10" gate="G$1" x="-1.27" y="97.79"/>
 <instance part="U$26" gate="G$1" x="-39.37" y="100.33" smashed="yes">
-<attribute name="VALUE" x="-41.91" y="100.33" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="-41.91" y="104.14" size="1.778" layer="96"/>
 </instance>
 <instance part="U$31" gate="G$1" x="-1.27" y="100.33" smashed="yes">
-<attribute name="VALUE" x="-3.81" y="100.33" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="1.27" y="106.68" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND27" gate="1" x="-39.37" y="90.17"/>
 <instance part="GND31" gate="1" x="-1.27" y="90.17"/>

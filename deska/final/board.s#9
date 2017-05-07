@@ -4823,23 +4823,23 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="U$25" gate="G$1" x="111.76" y="35.56" smashed="yes" rot="R270">
 <attribute name="VALUE" x="120.65" y="36.83" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="Q1" gate="G$1" x="198.12" y="35.56" smashed="yes" rot="MR0">
-<attribute name="NAME" x="200.66" y="39.116" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="195.58" y="33.02" size="1.778" layer="96" rot="MR0"/>
+<instance part="Q1" gate="G$1" x="127" y="1.27" smashed="yes" rot="MR0">
+<attribute name="NAME" x="129.54" y="4.826" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="124.46" y="-1.27" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="C6" gate="G$1" x="203.2" y="30.48"/>
-<instance part="C7" gate="G$1" x="193.04" y="30.48"/>
-<instance part="GND23" gate="1" x="193.04" y="22.86" smashed="yes">
-<attribute name="VALUE" x="195.58" y="22.86" size="1.778" layer="96" rot="R180"/>
+<instance part="C6" gate="G$1" x="132.08" y="-3.81"/>
+<instance part="C7" gate="G$1" x="121.92" y="-3.81"/>
+<instance part="GND23" gate="1" x="121.92" y="-11.43" smashed="yes">
+<attribute name="VALUE" x="124.46" y="-11.43" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND24" gate="1" x="203.2" y="22.86" smashed="yes">
-<attribute name="VALUE" x="205.74" y="22.86" size="1.778" layer="96" rot="R180"/>
+<instance part="GND24" gate="1" x="132.08" y="-11.43" smashed="yes">
+<attribute name="VALUE" x="134.62" y="-11.43" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND25" gate="1" x="198.12" y="22.86" smashed="yes">
-<attribute name="VALUE" x="200.66" y="22.86" size="1.778" layer="96" rot="R180"/>
+<instance part="GND25" gate="1" x="127" y="-11.43" smashed="yes">
+<attribute name="VALUE" x="129.54" y="-11.43" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND26" gate="1" x="198.12" y="48.26" smashed="yes" rot="R180">
-<attribute name="VALUE" x="195.58" y="48.26" size="1.778" layer="96"/>
+<instance part="GND26" gate="1" x="127" y="13.97" smashed="yes" rot="R180">
+<attribute name="VALUE" x="124.46" y="13.97" size="1.778" layer="96"/>
 </instance>
 <instance part="IC2" gate="G$1" x="111.76" y="124.46"/>
 <instance part="P+2" gate="1" x="96.52" y="114.3" smashed="yes" rot="R90">
@@ -5386,12 +5386,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="193.04" y1="33.02" x2="193.04" y2="35.56" width="0.1524" layer="91"/>
-<label x="195.58" y="43.18" size="1.778" layer="95" rot="R180"/>
+<wire x1="121.92" y1="-1.27" x2="121.92" y2="1.27" width="0.1524" layer="91"/>
+<label x="124.46" y="8.89" size="1.778" layer="95" rot="R180"/>
 <pinref part="Q1" gate="G$1" pin="2"/>
-<wire x1="193.04" y1="35.56" x2="193.04" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="195.58" y1="35.56" x2="193.04" y2="35.56" width="0.1524" layer="91"/>
-<junction x="193.04" y="35.56"/>
+<wire x1="121.92" y1="1.27" x2="121.92" y2="6.35" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="1.27" x2="121.92" y2="1.27" width="0.1524" layer="91"/>
+<junction x="121.92" y="1.27"/>
 </segment>
 </net>
 <net name="DIFF_P" class="0">
@@ -5402,12 +5402,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="203.2" y1="33.02" x2="203.2" y2="35.56" width="0.1524" layer="91"/>
-<label x="205.74" y="43.18" size="1.778" layer="95" rot="R180"/>
+<wire x1="132.08" y1="-1.27" x2="132.08" y2="1.27" width="0.1524" layer="91"/>
+<label x="134.62" y="8.89" size="1.778" layer="95" rot="R180"/>
 <pinref part="Q1" gate="G$1" pin="1"/>
-<wire x1="203.2" y1="35.56" x2="203.2" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="35.56" x2="203.2" y2="35.56" width="0.1524" layer="91"/>
-<junction x="203.2" y="35.56"/>
+<wire x1="132.08" y1="1.27" x2="132.08" y2="6.35" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="1.27" x2="132.08" y2="1.27" width="0.1524" layer="91"/>
+<junction x="132.08" y="1.27"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -5960,7 +5960,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </plain>
 <instances>
 <instance part="U$2" gate="G$1" x="149.86" y="104.14" rot="MR90"/>
-<instance part="U$1" gate="G$1" x="233.68" y="104.14" rot="MR90"/>
 <instance part="U$3" gate="G$1" x="149.86" y="53.34" rot="MR90"/>
 <instance part="GND4" gate="1" x="40.64" y="33.02"/>
 <instance part="U$4" gate="G$1" x="68.58" y="53.34" rot="R180"/>
@@ -6022,14 +6021,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="U$13" gate="G$2" x="137.16" y="121.92"/>
 <instance part="U$14" gate="G$2" x="137.16" y="20.32"/>
 <instance part="U$16" gate="G$2" x="55.88" y="20.32"/>
-<instance part="E1_DRV" gate="G$1" x="195.58" y="109.22"/>
-<instance part="GND1" gate="1" x="203.2" y="83.82"/>
-<instance part="GND73" gate="1" x="198.12" y="83.82"/>
-<instance part="GND74" gate="1" x="193.04" y="83.82"/>
-<instance part="GND75" gate="1" x="187.96" y="83.82"/>
-<instance part="GND76" gate="1" x="218.44" y="114.3"/>
-<instance part="GND77" gate="1" x="172.72" y="114.3"/>
-<instance part="U$12" gate="G$2" x="218.44" y="121.92"/>
 <instance part="U$5" gate="G$1" x="218.44" y="43.18"/>
 <instance part="C21" gate="G$1" x="172.72" y="15.24"/>
 <instance part="GND80" gate="1" x="172.72" y="7.62"/>
@@ -6235,32 +6226,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="137.16" y1="116.84" x2="134.62" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="E1_DRV" gate="G$1" pin="PAD4"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="PAD3"/>
-<pinref part="GND73" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="PAD2"/>
-<pinref part="GND74" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="PAD1"/>
-<pinref part="GND75" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="GND1"/>
-<pinref part="GND77" gate="1" pin="GND"/>
-<wire x1="175.26" y1="116.84" x2="172.72" y2="116.84" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND76" gate="1" pin="GND"/>
-<pinref part="E1_DRV" gate="G$1" pin="GND2"/>
-<wire x1="218.44" y1="116.84" x2="215.9" y2="116.84" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="C21" gate="G$1" pin="2"/>
 <pinref part="GND80" gate="1" pin="GND"/>
 </segment>
@@ -6327,26 +6292,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="137.16" y1="104.14" x2="137.16" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="L1A"/>
 <wire x1="137.16" y1="99.06" x2="139.7" y2="99.06" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$17" class="0">
-<segment>
-<wire x1="215.9" y1="111.76" x2="223.52" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="111.76" x2="223.52" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="119.38" x2="238.76" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="E1_DRV" gate="G$1" pin="AOUT1"/>
-<pinref part="U$1" gate="G$1" pin="L2B"/>
-<wire x1="238.76" y1="119.38" x2="238.76" y2="114.3" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$18" class="0">
-<segment>
-<wire x1="215.9" y1="109.22" x2="228.6" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="228.6" y1="109.22" x2="228.6" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="E1_DRV" gate="G$1" pin="AOUT2"/>
-<pinref part="U$1" gate="G$1" pin="L2A"/>
-<wire x1="233.68" y1="114.3" x2="233.68" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="233.68" y1="116.84" x2="228.6" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -6570,34 +6515,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="H1_DRV" gate="G$1" pin="AIN1/APHASE"/>
 </segment>
 </net>
-<net name="E1_AIN1" class="0">
-<segment>
-<wire x1="160.02" y1="111.76" x2="175.26" y2="111.76" width="0.1524" layer="91"/>
-<label x="160.02" y="111.76" size="1.778" layer="95"/>
-<pinref part="E1_DRV" gate="G$1" pin="AIN1/APHASE"/>
-</segment>
-</net>
-<net name="E1_AIN2" class="0">
-<segment>
-<wire x1="160.02" y1="109.22" x2="175.26" y2="109.22" width="0.1524" layer="91"/>
-<label x="160.02" y="109.22" size="1.778" layer="95"/>
-<pinref part="E1_DRV" gate="G$1" pin="AIN2/AENBL"/>
-</segment>
-</net>
-<net name="E1_BIN1" class="0">
-<segment>
-<wire x1="160.02" y1="104.14" x2="175.26" y2="104.14" width="0.1524" layer="91"/>
-<label x="160.02" y="104.14" size="1.778" layer="95"/>
-<pinref part="E1_DRV" gate="G$1" pin="BIN1/BPHASE"/>
-</segment>
-</net>
-<net name="E1_BIN2" class="0">
-<segment>
-<wire x1="160.02" y1="101.6" x2="175.26" y2="101.6" width="0.1524" layer="91"/>
-<label x="160.02" y="101.6" size="1.778" layer="95"/>
-<pinref part="E1_DRV" gate="G$1" pin="BIN2/BENBL"/>
-</segment>
-</net>
 <net name="G_AIN1" class="0">
 <segment>
 <wire x1="78.74" y1="60.96" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
@@ -6727,12 +6644,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U$16" gate="G$2" pin="+10V"/>
 </segment>
 <segment>
-<wire x1="215.9" y1="119.38" x2="218.44" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="218.44" y1="119.38" x2="218.44" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="E1_DRV" gate="G$1" pin="VM"/>
-<pinref part="U$12" gate="G$2" pin="+10V"/>
-</segment>
-<segment>
 <pinref part="C21" gate="G$1" pin="1"/>
 <pinref part="U$39" gate="G$2" pin="+10V"/>
 </segment>
@@ -6792,11 +6703,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="93.98" y1="119.38" x2="78.74" y2="119.38" width="0.1524" layer="91"/>
 <label x="78.74" y="119.38" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="VCC"/>
-<wire x1="175.26" y1="119.38" x2="160.02" y2="119.38" width="0.1524" layer="91"/>
-<label x="160.02" y="119.38" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="G_AIN2" class="0">
 <segment>
@@ -6847,24 +6753,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="55.88" y1="48.26" x2="58.42" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="BOUT1"/>
-<wire x1="215.9" y1="104.14" x2="218.44" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="218.44" y1="104.14" x2="218.44" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="L1A"/>
-<wire x1="218.44" y1="99.06" x2="223.52" y2="99.06" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$20" class="0">
-<segment>
-<pinref part="E1_DRV" gate="G$1" pin="BOUT2"/>
-<wire x1="215.9" y1="101.6" x2="220.98" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="101.6" x2="220.98" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="L1B"/>
-<wire x1="220.98" y1="104.14" x2="223.52" y2="104.14" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$41" class="0">
 <segment>
 <pinref part="U$6" gate="G$1" pin="L2B"/>
@@ -6897,10 +6785,128 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <plain>
 </plain>
 <instances>
+<instance part="U$1" gate="G$1" x="87.63" y="59.69" rot="MR90"/>
+<instance part="E1_DRV" gate="G$1" x="49.53" y="64.77"/>
+<instance part="GND1" gate="1" x="57.15" y="39.37"/>
+<instance part="GND73" gate="1" x="52.07" y="39.37"/>
+<instance part="GND74" gate="1" x="46.99" y="39.37"/>
+<instance part="GND75" gate="1" x="41.91" y="39.37"/>
+<instance part="GND76" gate="1" x="72.39" y="69.85"/>
+<instance part="GND77" gate="1" x="26.67" y="69.85"/>
+<instance part="U$12" gate="G$2" x="72.39" y="77.47"/>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="GND" class="0">
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="PAD4"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="PAD3"/>
+<pinref part="GND73" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="PAD2"/>
+<pinref part="GND74" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="PAD1"/>
+<pinref part="GND75" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="GND1"/>
+<pinref part="GND77" gate="1" pin="GND"/>
+<wire x1="29.21" y1="72.39" x2="26.67" y2="72.39" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND76" gate="1" pin="GND"/>
+<pinref part="E1_DRV" gate="G$1" pin="GND2"/>
+<wire x1="72.39" y1="72.39" x2="69.85" y2="72.39" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<wire x1="69.85" y1="67.31" x2="77.47" y2="67.31" width="0.1524" layer="91"/>
+<wire x1="77.47" y1="67.31" x2="77.47" y2="74.93" width="0.1524" layer="91"/>
+<wire x1="77.47" y1="74.93" x2="92.71" y2="74.93" width="0.1524" layer="91"/>
+<pinref part="E1_DRV" gate="G$1" pin="AOUT1"/>
+<pinref part="U$1" gate="G$1" pin="L2B"/>
+<wire x1="92.71" y1="74.93" x2="92.71" y2="69.85" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<wire x1="69.85" y1="64.77" x2="82.55" y2="64.77" width="0.1524" layer="91"/>
+<wire x1="82.55" y1="64.77" x2="82.55" y2="72.39" width="0.1524" layer="91"/>
+<pinref part="E1_DRV" gate="G$1" pin="AOUT2"/>
+<pinref part="U$1" gate="G$1" pin="L2A"/>
+<wire x1="87.63" y1="69.85" x2="87.63" y2="72.39" width="0.1524" layer="91"/>
+<wire x1="87.63" y1="72.39" x2="82.55" y2="72.39" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="E1_AIN1" class="0">
+<segment>
+<wire x1="13.97" y1="67.31" x2="29.21" y2="67.31" width="0.1524" layer="91"/>
+<label x="13.97" y="67.31" size="1.778" layer="95"/>
+<pinref part="E1_DRV" gate="G$1" pin="AIN1/APHASE"/>
+</segment>
+</net>
+<net name="E1_AIN2" class="0">
+<segment>
+<wire x1="13.97" y1="64.77" x2="29.21" y2="64.77" width="0.1524" layer="91"/>
+<label x="13.97" y="64.77" size="1.778" layer="95"/>
+<pinref part="E1_DRV" gate="G$1" pin="AIN2/AENBL"/>
+</segment>
+</net>
+<net name="E1_BIN1" class="0">
+<segment>
+<wire x1="13.97" y1="59.69" x2="29.21" y2="59.69" width="0.1524" layer="91"/>
+<label x="13.97" y="59.69" size="1.778" layer="95"/>
+<pinref part="E1_DRV" gate="G$1" pin="BIN1/BPHASE"/>
+</segment>
+</net>
+<net name="E1_BIN2" class="0">
+<segment>
+<wire x1="13.97" y1="57.15" x2="29.21" y2="57.15" width="0.1524" layer="91"/>
+<label x="13.97" y="57.15" size="1.778" layer="95"/>
+<pinref part="E1_DRV" gate="G$1" pin="BIN2/BENBL"/>
+</segment>
+</net>
+<net name="+10V" class="0">
+<segment>
+<wire x1="69.85" y1="74.93" x2="72.39" y2="74.93" width="0.1524" layer="91"/>
+<wire x1="72.39" y1="74.93" x2="72.39" y2="77.47" width="0.1524" layer="91"/>
+<pinref part="E1_DRV" gate="G$1" pin="VM"/>
+<pinref part="U$12" gate="G$2" pin="+10V"/>
+</segment>
+</net>
+<net name="DRV_VCC" class="0">
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="VCC"/>
+<wire x1="29.21" y1="74.93" x2="13.97" y2="74.93" width="0.1524" layer="91"/>
+<label x="13.97" y="74.93" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="BOUT1"/>
+<wire x1="69.85" y1="59.69" x2="72.39" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="72.39" y1="59.69" x2="72.39" y2="54.61" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="L1A"/>
+<wire x1="72.39" y1="54.61" x2="77.47" y2="54.61" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="E1_DRV" gate="G$1" pin="BOUT2"/>
+<wire x1="69.85" y1="57.15" x2="74.93" y2="57.15" width="0.1524" layer="91"/>
+<wire x1="74.93" y1="57.15" x2="74.93" y2="59.69" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="L1B"/>
+<wire x1="74.93" y1="59.69" x2="77.47" y2="59.69" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>

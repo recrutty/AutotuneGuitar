@@ -6514,59 +6514,59 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="C17" gate="G$1" x="101.6" y="71.12"/>
 <instance part="U$17" gate="G$1" x="114.3" y="116.84"/>
 <instance part="U$34" gate="G$1" x="78.74" y="124.46"/>
-<instance part="C8" gate="G$1" x="-39.37" y="97.79"/>
-<instance part="C10" gate="G$1" x="-1.27" y="97.79"/>
-<instance part="U$26" gate="G$1" x="-39.37" y="100.33" smashed="yes">
-<attribute name="VALUE" x="-41.91" y="104.14" size="1.778" layer="96"/>
+<instance part="C8" gate="G$1" x="-1.27" y="45.72"/>
+<instance part="C10" gate="G$1" x="6.35" y="45.72"/>
+<instance part="U$26" gate="G$1" x="-1.27" y="48.26" smashed="yes">
+<attribute name="VALUE" x="1.27" y="53.34" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="U$31" gate="G$1" x="-1.27" y="100.33" smashed="yes">
-<attribute name="VALUE" x="1.27" y="106.68" size="1.778" layer="96" rot="R180"/>
+<instance part="U$31" gate="G$1" x="6.35" y="48.26" smashed="yes">
+<attribute name="VALUE" x="8.89" y="53.34" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND27" gate="1" x="-39.37" y="90.17"/>
-<instance part="GND31" gate="1" x="-1.27" y="90.17"/>
-<instance part="C4" gate="G$1" x="6.35" y="97.79"/>
-<instance part="GND47" gate="1" x="6.35" y="90.17"/>
-<instance part="U$5" gate="G$1" x="6.35" y="105.41"/>
-<instance part="C21" gate="G$1" x="-39.37" y="77.47"/>
-<instance part="GND80" gate="1" x="-39.37" y="69.85"/>
-<instance part="C22" gate="G$1" x="-31.75" y="77.47"/>
-<instance part="C23" gate="G$1" x="-24.13" y="77.47"/>
-<instance part="C24" gate="G$1" x="-16.51" y="77.47"/>
-<instance part="C25" gate="G$1" x="-8.89" y="77.47"/>
-<instance part="C26" gate="G$1" x="-1.27" y="77.47"/>
-<instance part="C27" gate="G$1" x="6.35" y="77.47"/>
-<instance part="GND81" gate="1" x="-31.75" y="69.85"/>
-<instance part="GND82" gate="1" x="-24.13" y="69.85"/>
-<instance part="GND83" gate="1" x="-16.51" y="69.85"/>
-<instance part="GND84" gate="1" x="-8.89" y="69.85"/>
-<instance part="GND85" gate="1" x="-1.27" y="69.85"/>
-<instance part="GND86" gate="1" x="6.35" y="69.85"/>
-<instance part="U$39" gate="G$2" x="-39.37" y="80.01"/>
-<instance part="U$40" gate="G$2" x="-31.75" y="80.01"/>
-<instance part="U$41" gate="G$2" x="-24.13" y="80.01"/>
-<instance part="U$42" gate="G$2" x="-16.51" y="80.01"/>
-<instance part="U$43" gate="G$2" x="-8.89" y="80.01"/>
-<instance part="U$44" gate="G$2" x="-1.27" y="80.01"/>
-<instance part="U$45" gate="G$2" x="6.35" y="80.01"/>
-<instance part="C28" gate="G$1" x="-31.75" y="97.79"/>
-<instance part="GND89" gate="1" x="-31.75" y="90.17"/>
-<instance part="U$35" gate="G$1" x="-31.75" y="100.33"/>
-<instance part="C29" gate="G$1" x="-24.13" y="97.79"/>
-<instance part="GND90" gate="1" x="-24.13" y="90.17"/>
-<instance part="U$47" gate="G$1" x="-24.13" y="100.33"/>
-<instance part="C30" gate="G$1" x="-16.51" y="97.79"/>
-<instance part="GND91" gate="1" x="-16.51" y="90.17"/>
-<instance part="U$48" gate="G$1" x="-16.51" y="100.33"/>
-<instance part="C14" gate="G$1" x="-12.7" y="50.8"/>
-<instance part="GND34" gate="1" x="-12.7" y="43.18"/>
-<instance part="U$33" gate="G$1" x="-12.7" y="55.88" smashed="yes">
-<attribute name="VALUE" x="-12.7" y="55.88" size="1.778" layer="96" rot="R180"/>
+<instance part="GND27" gate="1" x="-1.27" y="38.1"/>
+<instance part="GND31" gate="1" x="6.35" y="38.1"/>
+<instance part="C4" gate="G$1" x="6.35" y="92.71"/>
+<instance part="GND47" gate="1" x="6.35" y="85.09"/>
+<instance part="U$5" gate="G$1" x="6.35" y="95.25"/>
+<instance part="C21" gate="G$1" x="-39.37" y="72.39"/>
+<instance part="GND80" gate="1" x="-39.37" y="64.77"/>
+<instance part="C22" gate="G$1" x="-31.75" y="72.39"/>
+<instance part="C23" gate="G$1" x="-24.13" y="72.39"/>
+<instance part="C24" gate="G$1" x="-16.51" y="72.39"/>
+<instance part="C25" gate="G$1" x="-8.89" y="72.39"/>
+<instance part="C26" gate="G$1" x="-1.27" y="72.39"/>
+<instance part="C27" gate="G$1" x="6.35" y="72.39"/>
+<instance part="GND81" gate="1" x="-31.75" y="64.77"/>
+<instance part="GND82" gate="1" x="-24.13" y="64.77"/>
+<instance part="GND83" gate="1" x="-16.51" y="64.77"/>
+<instance part="GND84" gate="1" x="-8.89" y="64.77"/>
+<instance part="GND85" gate="1" x="-1.27" y="64.77"/>
+<instance part="GND86" gate="1" x="6.35" y="64.77"/>
+<instance part="U$39" gate="G$2" x="-39.37" y="74.93"/>
+<instance part="U$40" gate="G$2" x="-31.75" y="74.93"/>
+<instance part="U$41" gate="G$2" x="-24.13" y="74.93"/>
+<instance part="U$42" gate="G$2" x="-16.51" y="74.93"/>
+<instance part="U$43" gate="G$2" x="-8.89" y="74.93"/>
+<instance part="U$44" gate="G$2" x="-1.27" y="74.93"/>
+<instance part="U$45" gate="G$2" x="6.35" y="74.93"/>
+<instance part="C28" gate="G$1" x="-8.89" y="92.71"/>
+<instance part="GND89" gate="1" x="-8.89" y="85.09"/>
+<instance part="U$35" gate="G$1" x="-8.89" y="95.25"/>
+<instance part="C29" gate="G$1" x="-24.13" y="92.71"/>
+<instance part="GND90" gate="1" x="-24.13" y="85.09"/>
+<instance part="U$47" gate="G$1" x="-24.13" y="95.25"/>
+<instance part="C30" gate="G$1" x="-16.51" y="92.71"/>
+<instance part="GND91" gate="1" x="-16.51" y="85.09"/>
+<instance part="U$48" gate="G$1" x="-16.51" y="95.25"/>
+<instance part="C14" gate="G$1" x="-8.89" y="45.72"/>
+<instance part="GND34" gate="1" x="-8.89" y="38.1"/>
+<instance part="U$33" gate="G$1" x="-8.89" y="48.26" smashed="yes">
+<attribute name="VALUE" x="-6.35" y="53.34" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C31" gate="G$1" x="-22.86" y="50.8"/>
-<instance part="P+6" gate="1" x="-22.86" y="55.88" smashed="yes">
-<attribute name="VALUE" x="-25.4" y="55.88" size="1.778" layer="96" rot="R180"/>
+<instance part="C31" gate="G$1" x="-22.86" y="45.72"/>
+<instance part="P+6" gate="1" x="-22.86" y="50.8" smashed="yes">
+<attribute name="VALUE" x="-25.4" y="50.8" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND92" gate="1" x="-22.86" y="43.18"/>
+<instance part="GND92" gate="1" x="-22.86" y="38.1"/>
 </instances>
 <busses>
 </busses>
@@ -6881,7 +6881,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="C4" gate="G$1" pin="1"/>
 <pinref part="U$5" gate="G$1" pin="+3.15V"/>
-<wire x1="6.35" y1="105.41" x2="6.35" y2="100.33" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C28" gate="G$1" pin="1"/>
@@ -6908,7 +6907,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="C14" gate="G$1" pin="1"/>
 <pinref part="U$33" gate="G$1" pin="VBAT"/>
-<wire x1="-12.7" y1="55.88" x2="-12.7" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
