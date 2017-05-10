@@ -184,7 +184,7 @@ section                    address      alignment gaps    total length  (dec)
 .data                       0x18da                   0            0xc6  (198)
 .xbss                       0x2000                   0          0x1000  (4096)
 .bss                        0x3000                   0          0x1040  (4160)
-_04DC960058f0b356           0x6000                   0          0x2000  (8192)
+_04E0960059101743           0x6000                   0          0x2000  (8192)
 
                  Total data memory used (bytes):         0x49e0  (18912) 65%
 
@@ -674,20 +674,20 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x4e7e
+.debug_info       0x000000       0x4e4c
  *(.debug_info)
- .debug_info      0x000000        0x64c build/default/production/main.o
- .debug_info      0x00064c        0x592 build/default/production/stepper_motors.o
- .debug_info      0x000bde        0x54f build/default/production/user.o
- .debug_info      0x00112d        0x79e build/default/production/stepper_motor_vars.o
- .debug_info      0x0018cb       0x1c8c build/default/production/ADC.o
- .debug_info      0x003557        0x3df build/default/production/Leds.o
- .debug_info      0x003936        0x378 build/default/production/Leds_vars.o
- .debug_info      0x003cae        0x3aa build/default/production/Buttons.o
- .debug_info      0x004058        0x3cb build/default/production/Buttons_vars.o
- .debug_info      0x004423        0x684 build/default/production/fft.o
- .debug_info      0x004aa7        0x248 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_info      0x004cef        0x18f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_info      0x000000        0x647 build/default/production/main.o
+ .debug_info      0x000647        0x58d build/default/production/stepper_motors.o
+ .debug_info      0x000bd4        0x54a build/default/production/user.o
+ .debug_info      0x00111e        0x799 build/default/production/stepper_motor_vars.o
+ .debug_info      0x0018b7       0x1c87 build/default/production/ADC.o
+ .debug_info      0x00353e        0x3da build/default/production/Leds.o
+ .debug_info      0x003918        0x373 build/default/production/Leds_vars.o
+ .debug_info      0x003c8b        0x3a5 build/default/production/Buttons.o
+ .debug_info      0x004030        0x3c6 build/default/production/Buttons_vars.o
+ .debug_info      0x0043f6        0x67f build/default/production/fft.o
+ .debug_info      0x004a75        0x248 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_info      0x004cbd        0x18f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0xad9
@@ -3549,9 +3549,9 @@ __c30_signature
  .xbss              0x2000       0x1000 build/default/production/fft.o
                     0x2000                  _twiddleFactors
 
-_04DC960058f0b356
+_04E0960059101743
                     0x6000       0x2000
- _04DC960058f0b356
+ _04E0960059101743
                     0x6000       0x2000 build/default/production/fft.o
                     0x6000                  _sigCmpx
 
