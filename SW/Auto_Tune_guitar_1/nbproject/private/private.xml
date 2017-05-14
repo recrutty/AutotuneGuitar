@@ -6,8 +6,11 @@
             <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/main.c</file>
             <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/fft.c</file>
             <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/user.c</file>
+            <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/stepper_motors.c</file>
+            <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/stepper_motors.h</file>
             <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/fft.h</file>
             <file>file:/C:/Program%20Files%20(x86)/Microchip/xc16/v1.31/support/generic/h/dsp.h</file>
+            <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/GPIO_binding.h</file>
             <file>file:/D:/GIT/AutotuneGuitar/SW/Auto_Tune_guitar_1/ADC.c</file>
         </group>
     </open-files>
