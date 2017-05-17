@@ -143,7 +143,6 @@ volatile const uint16_t *ADC_buffer[] = {
 
 void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
 {       
-    *(STEP_POW_PORT) |= 1 << STEP_POW_BIT;
     if (MeasurementStart == 1)
     {
         if (AD1CON3bits.ADCS != DesiredSampleRate)
@@ -167,5 +166,4 @@ void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
         }
     }
     IFS0bits.AD1IF = 0;        //Clear the interrupt flag
-    *(STEP_POW_PORT) &= ~(1 << STEP_POW_BIT);
 }

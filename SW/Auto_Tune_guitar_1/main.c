@@ -45,8 +45,11 @@ int main(void)
     {
         if (MeasurementStart == 2)
         {
+            //*(STEP_POW_PORT) ^= 1 << STEP_POW_BIT;
             CalculateFFT(DataForFFT, OutputValues);
+            //*(STEP_POW_PORT) &= ~(1 << STEP_POW_BIT);
             double truePeakFreq = CalculateFreq(OutputValues, strings[mot].Freq);        
+            
             if (truePeakFreq>0)
             {                       
                 double distunning = strings[mot].Freq - truePeakFreq;

@@ -150,11 +150,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xafa          0x1077  (4215)
 .const                       0xcfa                0x70            0xa8  (168)
-.text                        0xd6a               0xf96          0x1761  (5985)
-.dinit                      0x1d00               0x11a           0x1a7  (423)
-.text                       0x1e1a               0x180           0x240  (576)
+.text                        0xd6a               0xf8a          0x174f  (5967)
+.dinit                      0x1cf4               0x11a           0x1a7  (423)
+.text                       0x1e0e               0x180           0x240  (576)
 
-                 Total program memory used (bytes):         0x2c67  (11367) 4%
+                 Total program memory used (bytes):         0x2c55  (11349) 4%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -184,7 +184,7 @@ section                    address      alignment gaps    total length  (dec)
 .data                       0x18da                   0            0xc6  (198)
 .xbss                       0x2000                   0          0x1000  (4096)
 .bss                        0x3000                   0          0x1040  (4160)
-_04E0960059101743           0x6000                   0          0x2000  (8192)
+_04E80660591c10ba           0x6000                   0          0x2000  (8192)
 
                  Total data memory used (bytes):         0x49e0  (18912) 65%
 
@@ -383,14 +383,14 @@ External Symbols in Program Memory (by address):
                   0x001bbe                  _initAdcBattery
                   0x001c16                  _initAdcPiezo
                   0x001c7e                  __AD1Interrupt
-                  0x001e1a                  _InitBtns
-                  0x001e84                  _DebPress
-                  0x001e9a                  _DebRelease
-                  0x001eb0                  _BtnOpen
-                  0x001eca                  _BtnClick
-                  0x001f32                  _InitApp
-                  0x001f42                  _InitPllOsc
-                  0x001f96                  _SetStackGuard
+                  0x001e0e                  _InitBtns
+                  0x001e78                  _DebPress
+                  0x001e8e                  _DebRelease
+                  0x001ea4                  _BtnOpen
+                  0x001ebe                  _BtnClick
+                  0x001f26                  _InitApp
+                  0x001f36                  _InitPllOsc
+                  0x001f8a                  _SetStackGuard
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
@@ -398,8 +398,8 @@ External Symbols in Program Memory (by name):
                   0x001b42                  _AllLedsOff
                   0x001b7c                  _AllLedsOn
                   0x0002fe                  _BitReverseComplex
-                  0x001eca                  _BtnClick
-                  0x001eb0                  _BtnOpen
+                  0x001ebe                  _BtnClick
+                  0x001ea4                  _BtnOpen
                   0x001322                  _CalcHarmNum
                   0x000f8c                  _CalculateFFT
                   0x001042                  _CalculateFreq
@@ -418,26 +418,26 @@ External Symbols in Program Memory (by name):
                   0x000d52                  _CoilB_Motor6
                   0x000d62                  _CoilB_Motor7
                   0x000d7e                  _CountFrequencyTable
-                  0x001e84                  _DebPress
-                  0x001e9a                  _DebRelease
+                  0x001e78                  _DebPress
+                  0x001e8e                  _DebRelease
                   0x001468                  _DoStep
                   0x001440                  _DoSteps
                   0x00036e                  _FFTComplexIP
                   0x000610                  _Float2Fract
                   0x001bb4                  _InitAdc
-                  0x001f32                  _InitApp
-                  0x001e1a                  _InitBtns
+                  0x001f26                  _InitApp
+                  0x001e0e                  _InitBtns
                   0x000d6a                  _InitFFT
                   0x001a28                  _InitLeds
                   0x00174c                  _InitMotors
-                  0x001f42                  _InitPllOsc
+                  0x001f36                  _InitPllOsc
                   0x001b0a                  _InverseLeds
                   0x0013c8                  _MotorOff
                   0x0013b0                  _MotorsSleep
                   0x0013bc                  _MotorsWake
                   0x001afc                  _OneLedOff
                   0x001aee                  _OneLedOn
-                  0x001f96                  _SetStackGuard
+                  0x001f8a                  _SetStackGuard
                   0x00033a                  _SquareMagnitudeCplx
                   0x001ab4                  _TurnLedOff
                   0x001a7c                  _TurnLedOn
@@ -674,20 +674,20 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x4e4c
+.debug_info       0x000000       0x4e2c
  *(.debug_info)
  .debug_info      0x000000        0x647 build/default/production/main.o
  .debug_info      0x000647        0x58d build/default/production/stepper_motors.o
  .debug_info      0x000bd4        0x54a build/default/production/user.o
  .debug_info      0x00111e        0x799 build/default/production/stepper_motor_vars.o
- .debug_info      0x0018b7       0x1c87 build/default/production/ADC.o
- .debug_info      0x00353e        0x3da build/default/production/Leds.o
- .debug_info      0x003918        0x373 build/default/production/Leds_vars.o
- .debug_info      0x003c8b        0x3a5 build/default/production/Buttons.o
- .debug_info      0x004030        0x3c6 build/default/production/Buttons_vars.o
- .debug_info      0x0043f6        0x67f build/default/production/fft.o
- .debug_info      0x004a75        0x248 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_info      0x004cbd        0x18f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_info      0x0018b7       0x1c67 build/default/production/ADC.o
+ .debug_info      0x00351e        0x3da build/default/production/Leds.o
+ .debug_info      0x0038f8        0x373 build/default/production/Leds_vars.o
+ .debug_info      0x003c6b        0x3a5 build/default/production/Buttons.o
+ .debug_info      0x004010        0x3c6 build/default/production/Buttons_vars.o
+ .debug_info      0x0043d6        0x67f build/default/production/fft.o
+ .debug_info      0x004a55        0x248 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_info      0x004c9d        0x18f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0xad9
@@ -705,20 +705,20 @@ __FUID0
  .debug_abbrev    0x0009e3         0x95 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
  .debug_abbrev    0x000a78         0x61 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
-.debug_line       0x000000        0xd7f
+.debug_line       0x000000        0xd7d
  *(.debug_line)
  .debug_line      0x000000        0x172 build/default/production/main.o
  .debug_line      0x000172        0x17d build/default/production/stepper_motors.o
  .debug_line      0x0002ef         0xa1 build/default/production/user.o
  .debug_line      0x000390        0x112 build/default/production/stepper_motor_vars.o
- .debug_line      0x0004a2        0x188 build/default/production/ADC.o
- .debug_line      0x00062a         0xc0 build/default/production/Leds.o
- .debug_line      0x0006ea         0xf6 build/default/production/Leds_vars.o
- .debug_line      0x0007e0         0xba build/default/production/Buttons.o
- .debug_line      0x00089a         0xff build/default/production/Buttons_vars.o
- .debug_line      0x000999        0x1a2 build/default/production/fft.o
- .debug_line      0x000b3b        0x115 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_line      0x000c50        0x12f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_line      0x0004a2        0x186 build/default/production/ADC.o
+ .debug_line      0x000628         0xc0 build/default/production/Leds.o
+ .debug_line      0x0006e8         0xf6 build/default/production/Leds_vars.o
+ .debug_line      0x0007de         0xba build/default/production/Buttons.o
+ .debug_line      0x000898         0xff build/default/production/Buttons_vars.o
+ .debug_line      0x000997        0x1a2 build/default/production/fft.o
+ .debug_line      0x000b39        0x115 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_line      0x000c4e        0x12f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
 .debug_frame      0x000000        0x482
  *(.debug_frame)
@@ -3549,9 +3549,9 @@ __c30_signature
  .xbss              0x2000       0x1000 build/default/production/fft.o
                     0x2000                  _twiddleFactors
 
-_04E0960059101743
+_04E80660591c10ba
                     0x6000       0x2000
- _04E0960059101743
+ _04E80660591c10ba
                     0x6000       0x2000 build/default/production/fft.o
                     0x6000                  _sigCmpx
 
@@ -3633,7 +3633,7 @@ _04E0960059101743
                     0x8d5a                  _CoilA_Motor7
                     0x8d62                  _CoilB_Motor7
 
-.text             0x000d6a        0xf96
+.text             0x000d6a        0xf8a
  .text            0x000d6a        0x646 build/default/production/fft.o
                   0x000d6a                  _InitFFT
                   0x000d7e                  _CountFrequencyTable
@@ -3659,24 +3659,24 @@ _04E0960059101743
                   0x001b0a                  _InverseLeds
                   0x001b42                  _AllLedsOff
                   0x001b7c                  _AllLedsOn
- .text            0x001bb4        0x14c build/default/production/ADC.o
+ .text            0x001bb4        0x140 build/default/production/ADC.o
                   0x001bb4                  _InitAdc
                   0x001bbe                  _initAdcBattery
                   0x001c16                  _initAdcPiezo
                   0x001c7e                  __AD1Interrupt
 
-.dinit            0x001d00        0x11a
- .dinit           0x001d00        0x11a data_init
+.dinit            0x001cf4        0x11a
+ .dinit           0x001cf4        0x11a data_init
 
-.text             0x001e1a        0x180
- .text            0x001e1a        0x118 build/default/production/Buttons.o
-                  0x001e1a                  _InitBtns
-                  0x001e84                  _DebPress
-                  0x001e9a                  _DebRelease
-                  0x001eb0                  _BtnOpen
-                  0x001eca                  _BtnClick
- .text            0x001f32         0x64 build/default/production/user.o
-                  0x001f32                  _InitApp
-                  0x001f42                  _InitPllOsc
- .text            0x001f96          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
-                  0x001f96                  _SetStackGuard
+.text             0x001e0e        0x180
+ .text            0x001e0e        0x118 build/default/production/Buttons.o
+                  0x001e0e                  _InitBtns
+                  0x001e78                  _DebPress
+                  0x001e8e                  _DebRelease
+                  0x001ea4                  _BtnOpen
+                  0x001ebe                  _BtnClick
+ .text            0x001f26         0x64 build/default/production/user.o
+                  0x001f26                  _InitApp
+                  0x001f36                  _InitPllOsc
+ .text            0x001f8a          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
+                  0x001f8a                  _SetStackGuard

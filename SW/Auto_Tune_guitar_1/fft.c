@@ -3,6 +3,7 @@
 #include <dsp.h>
 #include "fft.h"
 #include "Strings_freq.h"
+#include "GPIO_binding.h"
 
 
 //double ADC_SampleRate = 1593.76;
@@ -84,6 +85,7 @@ int CalculateFFT(int inputValues[], fractional outputValues[FFT_BLOCK_LENGTH/2])
     FFTComplexIP(LOG2_BLOCK_LENGTH, &sigCmpx[0], &twiddleFactors[0], COEFFS_IN_DATA);
     BitReverseComplex(LOG2_BLOCK_LENGTH, &sigCmpx[0]);
     SquareMagnitudeCplx(FFT_BLOCK_LENGTH / 2, &sigCmpx[0], outputValues);
+    
     int16_t	peakFrequencyBin = 0;
     fractional val = VectorMax(FFT_BLOCK_LENGTH/2, outputValues, &peakFrequencyBin);
     if (outputValues[peakFrequencyBin]>=200)
