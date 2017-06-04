@@ -5,25 +5,24 @@
 #include "Strings_freq.h"
 #include "GPIO_binding.h"
 
+#define MAX_FREQ_HARM (10)
 
-//double ADC_SampleRate = 1593.76;
-double ADC_SampleRate = 3174.4;
 double FFT_MaxFreq;
 
+//array of strings
 GuitarString strings[7];
-double A_low_freq;
 
-double TonesFreq[7];
+//array of samples for FFT
 fractcomplex sigCmpx[FFT_BLOCK_LENGTH]
 __attribute__ ((eds, space(ymemory), aligned (FFT_BLOCK_LENGTH * 2 *2)));	
  
+//array of twiddleFactors for FFT
 fractcomplex twiddleFactors[FFT_BLOCK_LENGTH/2]
 __attribute__ ((section (".xbss, bss, xmemory"), aligned (FFT_BLOCK_LENGTH*2)));
 
 void InitFFT()
 {
-    TwidFactorInit(LOG2_BLOCK_LENGTH, &twiddleFactors[0], 0);
-    
+    TwidFactorInit(LOG2_BLOCK_LENGTH, &twiddleFactors[0], 0);    
     CountFrequencyTable(FREQ_a1);
 }
 void CountFrequencyTable(uint32_t ConcertPitchA)
@@ -61,7 +60,7 @@ void CountFrequencyTable(uint32_t ConcertPitchA)
     strings[6].StepsCoef = 800;
 }
 
-int CalculateFFT(int inputValues[], fractional outputValues[FFT_BLOCK_LENGTH/2])
+void CalculateFFT(fractional outputValues[FFT_BLOCK_LENGTH/2])
 {
     int i;
     for ( i = 0; i < FFT_BLOCK_LENGTH; i++ )
@@ -84,21 +83,9 @@ int CalculateFFT(int inputValues[], fractional outputValues[FFT_BLOCK_LENGTH/2])
 
     FFTComplexIP(LOG2_BLOCK_LENGTH, &sigCmpx[0], &twiddleFactors[0], COEFFS_IN_DATA);
     BitReverseComplex(LOG2_BLOCK_LENGTH, &sigCmpx[0]);
-    SquareMagnitudeCplx(FFT_BLOCK_LENGTH / 2, &sigCmpx[0], outputValues);
-    
-    int16_t	peakFrequencyBin = 0;
-    fractional val = VectorMax(FFT_BLOCK_LENGTH/2, outputValues, &peakFrequencyBin);
-    if (outputValues[peakFrequencyBin]>=200)
-    {        
-        return peakFrequencyBin;
-    }
-    else
-    {
-        return 0;
-    }
-
+    SquareMagnitudeCplx(FFT_BLOCK_LENGTH / 2, &sigCmpx[0], outputValues);    
 }
-#define MAX_FREQ_HARM (10)
+
 double CalculateFreq(fractional outputFFT[FFT_BLOCK_LENGTH/2], double desiredFreq)
 {
     FreqPeak peaks[MAX_FREQ_HARM]={{ 0 }};
@@ -145,8 +132,6 @@ double CalculateFreq(fractional outputFFT[FFT_BLOCK_LENGTH/2], double desiredFre
             peaksCounter++;
             if (peaksCounter==MAX_FREQ_HARM)
             {
-                int kuk = 0;
-                kuk++;
                 return 0;
             }
             found = 1;
@@ -158,7 +143,6 @@ double CalculateFreq(fractional outputFFT[FFT_BLOCK_LENGTH/2], double desiredFre
     }
     double diff;
     double minimum = FFT_MaxFreq;
-    uint8_t minIndex = 0;
     int goodPeaksLimit = 3*(((int)desiredFreq)/4);
     for (i = 0; i < MAX_FREQ_HARM; i++)
     {
@@ -214,7 +198,6 @@ double CalculateFreq(fractional outputFFT[FFT_BLOCK_LENGTH/2], double desiredFre
 int CalcHarmNum(double desiredFreq, double freq)
 {
     double diff;
-    double minimum = FFT_MaxFreq;
     uint8_t minIndex = 0;
     int i;
     for (i = 1; i < MAX_FREQ_HARM; i++)
@@ -225,12 +208,11 @@ int CalcHarmNum(double desiredFreq, double freq)
             diff = (double)freq - (desiredFreq * i);
         }
 
-        if (diff < minimum)
+        if (diff < FFT_MaxFreq)
         {
-            minimum = diff;
+            FFT_MaxFreq = diff;
             minIndex = i;
         }
     }
-
     return minIndex;
 }

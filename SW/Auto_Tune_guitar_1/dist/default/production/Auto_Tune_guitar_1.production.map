@@ -64,8 +64,6 @@ c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_in
                               build/default/production/fft.o (_TwidFactorInit)
 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
                               c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_fft.obj) (_STACK_GUARD)
-c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_vmax.obj)
-                              build/default/production/fft.o (_VectorMax)
 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
                               c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o) (_Float2Fract)
 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
@@ -148,13 +146,13 @@ Program Memory  [Origin = 0x200, Length = 0x2aa00]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0xafa          0x1077  (4215)
-.const                       0xcfa                0x70            0xa8  (168)
-.text                        0xd6a               0xf8a          0x174f  (5967)
-.dinit                      0x1cf4               0x11a           0x1a7  (423)
-.text                       0x1e0e               0x180           0x240  (576)
+.text                        0x200               0xada          0x1047  (4167)
+.const                       0xcda                0x70            0xa8  (168)
+.text                        0xd4a              0x105c          0x188a  (6282)
+.dinit                      0x1da6               0x10a           0x18f  (399)
+.text                       0x1eb0                0x14            0x1e  (30)
 
-                 Total program memory used (bytes):         0x2c55  (11349) 4%
+                 Total program memory used (bytes):         0x2b26  (11046) 4%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -177,16 +175,17 @@ Data Memory  [Origin = 0x1000, Length = 0x7000]
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .ndata                      0x1000                   0            0x38  (56)
-.nbss                       0x1038                   0            0x2a  (42)
-.ndata                      0x1062                   0             0x6  (6)
-.nbss                       0x1068                   0             0x2  (2)
-.bss                        0x106a                   0           0x870  (2160)
-.data                       0x18da                   0            0xc6  (198)
+.nbss                       0x1038                   0             0xa  (10)
+.ndata                      0x1042                   0             0x2  (2)
+.nbss                       0x1044                   0             0x2  (2)
+.bss                        0x1046                   0           0x800  (2048)
+.data                       0x1846                   0            0x54  (84)
+.bss                        0x189a                   0            0x54  (84)
+.data                       0x18ee                   0            0x72  (114)
 .xbss                       0x2000                   0          0x1000  (4096)
-.bss                        0x3000                   0          0x1040  (4160)
-_04E80660591c10ba           0x6000                   0          0x2000  (8192)
+_04E923C05925468f           0x6000                   0          0x2000  (8192)
 
-                 Total data memory used (bytes):         0x49e0  (18912) 65%
+                 Total data memory used (bytes):         0x3960  (14688) 51%
 
 
 Dynamic Memory Usage
@@ -194,9 +193,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x4040                              0x1fc0  (8128)
+stack                       0x3000                              0x3000  (12288)
 
-                 Maximum dynamic memory (bytes):         0x1fc0  (8128)
+                 Maximum dynamic memory (bytes):         0x3000  (12288)
 
 
 External Symbols in Data Memory (by address):
@@ -208,63 +207,42 @@ External Symbols in Data Memory (by address):
                     0x1020                  _Led5
                     0x1028                  _Led6
                     0x1030                  _Led7
-                    0x1038                  _ADCdebugDataCounter
-                    0x103a                  _DataForFftCounter
-                    0x103c                  _MovingAverage
-                    0x1044                  _MovingAverageSummary
-                    0x1048                  _SucMesCounter
-                    0x1049                  _MovingAverageCounter
-                    0x104a                  _compMem
-                    0x104c                  _AdcSamplesCounter
-                    0x104e                  _Result
-                    0x1052                  _ResultFlag
-                    0x1053                  _MeasureDemand
-                    0x1054                  _MeasurementStart
-                    0x1056                  _FFT_MaxFreq
-                    0x105a                  _A_low_freq
-                    0x105e                  _MotorSelected
-                    0x105f                  _mot
-                    0x1060                  _led
-                    0x1062                  _ADC_SampleRate
-                    0x1066                  _DesiredSampleRate
-                    0x106a                  _OutputValues
-                    0x186a                  _strings
-                    0x18be                  _TonesFreq
-                    0x18da                  _Motor1
-                    0x18e4                  _Motor2
-                    0x18ee                  _Motor3
-                    0x18f8                  _Motor4
-                    0x1902                  _Motor5
-                    0x190c                  _Motor6
-                    0x1916                  _Motor7
-                    0x1920                  _StepperMotorList
-                    0x192e                  _Btn1
-                    0x1942                  _Btn2
-                    0x1956                  _Btn3
-                    0x196a                  _BtnList
-                    0x1970                  _ADC_buffer
-                    0x1990                  _LedList
-                    0x199e                  _STACK_GUARD
+                    0x1038                  _DataForFftCounter
+                    0x103a                  _MeasurementStart
+                    0x103c                  _FFT_MaxFreq
+                    0x1040                  _mot
+                    0x1041                  _led
+                    0x1042                  _DesiredSampleRate
+                    0x1046                  _OutputValues
+                    0x1846                  _Motor1
+                    0x1850                  _Motor2
+                    0x185a                  _Motor3
+                    0x1864                  _Motor4
+                    0x186e                  _Motor5
+                    0x1878                  _Motor6
+                    0x1882                  _Motor7
+                    0x188c                  _StepperMotorList
+                    0x189a                  _strings
+                    0x18ee                  _Btn1
+                    0x1902                  _Btn2
+                    0x1916                  _Btn3
+                    0x192a                  _BtnList
+                    0x1930                  _ADC_buffer
+                    0x1950                  _LedList
+                    0x195e                  _STACK_GUARD
                     0x2000                  _twiddleFactors
-                    0x3000                  _DataForFFT
-                    0x4000                  _SuccesfullMeasurement
                     0x6000                  _sigCmpx
 
 External Symbols in Data Memory (by name):
 
-                    0x1062                  _ADC_SampleRate
-                    0x1970                  _ADC_buffer
-                    0x1038                  _ADCdebugDataCounter
-                    0x105a                  _A_low_freq
-                    0x104c                  _AdcSamplesCounter
-                    0x192e                  _Btn1
-                    0x1942                  _Btn2
-                    0x1956                  _Btn3
-                    0x196a                  _BtnList
-                    0x3000                  _DataForFFT
-                    0x103a                  _DataForFftCounter
-                    0x1066                  _DesiredSampleRate
-                    0x1056                  _FFT_MaxFreq
+                    0x1930                  _ADC_buffer
+                    0x18ee                  _Btn1
+                    0x1902                  _Btn2
+                    0x1916                  _Btn3
+                    0x192a                  _BtnList
+                    0x1038                  _DataForFftCounter
+                    0x1042                  _DesiredSampleRate
+                    0x103c                  _FFT_MaxFreq
                     0x1000                  _Led1
                     0x1008                  _Led2
                     0x1010                  _Led3
@@ -272,33 +250,22 @@ External Symbols in Data Memory (by name):
                     0x1020                  _Led5
                     0x1028                  _Led6
                     0x1030                  _Led7
-                    0x1990                  _LedList
-                    0x1053                  _MeasureDemand
-                    0x1054                  _MeasurementStart
-                    0x18da                  _Motor1
-                    0x18e4                  _Motor2
-                    0x18ee                  _Motor3
-                    0x18f8                  _Motor4
-                    0x1902                  _Motor5
-                    0x190c                  _Motor6
-                    0x1916                  _Motor7
-                    0x105e                  _MotorSelected
-                    0x103c                  _MovingAverage
-                    0x1049                  _MovingAverageCounter
-                    0x1044                  _MovingAverageSummary
-                    0x106a                  _OutputValues
-                    0x104e                  _Result
-                    0x1052                  _ResultFlag
-                    0x199e                  _STACK_GUARD
-                    0x1920                  _StepperMotorList
-                    0x1048                  _SucMesCounter
-                    0x4000                  _SuccesfullMeasurement
-                    0x18be                  _TonesFreq
-                    0x104a                  _compMem
-                    0x1060                  _led
-                    0x105f                  _mot
+                    0x1950                  _LedList
+                    0x103a                  _MeasurementStart
+                    0x1846                  _Motor1
+                    0x1850                  _Motor2
+                    0x185a                  _Motor3
+                    0x1864                  _Motor4
+                    0x186e                  _Motor5
+                    0x1878                  _Motor6
+                    0x1882                  _Motor7
+                    0x1046                  _OutputValues
+                    0x195e                  _STACK_GUARD
+                    0x188c                  _StepperMotorList
+                    0x1041                  _led
+                    0x1040                  _mot
                     0x6000                  _sigCmpx
-                    0x186a                  _strings
+                    0x189a                  _strings
                     0x2000                  _twiddleFactors
 
 External Symbols in Program Memory (by address):
@@ -312,178 +279,174 @@ External Symbols in Program Memory (by address):
                   0x00033a                  _SquareMagnitudeCplx
                   0x00036e                  _FFTComplexIP
                   0x00047a                  _TwidFactorInit
-                  0x0005f0                  _VectorMax
-                  0x000610                  _Float2Fract
-                  0x0007b6                  ___subsf3
-                  0x0007b8                  ___addsf3
-                  0x000872                  _ceilf
-                  0x000882                  _cosf
-                  0x000886                  ___divsf3
-                  0x00090a                  __fchop
-                  0x000958                  ___ltsf2
-                  0x000958                  ___eqsf2
-                  0x000958                  ___lesf2
-                  0x00095c                  ___gesf2
-                  0x00095c                  ___gtsf2
-                  0x000960                  ___fixsfsi
-                  0x0009a2                  ___floatsisf
-                  0x0009a8                  ___floatunsisf
-                  0x0009ac                  _floorf
-                  0x0009bc                  ___nesf2
-                  0x0009c0                  __fpack
-                  0x000a0c                  __funpack
-                  0x000a36                  __funpack2
-                  0x000a46                  __fPropagateNaN
-                  0x000a58                  __fbopExit
-                  0x000a60                  __fbopReturnNaN
-                  0x000a66                  ___mulsf3
-                  0x000ace                  __sincosf
-                  0x000ba0                  _sinf
-                  0x000ba4                  __fcompare
-                  0x000bda                  ___floatdisf
-                  0x000bfa                  ___floatundisf
-                  0x000c58                  _fmodf
-                  0x000c5c                  __fmodrem
-                  0x000cfa                  _CoilA_Motor1
-                  0x000d02                  _CoilB_Motor1
-                  0x000d0a                  _CoilA_Motor2
-                  0x000d12                  _CoilB_Motor2
-                  0x000d1a                  _CoilA_Motor3
-                  0x000d22                  _CoilB_Motor3
-                  0x000d2a                  _CoilA_Motor4
-                  0x000d32                  _CoilB_Motor4
-                  0x000d3a                  _CoilA_Motor5
-                  0x000d42                  _CoilB_Motor5
-                  0x000d4a                  _CoilA_Motor6
-                  0x000d52                  _CoilB_Motor6
-                  0x000d5a                  _CoilA_Motor7
-                  0x000d62                  _CoilB_Motor7
-                  0x000d6a                  _InitFFT
-                  0x000d7e                  _CountFrequencyTable
-                  0x000f8c                  _CalculateFFT
-                  0x001042                  _CalculateFreq
-                  0x001322                  _CalcHarmNum
-                  0x0013b0                  _MotorsSleep
-                  0x0013bc                  _MotorsWake
-                  0x0013c8                  _MotorOff
-                  0x001440                  _DoSteps
-                  0x001468                  _DoStep
-                  0x00174c                  _InitMotors
-                  0x001830                  _myNewDelay
-                  0x001846                  _main
-                  0x001a28                  _InitLeds
-                  0x001a7c                  _TurnLedOn
-                  0x001ab4                  _TurnLedOff
-                  0x001aee                  _OneLedOn
-                  0x001afc                  _OneLedOff
-                  0x001b0a                  _InverseLeds
-                  0x001b42                  _AllLedsOff
-                  0x001b7c                  _AllLedsOn
-                  0x001bb4                  _InitAdc
-                  0x001bbe                  _initAdcBattery
-                  0x001c16                  _initAdcPiezo
-                  0x001c7e                  __AD1Interrupt
-                  0x001e0e                  _InitBtns
-                  0x001e78                  _DebPress
-                  0x001e8e                  _DebRelease
-                  0x001ea4                  _BtnOpen
-                  0x001ebe                  _BtnClick
-                  0x001f26                  _InitApp
-                  0x001f36                  _InitPllOsc
-                  0x001f8a                  _SetStackGuard
+                  0x0005f0                  _Float2Fract
+                  0x000796                  ___subsf3
+                  0x000798                  ___addsf3
+                  0x000852                  _ceilf
+                  0x000862                  _cosf
+                  0x000866                  ___divsf3
+                  0x0008ea                  __fchop
+                  0x000938                  ___ltsf2
+                  0x000938                  ___lesf2
+                  0x000938                  ___eqsf2
+                  0x00093c                  ___gesf2
+                  0x00093c                  ___gtsf2
+                  0x000940                  ___fixsfsi
+                  0x000982                  ___floatsisf
+                  0x000988                  ___floatunsisf
+                  0x00098c                  _floorf
+                  0x00099c                  ___nesf2
+                  0x0009a0                  __fpack
+                  0x0009ec                  __funpack
+                  0x000a16                  __funpack2
+                  0x000a26                  __fPropagateNaN
+                  0x000a38                  __fbopExit
+                  0x000a40                  __fbopReturnNaN
+                  0x000a46                  ___mulsf3
+                  0x000aae                  __sincosf
+                  0x000b80                  _sinf
+                  0x000b84                  __fcompare
+                  0x000bba                  ___floatdisf
+                  0x000bda                  ___floatundisf
+                  0x000c38                  _fmodf
+                  0x000c3c                  __fmodrem
+                  0x000cda                  _CoilA_Motor1
+                  0x000ce2                  _CoilB_Motor1
+                  0x000cea                  _CoilA_Motor2
+                  0x000cf2                  _CoilB_Motor2
+                  0x000cfa                  _CoilA_Motor3
+                  0x000d02                  _CoilB_Motor3
+                  0x000d0a                  _CoilA_Motor4
+                  0x000d12                  _CoilB_Motor4
+                  0x000d1a                  _CoilA_Motor5
+                  0x000d22                  _CoilB_Motor5
+                  0x000d2a                  _CoilA_Motor6
+                  0x000d32                  _CoilB_Motor6
+                  0x000d3a                  _CoilA_Motor7
+                  0x000d42                  _CoilB_Motor7
+                  0x000d4a                  _InitFFT
+                  0x000d5e                  _CountFrequencyTable
+                  0x000f6c                  _CalculateFFT
+                  0x000ffa                  _CalculateFreq
+                  0x0012cc                  _CalcHarmNum
+                  0x001354                  _MotorsSleep
+                  0x001360                  _MotorsWake
+                  0x00136c                  _MotorOff
+                  0x0013e4                  _DoSteps
+                  0x00140c                  _DoStep
+                  0x0016f0                  _InitMotors
+                  0x0017d4                  _main
+                  0x0019ac                  _StepMotorDelay
+                  0x0019c2                  _InitLeds
+                  0x001a16                  _TurnLedOn
+                  0x001a4e                  _TurnLedOff
+                  0x001a88                  _OneLedOn
+                  0x001a96                  _OneLedOff
+                  0x001aa4                  _InverseLeds
+                  0x001adc                  _AllLedsOff
+                  0x001b16                  _AllLedsOn
+                  0x001b4e                  _InitAdc
+                  0x001b58                  _initAdcBattery
+                  0x001bb0                  _initAdcPiezo
+                  0x001c18                  __AD1Interrupt
+                  0x001c8e                  _InitBtns
+                  0x001cf8                  _DebPress
+                  0x001d0e                  _DebRelease
+                  0x001d24                  _BtnOpen
+                  0x001d3e                  _BtnClick
+                  0x001eb0                  _InitApp
+                  0x001ec0                  _SetStackGuard
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x001b42                  _AllLedsOff
-                  0x001b7c                  _AllLedsOn
+                  0x001adc                  _AllLedsOff
+                  0x001b16                  _AllLedsOn
                   0x0002fe                  _BitReverseComplex
-                  0x001ebe                  _BtnClick
-                  0x001ea4                  _BtnOpen
-                  0x001322                  _CalcHarmNum
-                  0x000f8c                  _CalculateFFT
-                  0x001042                  _CalculateFreq
-                  0x000cfa                  _CoilA_Motor1
-                  0x000d0a                  _CoilA_Motor2
-                  0x000d1a                  _CoilA_Motor3
-                  0x000d2a                  _CoilA_Motor4
-                  0x000d3a                  _CoilA_Motor5
-                  0x000d4a                  _CoilA_Motor6
-                  0x000d5a                  _CoilA_Motor7
-                  0x000d02                  _CoilB_Motor1
-                  0x000d12                  _CoilB_Motor2
-                  0x000d22                  _CoilB_Motor3
-                  0x000d32                  _CoilB_Motor4
-                  0x000d42                  _CoilB_Motor5
-                  0x000d52                  _CoilB_Motor6
-                  0x000d62                  _CoilB_Motor7
-                  0x000d7e                  _CountFrequencyTable
-                  0x001e78                  _DebPress
-                  0x001e8e                  _DebRelease
-                  0x001468                  _DoStep
-                  0x001440                  _DoSteps
+                  0x001d3e                  _BtnClick
+                  0x001d24                  _BtnOpen
+                  0x0012cc                  _CalcHarmNum
+                  0x000f6c                  _CalculateFFT
+                  0x000ffa                  _CalculateFreq
+                  0x000cda                  _CoilA_Motor1
+                  0x000cea                  _CoilA_Motor2
+                  0x000cfa                  _CoilA_Motor3
+                  0x000d0a                  _CoilA_Motor4
+                  0x000d1a                  _CoilA_Motor5
+                  0x000d2a                  _CoilA_Motor6
+                  0x000d3a                  _CoilA_Motor7
+                  0x000ce2                  _CoilB_Motor1
+                  0x000cf2                  _CoilB_Motor2
+                  0x000d02                  _CoilB_Motor3
+                  0x000d12                  _CoilB_Motor4
+                  0x000d22                  _CoilB_Motor5
+                  0x000d32                  _CoilB_Motor6
+                  0x000d42                  _CoilB_Motor7
+                  0x000d5e                  _CountFrequencyTable
+                  0x001cf8                  _DebPress
+                  0x001d0e                  _DebRelease
+                  0x00140c                  _DoStep
+                  0x0013e4                  _DoSteps
                   0x00036e                  _FFTComplexIP
-                  0x000610                  _Float2Fract
-                  0x001bb4                  _InitAdc
-                  0x001f26                  _InitApp
-                  0x001e0e                  _InitBtns
-                  0x000d6a                  _InitFFT
-                  0x001a28                  _InitLeds
-                  0x00174c                  _InitMotors
-                  0x001f36                  _InitPllOsc
-                  0x001b0a                  _InverseLeds
-                  0x0013c8                  _MotorOff
-                  0x0013b0                  _MotorsSleep
-                  0x0013bc                  _MotorsWake
-                  0x001afc                  _OneLedOff
-                  0x001aee                  _OneLedOn
-                  0x001f8a                  _SetStackGuard
+                  0x0005f0                  _Float2Fract
+                  0x001b4e                  _InitAdc
+                  0x001eb0                  _InitApp
+                  0x001c8e                  _InitBtns
+                  0x000d4a                  _InitFFT
+                  0x0019c2                  _InitLeds
+                  0x0016f0                  _InitMotors
+                  0x001aa4                  _InverseLeds
+                  0x00136c                  _MotorOff
+                  0x001354                  _MotorsSleep
+                  0x001360                  _MotorsWake
+                  0x001a96                  _OneLedOff
+                  0x001a88                  _OneLedOn
+                  0x001ec0                  _SetStackGuard
                   0x00033a                  _SquareMagnitudeCplx
-                  0x001ab4                  _TurnLedOff
-                  0x001a7c                  _TurnLedOn
+                  0x0019ac                  _StepMotorDelay
+                  0x001a4e                  _TurnLedOff
+                  0x001a16                  _TurnLedOn
                   0x00047a                  _TwidFactorInit
-                  0x0005f0                  _VectorMax
-                  0x001c7e                  __AD1Interrupt
+                  0x001c18                  __AD1Interrupt
                   0x0002fa                  __DefaultInterrupt
                   0xf80004                  __FGS.sec
-                  0x0007b8                  ___addsf3
-                  0x000886                  ___divsf3
-                  0x000958                  ___eqsf2
-                  0x000960                  ___fixsfsi
-                  0x000bda                  ___floatdisf
-                  0x0009a2                  ___floatsisf
-                  0x000bfa                  ___floatundisf
-                  0x0009a8                  ___floatunsisf
-                  0x00095c                  ___gesf2
-                  0x00095c                  ___gtsf2
-                  0x000958                  ___lesf2
-                  0x000958                  ___ltsf2
-                  0x000a66                  ___mulsf3
-                  0x0009bc                  ___nesf2
-                  0x0007b6                  ___subsf3
+                  0x000798                  ___addsf3
+                  0x000866                  ___divsf3
+                  0x000938                  ___eqsf2
+                  0x000940                  ___fixsfsi
+                  0x000bba                  ___floatdisf
+                  0x000982                  ___floatsisf
+                  0x000bda                  ___floatundisf
+                  0x000988                  ___floatunsisf
+                  0x00093c                  ___gesf2
+                  0x00093c                  ___gtsf2
+                  0x000938                  ___lesf2
+                  0x000938                  ___ltsf2
+                  0x000a46                  ___mulsf3
+                  0x00099c                  ___nesf2
+                  0x000796                  ___subsf3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
-                  0x000a46                  __fPropagateNaN
-                  0x000a58                  __fbopExit
-                  0x000a60                  __fbopReturnNaN
-                  0x00090a                  __fchop
-                  0x000ba4                  __fcompare
-                  0x000c5c                  __fmodrem
-                  0x0009c0                  __fpack
-                  0x000a0c                  __funpack
-                  0x000a36                  __funpack2
+                  0x000a26                  __fPropagateNaN
+                  0x000a38                  __fbopExit
+                  0x000a40                  __fbopReturnNaN
+                  0x0008ea                  __fchop
+                  0x000b84                  __fcompare
+                  0x000c3c                  __fmodrem
+                  0x0009a0                  __fpack
+                  0x0009ec                  __funpack
+                  0x000a16                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000ace                  __sincosf
-                  0x000872                  _ceilf
-                  0x000882                  _cosf
-                  0x0009ac                  _floorf
-                  0x000c58                  _fmodf
-                  0x001bbe                  _initAdcBattery
-                  0x001c16                  _initAdcPiezo
-                  0x001846                  _main
-                  0x001830                  _myNewDelay
-                  0x000ba0                  _sinf
+                  0x000aae                  __sincosf
+                  0x000852                  _ceilf
+                  0x000862                  _cosf
+                  0x00098c                  _floorf
+                  0x000c38                  _fmodf
+                  0x001b58                  _initAdcBattery
+                  0x001bb0                  _initAdcPiezo
+                  0x0017d4                  _main
+                  0x000b80                  _sinf
 
 Memory Configuration
 
@@ -542,7 +505,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0xafa
+.text             0x000200        0xada
  *(.init)
  .init            0x000200         0x48 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __resetPRI
@@ -567,80 +530,78 @@ LOAD c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libfx-elf.a
                   0x00036e                  _FFTComplexIP
  .libdsp          0x00047a        0x176 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
                   0x00047a                  _TwidFactorInit
- .libdsp          0x0005f0         0x20 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_vmax.obj)
-                  0x0005f0                  _VectorMax
- .libdsp          0x000610        0x1a4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
-                  0x000610                  _Float2Fract
+ .libdsp          0x0005f0        0x1a4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+                  0x0005f0                  _Float2Fract
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x0007b4          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
-                  0x0007b4                  __crt_start_mode
-                  0x0007b4                  __crt_start_mode_normal
- .libm.subsf3     0x0007b6         0xbc c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(addsf3.epeo)
-                  0x0007b6                  ___subsf3
-                  0x0007b8                  ___addsf3
- .libm.ceilf      0x000872         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(ceilf.epeo)
-                  0x000872                  _ceilf
- .libm.cosf       0x000882          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(cosf.epeo)
-                  0x000882                  _cosf
- .libm.divfs3     0x000886         0x84 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
-                  0x000886                  ___divsf3
- .libm.fchop      0x00090a         0x4e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fchop.epeo)
-                  0x00090a                  __fchop
- .libm.eqsf2      0x000958          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(feqltle.epeo)
-                  0x000958                  ___eqsf2
-                  0x000958                  ___ltsf2
-                  0x000958                  ___lesf2
- .libm.gtsf2      0x00095c          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fgtge.epeo)
-                  0x00095c                  ___gesf2
-                  0x00095c                  ___gtsf2
- .libm.fixsfsi    0x000960         0x42 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixsfsi.epeo)
-                  0x000960                  _(float, int, long long, short, float, short, int)
+                  0x000794          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
+                  0x000794                  __crt_start_mode
+                  0x000794                  __crt_start_mode_normal
+ .libm.subsf3     0x000796         0xbc c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(addsf3.epeo)
+                  0x000796                  ___subsf3
+                  0x000798                  ___addsf3
+ .libm.ceilf      0x000852         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(ceilf.epeo)
+                  0x000852                  _ceilf
+ .libm.cosf       0x000862          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(cosf.epeo)
+                  0x000862                  _cosf
+ .libm.divfs3     0x000866         0x84 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
+                  0x000866                  ___divsf3
+ .libm.fchop      0x0008ea         0x4e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fchop.epeo)
+                  0x0008ea                  __fchop
+ .libm.eqsf2      0x000938          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(feqltle.epeo)
+                  0x000938                  ___eqsf2
+                  0x000938                  ___ltsf2
+                  0x000938                  ___lesf2
+ .libm.gtsf2      0x00093c          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fgtge.epeo)
+                  0x00093c                  ___gesf2
+                  0x00093c                  ___gtsf2
+ .libm.fixsfsi    0x000940         0x42 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixsfsi.epeo)
+                  0x000940                  _(float, int, long long, short, float, short, int)
  .libm.floatsisf
-                  0x0009a2          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatsisf.epeo)
-                  0x0009a2                  ___floatsisf
+                  0x000982          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatsisf.epeo)
+                  0x000982                  ___floatsisf
  .libm.floatunsisf
-                  0x0009a8          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
-                  0x0009a8                  ___floatunsisf
- .libm.floorf     0x0009ac         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floorf.epeo)
-                  0x0009ac                  _floorf
- .libm.nesf2      0x0009bc          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fne.epeo)
-                  0x0009bc                  ___nesf2
- .libm.fpack      0x0009c0         0x4c c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
-                  0x0009c0                  __fpack
- .libm.funpack    0x000a0c         0x2a c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
-                  0x000a0c                  __funpack
+                  0x000988          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
+                  0x000988                  ___floatunsisf
+ .libm.floorf     0x00098c         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floorf.epeo)
+                  0x00098c                  _floorf
+ .libm.nesf2      0x00099c          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fne.epeo)
+                  0x00099c                  ___nesf2
+ .libm.fpack      0x0009a0         0x4c c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
+                  0x0009a0                  __fpack
+ .libm.funpack    0x0009ec         0x2a c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
+                  0x0009ec                  __funpack
  .libm.funpack2
-                  0x000a36         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
-                  0x000a36                  __funpack2
+                  0x000a16         0x10 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
+                  0x000a16                  __funpack2
  .libm.fPropagateNaN
-                  0x000a46         0x12 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
-                  0x000a46                  __fPropagateNaN
+                  0x000a26         0x12 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x000a26                  __fPropagateNaN
  .libm.fbobExit
-                  0x000a58          0x8 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
-                  0x000a58                  __fbopExit
+                  0x000a38          0x8 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x000a38                  __fbopExit
  .libm.fbopReturnNaN
-                  0x000a60          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
-                  0x000a60                  __fbopReturnNaN
- .libm.mulsf3     0x000a66         0x68 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(mulsf3.epeo)
-                  0x000a66                  ___mulsf3
- .libm.sincosf    0x000ace         0xd2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sincosf.epeo)
-                  0x000ace                  __sincosf
- .libm.sinf       0x000ba0          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sinf.epeo)
-                  0x000ba0                  _sinf
+                  0x000a40          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x000a40                  __fbopReturnNaN
+ .libm.mulsf3     0x000a46         0x68 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(mulsf3.epeo)
+                  0x000a46                  ___mulsf3
+ .libm.sincosf    0x000aae         0xd2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sincosf.epeo)
+                  0x000aae                  __sincosf
+ .libm.sinf       0x000b80          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sinf.epeo)
+                  0x000b80                  _sinf
  .libm.fcompare
-                  0x000ba4         0x36 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fcompare.epeo)
-                  0x000ba4                  __fcompare
+                  0x000b84         0x36 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fcompare.epeo)
+                  0x000b84                  __fcompare
  .libm.floatdisf
-                  0x000bda         0x20 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatdisf.epeo)
-                  0x000bda                  ___floatdisf
+                  0x000bba         0x20 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatdisf.epeo)
+                  0x000bba                  ___floatdisf
  .libm.floatundisf
-                  0x000bfa         0x5e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
-                  0x000bfa                  ___floatundisf
- .libm.fmodf      0x000c58          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodf.epeo)
-                  0x000c58                  _fmodf
- .libm.fmodrem    0x000c5c         0x9e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodrem.epeo)
-                  0x000c5c                  __fmodrem
+                  0x000bda         0x5e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
+                  0x000bda                  ___floatundisf
+ .libm.fmodf      0x000c38          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodf.epeo)
+                  0x000c38                  _fmodf
+ .libm.fmodrem    0x000c3c         0x9e c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodrem.epeo)
+                  0x000c3c                  __fmodrem
 
 usercode
  *(usercode)
@@ -674,73 +635,72 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x4e2c
+.debug_info       0x000000       0x4761
  *(.debug_info)
- .debug_info      0x000000        0x647 build/default/production/main.o
- .debug_info      0x000647        0x58d build/default/production/stepper_motors.o
- .debug_info      0x000bd4        0x54a build/default/production/user.o
- .debug_info      0x00111e        0x799 build/default/production/stepper_motor_vars.o
- .debug_info      0x0018b7       0x1c67 build/default/production/ADC.o
- .debug_info      0x00351e        0x3da build/default/production/Leds.o
- .debug_info      0x0038f8        0x373 build/default/production/Leds_vars.o
- .debug_info      0x003c6b        0x3a5 build/default/production/Buttons.o
- .debug_info      0x004010        0x3c6 build/default/production/Buttons_vars.o
- .debug_info      0x0043d6        0x67f build/default/production/fft.o
- .debug_info      0x004a55        0x248 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_info      0x004c9d        0x18f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_info      0x000000        0x5ea build/default/production/main.o
+ .debug_info      0x0005ea        0x58d build/default/production/stepper_motors.o
+ .debug_info      0x000b77        0x146 build/default/production/user.o
+ .debug_info      0x000cbd        0x799 build/default/production/stepper_motor_vars.o
+ .debug_info      0x001456       0x1ac9 build/default/production/ADC.o
+ .debug_info      0x002f1f        0x3da build/default/production/Leds.o
+ .debug_info      0x0032f9        0x373 build/default/production/Leds_vars.o
+ .debug_info      0x00366c        0x3a5 build/default/production/Buttons.o
+ .debug_info      0x003a11        0x3c6 build/default/production/Buttons_vars.o
+ .debug_info      0x003dd7        0x5b3 build/default/production/fft.o
+ .debug_info      0x00438a        0x248 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_info      0x0045d2        0x18f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0xad9
+.debug_abbrev     0x000000        0xa35
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x12a build/default/production/main.o
  .debug_abbrev    0x00012a        0x136 build/default/production/stepper_motors.o
- .debug_abbrev    0x000260         0xb6 build/default/production/user.o
- .debug_abbrev    0x000316         0xf8 build/default/production/stepper_motor_vars.o
- .debug_abbrev    0x00040e        0x17d build/default/production/ADC.o
- .debug_abbrev    0x00058b         0xe0 build/default/production/Leds.o
- .debug_abbrev    0x00066b         0x9d build/default/production/Leds_vars.o
- .debug_abbrev    0x000708         0xe9 build/default/production/Buttons.o
- .debug_abbrev    0x0007f1         0xa4 build/default/production/Buttons_vars.o
- .debug_abbrev    0x000895        0x14e build/default/production/fft.o
- .debug_abbrev    0x0009e3         0x95 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_abbrev    0x000a78         0x61 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_abbrev    0x000260         0x32 build/default/production/user.o
+ .debug_abbrev    0x000292         0xf8 build/default/production/stepper_motor_vars.o
+ .debug_abbrev    0x00038a        0x16c build/default/production/ADC.o
+ .debug_abbrev    0x0004f6         0xe0 build/default/production/Leds.o
+ .debug_abbrev    0x0005d6         0x9d build/default/production/Leds_vars.o
+ .debug_abbrev    0x000673         0xe9 build/default/production/Buttons.o
+ .debug_abbrev    0x00075c         0xa4 build/default/production/Buttons_vars.o
+ .debug_abbrev    0x000800        0x13f build/default/production/fft.o
+ .debug_abbrev    0x00093f         0x95 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_abbrev    0x0009d4         0x61 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
-.debug_line       0x000000        0xd7d
+.debug_line       0x000000        0xd05
  *(.debug_line)
- .debug_line      0x000000        0x172 build/default/production/main.o
- .debug_line      0x000172        0x17d build/default/production/stepper_motors.o
- .debug_line      0x0002ef         0xa1 build/default/production/user.o
- .debug_line      0x000390        0x112 build/default/production/stepper_motor_vars.o
- .debug_line      0x0004a2        0x186 build/default/production/ADC.o
- .debug_line      0x000628         0xc0 build/default/production/Leds.o
- .debug_line      0x0006e8         0xf6 build/default/production/Leds_vars.o
- .debug_line      0x0007de         0xba build/default/production/Buttons.o
- .debug_line      0x000898         0xff build/default/production/Buttons_vars.o
- .debug_line      0x000997        0x1a2 build/default/production/fft.o
- .debug_line      0x000b39        0x115 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_line      0x000c4e        0x12f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_line      0x000000        0x16d build/default/production/main.o
+ .debug_line      0x00016d        0x17d build/default/production/stepper_motors.o
+ .debug_line      0x0002ea         0x37 build/default/production/user.o
+ .debug_line      0x000321        0x112 build/default/production/stepper_motor_vars.o
+ .debug_line      0x000433        0x186 build/default/production/ADC.o
+ .debug_line      0x0005b9         0xc0 build/default/production/Leds.o
+ .debug_line      0x000679         0xf6 build/default/production/Leds_vars.o
+ .debug_line      0x00076f         0xba build/default/production/Buttons.o
+ .debug_line      0x000829         0xff build/default/production/Buttons_vars.o
+ .debug_line      0x000928        0x199 build/default/production/fft.o
+ .debug_line      0x000ac1        0x115 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_line      0x000bd6        0x12f c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
-.debug_frame      0x000000        0x482
+.debug_frame      0x000000        0x466
  *(.debug_frame)
  .debug_frame     0x000000         0x52 build/default/production/main.o
  .debug_frame     0x000052         0xbc build/default/production/stepper_motors.o
- .debug_frame     0x00010e         0x4c build/default/production/user.o
- .debug_frame     0x00015a         0x9a build/default/production/ADC.o
- .debug_frame     0x0001f4         0xf4 build/default/production/Leds.o
- .debug_frame     0x0002e8         0xa0 build/default/production/Buttons.o
- .debug_frame     0x000388         0xb2 build/default/production/fft.o
- .debug_frame     0x00043a         0x24 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
- .debug_frame     0x00045e         0x24 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+ .debug_frame     0x00010e         0x30 build/default/production/user.o
+ .debug_frame     0x00013e         0x9a build/default/production/ADC.o
+ .debug_frame     0x0001d8         0xf4 build/default/production/Leds.o
+ .debug_frame     0x0002cc         0xa0 build/default/production/Buttons.o
+ .debug_frame     0x00036c         0xb2 build/default/production/fft.o
+ .debug_frame     0x00041e         0x24 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+ .debug_frame     0x000442         0x24 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
-.debug_str        0x000000        0x31e
+.debug_str        0x000000        0x2d8
  *(.debug_str)
- .debug_str       0x000000         0x55 build/default/production/main.o
- .debug_str       0x000055         0x2d build/default/production/stepper_motors.o
- .debug_str       0x000082         0x16 build/default/production/user.o
- .debug_str       0x000098         0xc9 build/default/production/stepper_motor_vars.o
- .debug_str       0x000161        0x16f build/default/production/ADC.o
- .debug_str       0x0002d0          0x7 build/default/production/Leds.o
- .debug_str       0x0002d7         0x47 build/default/production/fft.o
+ .debug_str       0x000000         0x3c build/default/production/main.o
+ .debug_str       0x00003c         0x2d build/default/production/stepper_motors.o
+ .debug_str       0x000069         0xc9 build/default/production/stepper_motor_vars.o
+ .debug_str       0x000132        0x16f build/default/production/ADC.o
+ .debug_str       0x0002a1          0x7 build/default/production/Leds.o
+ .debug_str       0x0002a8         0x30 build/default/production/fft.o
 
 .debug_loc
  *(.debug_loc)
@@ -749,32 +709,32 @@ __FUID0
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x662
+                  0x000000        0x530
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x5d build/default/production/main.o
+                  0x000000         0x4f build/default/production/main.o
  .debug_pubnames
-                  0x00005d         0x64 build/default/production/stepper_motors.o
+                  0x00004f         0x64 build/default/production/stepper_motors.o
  .debug_pubnames
-                  0x0000c1         0x2d build/default/production/user.o
+                  0x0000b3         0x1e build/default/production/user.o
  .debug_pubnames
-                  0x0000ee        0x162 build/default/production/stepper_motor_vars.o
+                  0x0000d1        0x162 build/default/production/stepper_motor_vars.o
  .debug_pubnames
-                  0x000250        0x189 build/default/production/ADC.o
+                  0x000233         0xa4 build/default/production/ADC.o
  .debug_pubnames
-                  0x0003d9         0x84 build/default/production/Leds.o
+                  0x0002d7         0x84 build/default/production/Leds.o
  .debug_pubnames
-                  0x00045d         0x5d build/default/production/Leds_vars.o
+                  0x00035b         0x5d build/default/production/Leds_vars.o
  .debug_pubnames
-                  0x0004ba         0x54 build/default/production/Buttons.o
+                  0x0003b8         0x54 build/default/production/Buttons.o
  .debug_pubnames
-                  0x00050e         0x39 build/default/production/Buttons_vars.o
+                  0x00040c         0x39 build/default/production/Buttons_vars.o
  .debug_pubnames
-                  0x000547         0xd4 build/default/production/fft.o
+                  0x000445         0xa4 build/default/production/fft.o
  .debug_pubnames
-                  0x00061b         0x25 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+                  0x0004e9         0x25 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
  .debug_pubnames
-                  0x000640         0x22 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+                  0x00050e         0x22 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
 .debug_ranges
  *(.debug_ranges)
@@ -3386,122 +3346,120 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0000d8        0x5fc
+                  0x0000d8        0x5a1
  .debug_pubtypes
                   0x0000d8         0x76 build/default/production/main.o
  .debug_pubtypes
                   0x00014e         0xaa build/default/production/stepper_motors.o
  .debug_pubtypes
-                  0x0001f8         0x54 build/default/production/user.o
+                  0x0001f8         0x12 build/default/production/user.o
  .debug_pubtypes
-                  0x00024c         0x97 build/default/production/stepper_motor_vars.o
+                  0x00020a         0x97 build/default/production/stepper_motor_vars.o
  .debug_pubtypes
-                  0x0002e3        0x230 build/default/production/ADC.o
+                  0x0002a1        0x223 build/default/production/ADC.o
  .debug_pubtypes
-                  0x000513         0x40 build/default/production/Leds.o
+                  0x0004c4         0x40 build/default/production/Leds.o
  .debug_pubtypes
-                  0x000553         0x33 build/default/production/Leds_vars.o
+                  0x000504         0x33 build/default/production/Leds_vars.o
  .debug_pubtypes
-                  0x000586         0x43 build/default/production/Buttons.o
+                  0x000537         0x43 build/default/production/Buttons.o
  .debug_pubtypes
-                  0x0005c9         0x36 build/default/production/Buttons_vars.o
+                  0x00057a         0x36 build/default/production/Buttons_vars.o
  .debug_pubtypes
-                  0x0005ff         0x82 build/default/production/fft.o
+                  0x0005b0         0x76 build/default/production/fft.o
  .debug_pubtypes
-                  0x000681         0x32 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+                  0x000626         0x32 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
  .debug_pubtypes
-                  0x0006b3         0x21 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+                  0x000658         0x21 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
 
 __c30_signature
-                  0x0006d4        0x108
+                  0x000679        0x102
  __c30_signature
-                  0x0006d4          0x6 build/default/production/main.o
+                  0x000679          0x6 build/default/production/main.o
  __c30_signature
-                  0x0006da          0x6 build/default/production/stepper_motors.o
+                  0x00067f          0x6 build/default/production/stepper_motors.o
  __c30_signature
-                  0x0006e0          0x6 build/default/production/user.o
+                  0x000685          0x6 build/default/production/user.o
  __c30_signature
-                  0x0006e6          0x6 build/default/production/stepper_motor_vars.o
+                  0x00068b          0x6 build/default/production/stepper_motor_vars.o
  __c30_signature
-                  0x0006ec          0x6 build/default/production/ADC.o
+                  0x000691          0x6 build/default/production/ADC.o
  __c30_signature
-                  0x0006f2          0x6 build/default/production/Leds.o
+                  0x000697          0x6 build/default/production/Leds.o
  __c30_signature
-                  0x0006f8          0x6 build/default/production/Leds_vars.o
+                  0x00069d          0x6 build/default/production/Leds_vars.o
  __c30_signature
-                  0x0006fe          0x6 build/default/production/Buttons.o
+                  0x0006a3          0x6 build/default/production/Buttons.o
  __c30_signature
-                  0x000704          0x6 build/default/production/Buttons_vars.o
+                  0x0006a9          0x6 build/default/production/Buttons_vars.o
  __c30_signature
-                  0x00070a          0x6 build/default/production/fft.o
+                  0x0006af          0x6 build/default/production/fft.o
  __c30_signature
-                  0x000710          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_bitrev.obj)
+                  0x0006b5          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_bitrev.obj)
  __c30_signature
-                  0x000716          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_cplxsqrmag.obj)
+                  0x0006bb          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_cplxsqrmag.obj)
  __c30_signature
-                  0x00071c          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_fft.obj)
+                  0x0006c1          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_fft.obj)
  __c30_signature
-                  0x000722          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
+                  0x0006c7          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_inittwid.o)
  __c30_signature
-                  0x000728          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
+                  0x0006cd          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
  __c30_signature
-                  0x00072e          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_vmax.obj)
+                  0x0006d3          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
  __c30_signature
-                  0x000734          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_flt2frct.o)
+                  0x0006d9          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x00073a          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0006df          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x000740          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extended.o)
+                  0x0006e5          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(addsf3.epeo)
  __c30_signature
-                  0x000746          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(addsf3.epeo)
+                  0x0006eb          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(ceilf.epeo)
  __c30_signature
-                  0x00074c          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(ceilf.epeo)
+                  0x0006f1          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(cosf.epeo)
  __c30_signature
-                  0x000752          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(cosf.epeo)
+                  0x0006f7          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
  __c30_signature
-                  0x000758          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(divsf3.epeo)
+                  0x0006fd          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fchop.epeo)
  __c30_signature
-                  0x00075e          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fchop.epeo)
+                  0x000703          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(feqltle.epeo)
  __c30_signature
-                  0x000764          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(feqltle.epeo)
+                  0x000709          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fgtge.epeo)
  __c30_signature
-                  0x00076a          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fgtge.epeo)
+                  0x00070f          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixsfsi.epeo)
  __c30_signature
-                  0x000770          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fixsfsi.epeo)
+                  0x000715          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatsisf.epeo)
  __c30_signature
-                  0x000776          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatsisf.epeo)
+                  0x00071b          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
  __c30_signature
-                  0x00077c          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatunsisf.epeo)
+                  0x000721          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floorf.epeo)
  __c30_signature
-                  0x000782          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floorf.epeo)
+                  0x000727          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fne.epeo)
  __c30_signature
-                  0x000788          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fne.epeo)
+                  0x00072d          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
  __c30_signature
-                  0x00078e          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fpack.epeo)
+                  0x000733          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
  __c30_signature
-                  0x000794          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack.epeo)
+                  0x000739          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
  __c30_signature
-                  0x00079a          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(funpack2.epeo)
+                  0x00073f          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
  __c30_signature
-                  0x0007a0          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(futil.epeo)
+                  0x000745          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(mulsf3.epeo)
  __c30_signature
-                  0x0007a6          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(mulsf3.epeo)
+                  0x00074b          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sincosf.epeo)
  __c30_signature
-                  0x0007ac          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sincosf.epeo)
+                  0x000751          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sinf.epeo)
  __c30_signature
-                  0x0007b2          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(sinf.epeo)
+                  0x000757          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(errno.epeo)
  __c30_signature
-                  0x0007b8          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(errno.epeo)
+                  0x00075d          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fcompare.epeo)
  __c30_signature
-                  0x0007be          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fcompare.epeo)
+                  0x000763          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatdisf.epeo)
  __c30_signature
-                  0x0007c4          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatdisf.epeo)
+                  0x000769          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
  __c30_signature
-                  0x0007ca          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(floatundisf.epeo)
+                  0x00076f          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodf.epeo)
  __c30_signature
-                  0x0007d0          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodf.epeo)
- __c30_signature
-                  0x0007d6          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodrem.epeo)
+                  0x000775          0x6 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(fmodrem.epeo)
 
 .ndata              0x1000         0x38
  .ndata             0x1000         0x38 build/default/production/Leds_vars.o
@@ -3513,81 +3471,65 @@ __c30_signature
                     0x1028                  _Led6
                     0x1030                  _Led7
 
-.nbss               0x1038         0x2a
- .nbss              0x1038         0x1e build/default/production/ADC.o
-                    0x1038                  _ADCdebugDataCounter
-                    0x103a                  _DataForFftCounter
-                    0x103c                  _MovingAverage
-                    0x1044                  _MovingAverageSummary
-                    0x1048                  _SucMesCounter
-                    0x1049                  _MovingAverageCounter
-                    0x104a                  _compMem
-                    0x104c                  _AdcSamplesCounter
-                    0x104e                  _Result
-                    0x1052                  _ResultFlag
-                    0x1053                  _MeasureDemand
-                    0x1054                  _MeasurementStart
- .nbss              0x1056          0x8 build/default/production/fft.o
-                    0x1056                  _FFT_MaxFreq
-                    0x105a                  _A_low_freq
- .nbss              0x105e          0x4 build/default/production/main.o
-                    0x105e                  _MotorSelected
-                    0x105f                  _mot
-                    0x1060                  _led
+.nbss               0x1038          0xa
+ .nbss              0x1038          0x4 build/default/production/ADC.o
+                    0x1038                  _DataForFftCounter
+                    0x103a                  _MeasurementStart
+ .nbss              0x103c          0x4 build/default/production/fft.o
+                    0x103c                  _FFT_MaxFreq
+ .nbss              0x1040          0x2 build/default/production/main.o
+                    0x1040                  _mot
+                    0x1041                  _led
 
-.ndata              0x1062          0x6
- .ndata             0x1062          0x4 build/default/production/fft.o
-                    0x1062                  _ADC_SampleRate
- .ndata             0x1066          0x2 build/default/production/ADC.o
-                    0x1066                  _DesiredSampleRate
+.ndata              0x1042          0x2
+ .ndata             0x1042          0x2 build/default/production/ADC.o
+                    0x1042                  _DesiredSampleRate
 
-.nbss               0x1068          0x2
- .nbss              0x1068          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(errno.epeo)
-                    0x1068                  _errno
+.nbss               0x1044          0x2
+ .nbss              0x1044          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libm-elf.a(errno.epeo)
+                    0x1044                  _errno
 
 .xbss               0x2000       0x1000
  .xbss              0x2000       0x1000 build/default/production/fft.o
                     0x2000                  _twiddleFactors
 
-_04E80660591c10ba
+_04E923C05925468f
                     0x6000       0x2000
- _04E80660591c10ba
+ _04E923C05925468f
                     0x6000       0x2000 build/default/production/fft.o
                     0x6000                  _sigCmpx
 
-.bss                0x3000       0x1040
- .bss               0x3000       0x1040 build/default/production/ADC.o
-                    0x3000                  _DataForFFT
-                    0x4000                  _SuccesfullMeasurement
+.bss                0x1046        0x800
+ .bss               0x1046        0x800 build/default/production/main.o
+                    0x1046                  _OutputValues
 
-.bss                0x106a        0x870
- .bss               0x106a        0x800 build/default/production/main.o
-                    0x106a                  _OutputValues
- .bss               0x186a         0x70 build/default/production/fft.o
-                    0x186a                  _strings
-                    0x18be                  _TonesFreq
+.data               0x1846         0x54
+ .data              0x1846         0x54 build/default/production/stepper_motor_vars.o
+                    0x1846                  _Motor1
+                    0x1850                  _Motor2
+                    0x185a                  _Motor3
+                    0x1864                  _Motor4
+                    0x186e                  _Motor5
+                    0x1878                  _Motor6
+                    0x1882                  _Motor7
+                    0x188c                  _StepperMotorList
 
-.data               0x18da         0xc6
- .data              0x18da         0x54 build/default/production/stepper_motor_vars.o
-                    0x18da                  _Motor1
-                    0x18e4                  _Motor2
-                    0x18ee                  _Motor3
-                    0x18f8                  _Motor4
-                    0x1902                  _Motor5
-                    0x190c                  _Motor6
-                    0x1916                  _Motor7
-                    0x1920                  _StepperMotorList
- .data              0x192e         0x42 build/default/production/Buttons_vars.o
-                    0x192e                  _Btn1
-                    0x1942                  _Btn2
-                    0x1956                  _Btn3
-                    0x196a                  _BtnList
- .data              0x1970         0x20 build/default/production/ADC.o
-                    0x1970                  _ADC_buffer
- .data              0x1990          0xe build/default/production/Leds_vars.o
-                    0x1990                  _LedList
- .data              0x199e          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
-                    0x199e                  _STACK_GUARD
+.bss                0x189a         0x54
+ .bss               0x189a         0x54 build/default/production/fft.o
+                    0x189a                  _strings
+
+.data               0x18ee         0x72
+ .data              0x18ee         0x42 build/default/production/Buttons_vars.o
+                    0x18ee                  _Btn1
+                    0x1902                  _Btn2
+                    0x1916                  _Btn3
+                    0x192a                  _BtnList
+ .data              0x1930         0x20 build/default/production/ADC.o
+                    0x1930                  _ADC_buffer
+ .data              0x1950          0xe build/default/production/Leds_vars.o
+                    0x1950                  _LedList
+ .data              0x195e          0x2 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
+                    0x195e                  _STACK_GUARD
 
 .config_APLK      0xf80010          0x2
  .config_APLK     0xf80010          0x2 build/default/production/main.o
@@ -3616,67 +3558,66 @@ _04E80660591c10ba
  .ivt._AD1Interrupt
                   0x00002e          0x2 build/default/production/ADC.o
 
-.const              0x8cfa         0x70 load address 0x000cfa  
- .const             0x8cfa         0x70 build/default/production/stepper_motor_vars.o
-                    0x8cfa                  _CoilA_Motor1
-                    0x8d02                  _CoilB_Motor1
-                    0x8d0a                  _CoilA_Motor2
-                    0x8d12                  _CoilB_Motor2
-                    0x8d1a                  _CoilA_Motor3
-                    0x8d22                  _CoilB_Motor3
-                    0x8d2a                  _CoilA_Motor4
-                    0x8d32                  _CoilB_Motor4
-                    0x8d3a                  _CoilA_Motor5
-                    0x8d42                  _CoilB_Motor5
-                    0x8d4a                  _CoilA_Motor6
-                    0x8d52                  _CoilB_Motor6
-                    0x8d5a                  _CoilA_Motor7
-                    0x8d62                  _CoilB_Motor7
+.const              0x8cda         0x70 load address 0x000cda  
+ .const             0x8cda         0x70 build/default/production/stepper_motor_vars.o
+                    0x8cda                  _CoilA_Motor1
+                    0x8ce2                  _CoilB_Motor1
+                    0x8cea                  _CoilA_Motor2
+                    0x8cf2                  _CoilB_Motor2
+                    0x8cfa                  _CoilA_Motor3
+                    0x8d02                  _CoilB_Motor3
+                    0x8d0a                  _CoilA_Motor4
+                    0x8d12                  _CoilB_Motor4
+                    0x8d1a                  _CoilA_Motor5
+                    0x8d22                  _CoilB_Motor5
+                    0x8d2a                  _CoilA_Motor6
+                    0x8d32                  _CoilB_Motor6
+                    0x8d3a                  _CoilA_Motor7
+                    0x8d42                  _CoilB_Motor7
 
-.text             0x000d6a        0xf8a
- .text            0x000d6a        0x646 build/default/production/fft.o
-                  0x000d6a                  _InitFFT
-                  0x000d7e                  _CountFrequencyTable
-                  0x000f8c                  _CalculateFFT
-                  0x001042                  _CalculateFreq
-                  0x001322                  _CalcHarmNum
- .text            0x0013b0        0x480 build/default/production/stepper_motors.o
-                  0x0013b0                  _MotorsSleep
-                  0x0013bc                  _MotorsWake
-                  0x0013c8                  _MotorOff
-                  0x001440                  _DoSteps
-                  0x001468                  _DoStep
-                  0x00174c                  _InitMotors
- .text            0x001830        0x1f8 build/default/production/main.o
-                  0x001830                  _myNewDelay
-                  0x001846                  _main
- .text            0x001a28        0x18c build/default/production/Leds.o
-                  0x001a28                  _InitLeds
-                  0x001a7c                  _TurnLedOn
-                  0x001ab4                  _TurnLedOff
-                  0x001aee                  _OneLedOn
-                  0x001afc                  _OneLedOff
-                  0x001b0a                  _InverseLeds
-                  0x001b42                  _AllLedsOff
-                  0x001b7c                  _AllLedsOn
- .text            0x001bb4        0x140 build/default/production/ADC.o
-                  0x001bb4                  _InitAdc
-                  0x001bbe                  _initAdcBattery
-                  0x001c16                  _initAdcPiezo
-                  0x001c7e                  __AD1Interrupt
+.text             0x000d4a       0x105c
+ .text            0x000d4a        0x60a build/default/production/fft.o
+                  0x000d4a                  _InitFFT
+                  0x000d5e                  _CountFrequencyTable
+                  0x000f6c                  _CalculateFFT
+                  0x000ffa                  _CalculateFreq
+                  0x0012cc                  _CalcHarmNum
+ .text            0x001354        0x480 build/default/production/stepper_motors.o
+                  0x001354                  _MotorsSleep
+                  0x001360                  _MotorsWake
+                  0x00136c                  _MotorOff
+                  0x0013e4                  _DoSteps
+                  0x00140c                  _DoStep
+                  0x0016f0                  _InitMotors
+ .text            0x0017d4        0x1ee build/default/production/main.o
+                  0x0017d4                  _main
+                  0x0019ac                  _StepMotorDelay
+ .text            0x0019c2        0x18c build/default/production/Leds.o
+                  0x0019c2                  _InitLeds
+                  0x001a16                  _TurnLedOn
+                  0x001a4e                  _TurnLedOff
+                  0x001a88                  _OneLedOn
+                  0x001a96                  _OneLedOff
+                  0x001aa4                  _InverseLeds
+                  0x001adc                  _AllLedsOff
+                  0x001b16                  _AllLedsOn
+ .text            0x001b4e        0x140 build/default/production/ADC.o
+                  0x001b4e                  _InitAdc
+                  0x001b58                  _initAdcBattery
+                  0x001bb0                  _initAdcPiezo
+                  0x001c18                  __AD1Interrupt
+ .text            0x001c8e        0x118 build/default/production/Buttons.o
+                  0x001c8e                  _InitBtns
+                  0x001cf8                  _DebPress
+                  0x001d0e                  _DebRelease
+                  0x001d24                  _BtnOpen
+                  0x001d3e                  _BtnClick
 
-.dinit            0x001cf4        0x11a
- .dinit           0x001cf4        0x11a data_init
+.dinit            0x001da6        0x10a
+ .dinit           0x001da6        0x10a data_init
 
-.text             0x001e0e        0x180
- .text            0x001e0e        0x118 build/default/production/Buttons.o
-                  0x001e0e                  _InitBtns
-                  0x001e78                  _DebPress
-                  0x001e8e                  _DebRelease
-                  0x001ea4                  _BtnOpen
-                  0x001ebe                  _BtnClick
- .text            0x001f26         0x64 build/default/production/user.o
-                  0x001f26                  _InitApp
-                  0x001f36                  _InitPllOsc
- .text            0x001f8a          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
-                  0x001f8a                  _SetStackGuard
+.text             0x001eb0         0x14
+ .text            0x001eb0         0x10 build/default/production/user.o
+                  0x001eb0                  _InitApp
+ .text            0x001ec0          0x4 c:/program files (x86)/microchip/xc16/v1.31/bin/bin/../../lib\libdsp-elf.a(ep_stackguard.obj)
+                  0x001ec0                  _SetStackGuard

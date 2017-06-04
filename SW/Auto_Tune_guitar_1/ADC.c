@@ -1,17 +1,10 @@
 #include <stdint.h>
-
 #include <p33EP256MU806.h>
 #include "xc.h"
 #include "Strings_freq.h"
 #include "ADC.h"
 #include "Leds.h"
 #include "fft.h"
-
-
-#define FIELD_SIZE 1000
-//uint32_t A[FIELD_SIZE];
-int ADCdebugDataCounter = 0;
-
 
 #define COMP_HIGH_LIMIT (2050)
 #define COMP_LOW_LIMIT (2035)
@@ -21,30 +14,18 @@ int ADCdebugDataCounter = 0;
 #define SUCCESFULL_MEASUREMENT_FIELD_SIZE (1<<(SUC_MES_BR_DIV))
 #define SAMPLES_TO_INTERRUPT (16)
 
-int DataForFFT[FFT_BLOCK_LENGTH] = {0};
 int DataForFftCounter = 0;
 uint8_t DesiredSampleRate = 125;
-extern GuitarString strings[7];
-
-uint16_t MovingAverage[MOVING_AVERAGE_FIELD_SIZE] = {0};
-uint32_t SuccesfullMeasurement[SUCCESFULL_MEASUREMENT_FIELD_SIZE];// = {2047};
-uint32_t MovingAverageSummary = 0;
-uint8_t SucMesCounter = 0;
-uint8_t MovingAverageCounter = 0;
-uint8_t compMem=0;
-uint16_t AdcSamplesCounter = 0;
-uint32_t Result = 0;
-uint8_t ResultFlag = 0;
-uint8_t MeasureDemand = 0;
 uint8_t MeasurementStart = 0;
 extern fractcomplex sigCmpx[FFT_BLOCK_LENGTH];
 
+//init ADC1 and ADC2
 void InitAdc()
 {
     initAdcPiezo();
     initAdcBattery();
-    //countFrequencyTable(440);
 }
+//init ADC2
 void initAdcBattery()
 {
     ANSELBbits.ANSB6 = 1;
@@ -72,7 +53,7 @@ void initAdcBattery()
     AD2CHS0bits.CH0NA = 0;
     AD2CHS0bits.CH0NB = 0;
 }
-
+// init ADC1
 void initAdcPiezo()
 {
     ANSELBbits.ANSB0 = 1;
@@ -108,20 +89,8 @@ void initAdcPiezo()
     AD1CSSL = 0;
     
     IEC0bits.AD1IE=1;
-}/*
-uint16_t TonesAdcPeriods[7];
-void countFrequencyTable(uint16_t ConcertPitchA)
-{    
-    long double A1_ADC_Per = (double)((ADC_SampleRate * MOVING_AVERAGE_FIELD_SIZE)/((double)(ConcertPitchA)));
-    TonesAdcPeriods[6] = (uint16_t)(A1_ADC_Per * SEMITONE_5_MULTIPLIER + 0.5);
-    TonesAdcPeriods[5] = (uint16_t)(A1_ADC_Per * SEMITONE_10_MULTIPLIER + 0.5);
-    TonesAdcPeriods[4] = (uint16_t)(A1_ADC_Per * SEMITONE_2_MULTIPLIER * 2 + 0.5);
-    TonesAdcPeriods[3] = (uint16_t)(A1_ADC_Per * SEMITONE_7_MULTIPLIER * 2 + 0.5);
-    TonesAdcPeriods[2] = (uint16_t)(A1_ADC_Per * 4 + 0.5);
-    TonesAdcPeriods[1] = (uint16_t)(A1_ADC_Per * SEMITONE_5_MULTIPLIER * 4 + 0.5);
-    TonesAdcPeriods[0] = (uint16_t)(A1_ADC_Per * SEMITONE_10_MULTIPLIER * 4 + 0.5);
-}*/
-#define BUF0 ((ADC1BUF0))
+}
+//pointers to 16 adc samples
 volatile const uint16_t *ADC_buffer[] = {
 &ADC1BUF0,
 &ADC1BUF1,
@@ -141,26 +110,26 @@ volatile const uint16_t *ADC_buffer[] = {
 &ADC1BUFF
 };
 
+//ADC1 finish conversion interrupt 
 void __attribute__ ((interrupt, auto_psv)) _AD1Interrupt(void)
 {       
     if (MeasurementStart == 1)
     {
-        if (AD1CON3bits.ADCS != DesiredSampleRate)
+        if (AD1CON3bits.ADCS != DesiredSampleRate) // if new sample rate
         {            
             AD1CON3bits.ADCS = DesiredSampleRate;
         }
         else
         {            
             int i;
-            for (i = 0; i < SAMPLES_TO_INTERRUPT; i++)
+            for (i = 0; i < SAMPLES_TO_INTERRUPT; i++) // loop through all 16 samples 
             {
-                sigCmpx[DataForFftCounter].real = (*(ADC_buffer[i])) - ADC_MIDDLE;
-                //DataForFFT[DataForFftCounter] = (*(ADC_buffer[i]));
+                sigCmpx[DataForFftCounter].real = (*(ADC_buffer[i])) - ADC_MIDDLE; // save sample
                 DataForFftCounter++;
-                if (DataForFftCounter == FFT_BLOCK_LENGTH)
+                if (DataForFftCounter == FFT_BLOCK_LENGTH) // all 1024 samplpes saved
                 {
                     DataForFftCounter = 0;
-                    MeasurementStart = 2;
+                    MeasurementStart = 2; //flag for main loop to start fft
                 }
             }
         }

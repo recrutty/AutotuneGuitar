@@ -30,7 +30,7 @@ typedef struct
 
 void InitFFT();
 void CountFrequencyTable(uint32_t ConcertPitchA);
-int CalculateFFT(int inputValues[FFT_BLOCK_LENGTH], fractional outputValues[FFT_BLOCK_LENGTH/2]);
+void CalculateFFT(fractional outputValues[FFT_BLOCK_LENGTH/2]);
 double CalculateFreq(fractional outputFFT[FFT_BLOCK_LENGTH/2], double desiredFreq);
 int CalcHarmNum(double desiredFreq, double freq);
 #endif	/* FFT_H */

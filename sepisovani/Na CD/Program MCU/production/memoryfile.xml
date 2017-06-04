@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/Auto_Tune_guitar_1.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>28672</length>
+      <used>14688</used>
+      <free>13984</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>261888</length>
+      <used>11046</used>
+      <free>250842</free>
+    </memory>
+  </executable>
+</project>
